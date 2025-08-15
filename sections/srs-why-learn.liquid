@@ -1,0 +1,475 @@
+<style>
+    .srs-why-learn-section {
+        /* Background and padding now controlled by inline styles */
+    }
+    
+    .srs-why-learn-section .srs-container {
+        max-width: 1460px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .srs-why-learn-section .srs-main-content {
+        display: flex;
+        flex-direction: column;
+        gap: 64px;
+        max-width: 100%;
+    }
+    
+    .srs-why-learn-section  .srs-header {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        max-width: 578px;
+    }
+    
+    .srs-why-learn-section  .srs-main-title {
+        /* Color now controlled by inline styles */
+        font-size: 70px;
+        font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+        font-weight: 300;
+        line-height: 70px;
+        margin: 0;
+    }
+    
+    .srs-why-learn-section  .srs-subtitle {
+        /* Color now controlled by inline styles */
+        font-size: 48px;
+        font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+        font-weight: 300;
+        line-height: 54.72px;
+        margin: 0;
+    }
+    
+    .srs-why-learn-section .srs-stats-container {
+        display: flex;
+        /* align-items: center; */
+        gap: 0;
+        max-width: 100%;
+    }
+    
+    .srs-why-learn-section  .srs-stat-item {
+        padding-top: 9px;
+        padding-right: 24px;
+        border-top: 1px solid #133B32;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .srs-why-learn-section .srs-stat-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 16px;
+    }
+    
+    .srs-why-learn-section  .srs-icon {
+        width: 16px;
+        height: 16px;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), #36F4A4;
+        position: relative;
+    }
+    
+    .srs-why-learn-section .srs-icon-certified {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), #36F4A4;
+    }
+    
+    .srs-why-learn-section .srs-icon-skill {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), #36F4A4;
+    }
+    
+    .srs-why-learn-section .srs-icon-career {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), #36F4A4;
+    }
+    
+    .srs-why-learn-section .srs-icon-global {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), #36F4A4;
+    }
+    
+    .srs-why-learn-section  .srs-stat-label {
+        /* Color now controlled by inline styles */
+        font-size: 12px;
+        font-family: Consolas, monospace;
+        font-weight: 400;
+        text-transform: uppercase;
+        line-height: 16px;
+        margin: 0;
+    }
+    
+    .srs-why-learn-section  .srs-stat-number {
+        display: flex;
+        align-items: flex-start;
+        gap: 0;
+        margin-bottom: 16px;
+    }
+    
+    .srs-why-learn-section .srs-stat-main-number {
+        /* Color now controlled by inline styles */
+        font-size: 96px;
+        font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+        font-weight: 100;
+        line-height: 92px;
+        margin: 0;
+    }
+    
+    .srs-why-learn-section  .srs-stat-percent {
+        /* Color now controlled by inline styles */
+        font-size: 48px;
+        font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+        font-weight: 100;
+        line-height: 54.72px;
+        margin: 0;
+    }
+    
+    .srs-why-learn-section .srs-stat-plus {
+        /* Color now controlled by inline styles */
+        font-size: 48px;
+        font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+        font-weight: 100;
+        line-height: 40px;
+        margin: 0;
+    }
+    
+    .srs-why-learn-section  .srs-stat-description {
+        /* Color now controlled by inline styles */
+        font-size: 18px;
+        font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+        font-weight: 400;
+        line-height: 22.56px;
+        letter-spacing: 0.72px;
+        margin: 0;
+        max-width: 338px;
+    }
+    
+    .srs-why-learn-section  .srs-last-stat {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 134px;
+    }
+    
+    .srs-why-learn-section  .srs-last-stat-content {
+        display: flex;
+        flex-direction: column;
+        /* gap: 16px; */
+    }
+    @media(max-width: 1024px){
+        .srs-why-learn-section    .srs-stats-container{
+            flex-wrap: wrap;
+        }
+    }
+    @media (max-width: 768px) {
+        .srs-why-learn-section   .srs-stats-container {
+            flex-direction: column;
+            gap: 24px;
+        }
+        
+        .srs-why-learn-section    .srs-stat-item {
+            width: 100%;
+            padding-right: 0;
+        }
+        
+        .srs-why-learn-section   .srs-main-title {
+            font-size: 48px;
+            line-height: 48px;
+        }
+        
+        .srs-why-learn-section    .srs-subtitle {
+            font-size: 32px;
+            line-height: 36px;
+        }
+        
+        .srs-why-learn-section    .srs-stat-main-number {
+            font-size: 72px;
+            line-height: 72px;
+        }
+        
+        .srs-why-learn-section   .srs-stat-percent,
+        .srs-why-learn-section   .srs-stat-plus {
+            font-size: 36px;
+            line-height: 40px;
+        }
+    }
+</style>
+<section class="srs-why-learn-section" style="background: {{ section.settings.background_color }}; padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px 0;">
+    <div class="srs-container">
+        <div class="srs-main-content">
+            <div class="srs-header">
+                <h1 class="srs-main-title" style="color: {{ section.settings.text_color }};">{{ section.settings.main_title }}</h1>
+                <p class="srs-subtitle" style="color: {{ section.settings.text_color }};">{{ section.settings.subtitle }}</p>
+            </div>
+            
+            <div class="srs-stats-container">
+                <div class="srs-stat-item">
+                    <div class="srs-stat-header">
+                        {% if section.settings.stat1_icon != blank %}
+                            <div class="srs-icon-wrapper">
+                                {{ section.settings.stat1_icon }}
+                            </div>
+                        {% else %}
+                            <div class="srs-icon srs-icon-certified"></div>
+                        {% endif %}
+                        <p class="srs-stat-label" style="color: {{ section.settings.accent_color }};">{{ section.settings.stat1_label }}</p>
+                    </div>
+                    <div class="srs-stat-number">
+                        <h2 class="srs-stat-main-number" style="color: {{ section.settings.text_color }};">{{ section.settings.stat1_number }}</h2>
+                        <span class="srs-stat-percent" style="color: {{ section.settings.text_color }};">{{ section.settings.stat1_suffix }}</span>
+                    </div>
+                    <p class="srs-stat-description" style="color: {{ section.settings.text_color }};">{{ section.settings.stat1_description }}</p>
+                </div>
+                
+                <div class="srs-stat-item">
+                    <div class="srs-stat-header">
+                        {% if section.settings.stat2_icon != blank %}
+                            <div class="srs-icon-wrapper">
+                                {{ section.settings.stat2_icon }}
+                            </div>
+                        {% else %}
+                            <div class="srs-icon srs-icon-skill"></div>
+                        {% endif %}
+                        <p class="srs-stat-label" style="color: {{ section.settings.accent_color }};">{{ section.settings.stat2_label }}</p>
+                    </div>
+                    <div class="srs-stat-number">
+                        <h2 class="srs-stat-main-number" style="color: {{ section.settings.text_color }};">{{ section.settings.stat2_number }}</h2>
+                        <span class="srs-stat-percent" style="color: {{ section.settings.text_color }};">{{ section.settings.stat2_suffix }}</span>
+                    </div>
+                    <p class="srs-stat-description" style="color: {{ section.settings.text_color }};">{{ section.settings.stat2_description }}</p>
+                </div>
+                
+                <div class="srs-stat-item">
+                    <div class="srs-stat-header">
+                        {% if section.settings.stat3_icon != blank %}
+                            <div class="srs-icon-wrapper">
+                                {{ section.settings.stat3_icon }}
+                            </div>
+                        {% else %}
+                            <div class="srs-icon srs-icon-career"></div>
+                        {% endif %}
+                        <p class="srs-stat-label" style="color: {{ section.settings.accent_color }};">{{ section.settings.stat3_label }}</p>
+                    </div>
+                    <div class="srs-stat-number">
+                        <h2 class="srs-stat-main-number" style="color: {{ section.settings.text_color }};">{{ section.settings.stat3_number }}</h2>
+                        <span class="srs-stat-percent" style="color: {{ section.settings.text_color }};">{{ section.settings.stat3_suffix }}</span>
+                    </div>
+                    <p class="srs-stat-description" style="color: {{ section.settings.text_color }};">{{ section.settings.stat3_description }}</p>
+                </div>
+                
+                <div class="srs-stat-item">
+                    
+                        <div class="srs-stat-header">
+                            {% if section.settings.stat4_icon != blank %}
+                                <div class="srs-icon-wrapper">
+                                    {{ section.settings.stat4_icon }}
+                                </div>
+                            {% else %}
+                                <div class="srs-icon srs-icon-global"></div>
+                            {% endif %}
+                            <p class="srs-stat-label" style="color: {{ section.settings.accent_color }};">{{ section.settings.stat4_label }}</p>
+                        </div>
+                        <div class="srs-stat-number">
+                            <h2 class="srs-stat-main-number" style="color: {{ section.settings.text_color }};">{{ section.settings.stat4_number }}</h2>
+                            <span class="srs-stat-plus" style="color: {{ section.settings.text_color }};">{{ section.settings.stat4_suffix }}</span>
+                        </div>
+                    
+                    <p class="srs-stat-description" style="color: {{ section.settings.text_color }};">{{ section.settings.stat4_description }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "SRS Why E-Learn",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header Content"
+    },
+    {
+      "type": "text",
+      "id": "main_title",
+      "label": "Main Title",
+      "default": "Why E-Learn?"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Why 90,000+ Learners Choose E-Learn"
+    },
+    {
+      "type": "header",
+      "content": "Statistics"
+    },
+    {
+      "type": "text",
+      "id": "stat1_label",
+      "label": "Stat 1 Label",
+      "default": "UK-Certified Learning"
+    },
+    {
+      "type": "text",
+      "id": "stat1_number",
+      "label": "Stat 1 Number",
+      "default": "95"
+    },
+    {
+      "type": "text",
+      "id": "stat1_suffix",
+      "label": "Stat 1 Suffix",
+      "default": "%"
+    },
+    {
+      "type": "textarea",
+      "id": "stat1_description",
+      "label": "Stat 1 Description",
+      "default": "95% of learners complete their courses — no pressure, just progress."
+    },
+    {
+      "type": "textarea",
+      "id": "stat1_icon",
+      "label": "Stat 1 SVG Icon",
+      "info": "Paste your SVG code here"
+    },
+    {
+      "type": "text",
+      "id": "stat2_label",
+      "label": "Stat 2 Label",
+      "default": "Skill Impact"
+    },
+    {
+      "type": "text",
+      "id": "stat2_number",
+      "label": "Stat 2 Number",
+      "default": "89"
+    },
+    {
+      "type": "text",
+      "id": "stat2_suffix",
+      "label": "Stat 2 Suffix",
+      "default": "%"
+    },
+    {
+      "type": "textarea",
+      "id": "stat2_description",
+      "label": "Stat 2 Description",
+      "default": "Most learners say E-Learn helped directly with job growth or upskilling."
+    },
+    {
+      "type": "textarea",
+      "id": "stat2_icon",
+      "label": "Stat 2 SVG Icon",
+      "info": "Paste your SVG code here"
+    },
+    {
+      "type": "text",
+      "id": "stat3_label",
+      "label": "Stat 3 Label",
+      "default": "Career Uplift"
+    },
+    {
+      "type": "text",
+      "id": "stat3_number",
+      "label": "Stat 3 Number",
+      "default": "78"
+    },
+    {
+      "type": "text",
+      "id": "stat3_suffix",
+      "label": "Stat 3 Suffix",
+      "default": "%"
+    },
+    {
+      "type": "textarea",
+      "id": "stat3_description",
+      "label": "Stat 3 Description",
+      "default": "Promotions. Interviews. Side hustles. It starts with one course."
+    },
+    {
+      "type": "textarea",
+      "id": "stat3_icon",
+      "label": "Stat 3 SVG Icon",
+      "info": "Paste your SVG code here"
+    },
+    {
+      "type": "text",
+      "id": "stat4_label",
+      "label": "Stat 4 Label",
+      "default": "Global Learning Hours"
+    },
+    {
+      "type": "text",
+      "id": "stat4_number",
+      "label": "Stat 4 Number",
+      "default": "150M"
+    },
+    {
+      "type": "text",
+      "id": "stat4_suffix",
+      "label": "Stat 4 Suffix",
+      "default": "+"
+    },
+    {
+      "type": "textarea",
+      "id": "stat4_description",
+      "label": "Stat 4 Description",
+      "default": "Across 90+ countries. From London to Lagos to Lahore."
+    },
+    {
+      "type": "textarea",
+      "id": "stat4_icon",
+      "label": "Stat 4 SVG Icon",
+      "info": "Paste your SVG code here"
+    },
+    {
+      "type": "header",
+      "content": "Styling"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#020A08"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent Color",
+      "default": "#36F4A4"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 128
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 150
+    }
+  ],
+  "presets": [
+    {
+      "name": "SA Why E-Learn"
+    }
+  ]
+}
+{% endschema %}

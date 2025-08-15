@@ -1,0 +1,54 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "header": {
+      "type": "header",
+      "disabled": true,
+      "settings": {
+        "logo_position": "middle-left",
+        "mobile_logo_position": "center",
+        "menu": "main-menu",
+        "menu_type_desktop": "dropdown",
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": true,
+        "color_scheme": "scheme-4",
+        "menu_color_scheme": "scheme-4",
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "enable_customer_avatar": true,
+        "margin_bottom": 0,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "srs_header_yg4XeK": {
+      "type": "srs-header",
+      "name": "SA Header",
+      "settings": {
+        "logo_image": "shopify://shop_images/Frame_41422.png",
+        "logo_text": "",
+        "logo_subtitle": "",
+        "main_menu": "main-menu",
+        "search_title": "Search Courses",
+        "search_placeholder": "Search for courses, topics, or instructors...",
+        "show_popular_searches": true,
+        "popular_searches_title": "Popular Searches",
+        "popular_search_terms": "JavaScript\nPython\nReact\nData Science"
+      }
+    }
+  },
+  "order": [
+    "header",
+    "srs_header_yg4XeK"
+  ]
+}

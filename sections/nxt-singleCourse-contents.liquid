@@ -1,0 +1,799 @@
+{% style %}
+          .nxt-singleCourse-contents__area {
+            background-color: {{ section.settings.background_color }};
+          }
+          .nxt-singleCourse__wrapper {
+            padding-top: {{ section.settings.padding_top | times: 0.6 | round: 0 }}px;
+            padding-bottom: {{ section.settings.padding_bottom | times: 0.6 | round: 0 }}px;
+            padding-left: 15px;
+            padding-right: 15px;
+            border-top-left-radius: 48px;
+            border-top-right-radius: 48px;
+            box-shadow: 0px 1px 0px 0px #272C3166 inset;
+          }
+        @media (min-width: 768px) {
+            .nxt-singleCourse__wrapper {
+                padding-top: {{ section.settings.padding_top }}px;
+                padding-bottom: {{ section.settings.padding_bottom }}px;
+            }
+        }
+          .nxt-singleCourse h2 {
+              margin: 0;
+              color: #FFFFFF;
+              font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+              font-weight: 300;
+              font-size: 48px;
+              line-height: 54.72px;
+          }
+
+          .nxt-singleCourse p {
+              color: #FFFFFF;
+              font-family: "Inter", sans-serif;
+              font-weight: 400;
+              font-size: 16px;
+              line-height: 24px;
+          }
+          .nxt-singleCourseMeta__wrapper {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            align-items: center;
+            border: 1px solid #133B32;
+            background: #041E18;
+            padding: 25px 40px;
+            border-radius: 8px;
+            margin-bottom: 49px;
+        }
+
+        .courseMeta__box:not(:first-child){
+            border-left: 1px solid #133B32;
+            padding-left: 25px;
+        }
+        .nxt-card__stars > svg {
+            width: 80px;
+          }
+        .nxt-card__stars {
+          display: flex;
+          gap: 4px;
+          align-items: center;
+          }
+          .nxt-card__stars .rating__background {
+            fill: #bfc3ca;
+            stroke: red;
+            stroke-width: 1;
+            height: 100%;
+            width: 100%;
+          }
+
+          .nxt-card__stars .rating__value {
+            fill: #FFFFFF;
+            height: 100%;
+          }
+          .courseMeta__box-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            color: #FFFFFF;
+            margin: 0;
+          }
+          .courseMeta__box-description {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            color: #676C6B;
+            margin: 0;
+            white-space: nowrap;
+          }
+
+          .nxt-singleCourse__contents-wrapper {
+          display: flex;
+          gap: 20px;
+          justify-content: space-between;
+      }
+      .nxt-singleCourse__contents-left {
+          max-width: 818px;
+          width: 100%;
+      }
+      .nxt-singleCourse__contents-right{
+          max-width: 457px;
+          width: 100%;
+      }
+      .nxt-contentBox:not(:last-child) {
+          margin-bottom: 32px;
+      }
+      .nxt-iconBox {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-top: 24px;
+    }
+    .nxt-iconBox-icon {
+        display: flex;
+        max-width: 32px;
+    }
+    .nxt-iconBox-icon img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+    .nxt-iconBox-title,
+    .nxt-iconBox-description{
+        color: #FFFFFF;
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        margin: 0;
+    }
+    .nxt-iconBox .nxt-iconBox-description{
+        color: #676C6B;
+    }
+      .nxt-contentBox .nxt-tagList {
+          margin:  24px 0 0;
+          padding: 0;
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 8px;
+          list-style: none;
+      }
+      .nxt-contentBox .nxt-tagList li {
+          background: #FFFFFF;
+          font-family: "Inter", sans-serif;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 24px;
+          color: #020A08;
+          padding: 8px 16px;
+          border-radius: 5000px;
+      }
+      .nxt-contentBox .nxt-tagList a{
+          font-family: "Source Sans 3", sans-serif;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 20px;
+          color: #FFFFFF;
+      }
+
+        .nxt-career__card {
+                  padding: 24px 32px;
+                  background: #041E18;
+                  border-radius: 12px;
+                  outline: 1px #133B32 solid;
+                  outline-offset: -1px;
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  gap: 24px;
+                  margin-top: 89px;
+              }
+
+              .nxt-career__content {
+                  flex: 1;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 24px;
+              }
+
+              .nxt-career__features {
+                  display: flex;
+                  flex-direction: column;
+                  gap: 8px;
+                  max-width: 482px;
+                  color: white;
+                  font-size: 16px;
+                  font-family: "Inter Variable", Arial, sans-serif;
+                  font-weight: 400;
+                  line-height: 24px;
+              }
+  .nxt-career__features ul{
+      padding: 0;
+      margin: 0;
+      padding-left: 20px;
+  }
+  .nxt-career__features ul li:not(:last-child){
+      margin-bottom: 8px;
+  }
+
+              .nxt-career__cta {
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 8px;
+                  text-decoration: none;
+              }
+
+              .nxt-career__cta-text {
+                  background: linear-gradient(0deg, #36F4A4, #36F4A4),
+                      linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+                  -webkit-background-clip: text;
+                  background-clip: text;
+                  -webkit-text-fill-color: transparent;
+                  text-fill-color: transparent;
+                  font-size: 12px;
+                  font-family: Consolas, monospace;
+                  font-weight: 400;
+                  text-transform: uppercase;
+                  line-height: 16px;
+                  word-wrap: break-word;
+              }
+
+              .nxt-career__arrow {
+                  display: flex;
+              }
+
+              .nxt-career__image {
+                display: flex;
+                  max-width: 511px;
+                  border-radius: 8px;
+                  overflow: hidden;
+                  position: relative;
+              }
+
+              .nxt-career__image img {
+                  max-width: 100%;
+                  height: auto;
+                  object-fit: contain;
+                  border-radius: 8px;
+              }
+          @media (max-width: 1399px) {
+            .nxt-singleCourseMeta__wrapper {
+              padding: 20px;
+            }
+            .courseMeta__box-title {
+              font-size: 14px;
+            }
+            .courseMeta__box-description {
+              font-size: 12px;
+            }
+            .courseMeta__box:not(:first-child) {
+              padding-left: 15px;
+            }
+          }
+          @media (max-width: 1140px) {
+            .nxt-singleCourseMeta__wrapper {
+              grid-template-columns: repeat(2, 1fr);
+            }
+            .courseMeta__box-description {
+              font-size: 12px;
+              white-space: normal;
+            }
+            .courseMeta__box:not(:last-child) {
+              border-bottom: 1px solid #133B32;
+              margin-bottom: 10px;
+              padding-bottom: 10px;
+            }
+            .courseMeta__box:not(:first-child) {
+              border-left: none;
+              padding-left: 0;
+            }
+          }
+          @media (max-width: 1024px) {
+            .nxt-career__card,
+            .nxt-singleCourse__contents-wrapper {
+              flex-direction: column;
+              margin-top: 60px;
+            }
+            .nxt-singleCourse__contents-left,
+            .nxt-singleCourse__contents-right {
+              max-width: 100%;
+            }
+            .nxt-career__image {
+              max-width: 100%;
+            }
+          }
+          @media (max-width: 767px) {
+            .nxt-singleCourseMeta__wrapper {
+              margin-bottom: 30px;
+            }
+              .nxt-singleCourse h2 {
+                  font-size: 20px;
+                  line-height: 28px;
+              }
+              .nxt-singleCourse p {
+                font-size: 12px;
+                line-height: 18px;
+              }
+
+              .nxt-career__card {
+                    padding: 15px;
+                    margin-top: 30px;
+              }
+
+              .nxt-career__image {
+                    width: 100%;
+                    max-width: 400px;
+                }
+                .nxt-contentBox:not(:last-child) {
+                  margin-bottom: 20px;
+                }
+                .nxt-iconBox {
+                  margin-top: 16px;
+                }
+                .nxt-iconBox-title,
+                .nxt-iconBox-description {
+                  font-size: 12px;
+                  line-height: 18px;
+                }
+                .nxt-iconBox-icon {
+                  max-width: 24px;
+                }
+                .nxt-contentBox .nxt-tagList {
+                  margin-top: 16px;
+                }
+                .nxt-contentBox .nxt-tagList li {
+                  font-size: 12px;
+                  line-height: 18px;
+                  padding: 4px 8px;
+                }
+                .nxt-contentBox .nxt-tagList a {
+                  font-size: 12px;
+                  line-height: 18px;
+                }
+                .nxt-career__features {
+                  font-size: 14px;
+                  line-height: 20px;
+                }
+
+              }
+          @media (max-width: 540px) {
+            .nxt-singleCourseMeta__wrapper {
+              padding: 15px;
+              grid-template-columns: 1fr;
+            }
+
+          }
+{% endstyle %}
+<div class="nxt-singleCourse__wrapper">
+  <div
+    class="nxt-container{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+  >
+    {% assign course_series = product.metafields.custom.course_series | default: '5 course series' %}
+
+    {% for block in section.blocks %}
+      {% if block.type == 'meta_card' %}
+        <div class="nxt-singleCourseMeta__wrapper">
+          {% if block.settings.course_series_show %}
+            <div class="courseMeta__box">
+              <div class="courseMeta__box-heading">
+                <h2 class="courseMeta__box-title">
+                  {% if course_series != blank %}
+                    {{ course_series }}
+                  {% else %}
+                    {{ block.settings.course_series_title }}
+                  {% endif %}
+                </h2>
+                <p class="courseMeta__box-description">
+                  {{ block.settings.course_series_subtitle }}
+                </p>
+              </div>
+            </div>
+          {% endif %}
+          {% if block.settings.course_rating_show %}
+            <div class="courseMeta__box">
+              <div class="courseMeta__box-heading">
+                <h2 class="courseMeta__box-title">
+                  {%- assign rating_value = product.metafields.custom.rating | default: 5 -%}
+                  <div class="nxt-card__stars">
+                    <svg viewBox="0 0 1000 200" class="rating">
+                      <defs>
+                        <polygon id="star"
+                          points="100,0 131,66 200,76 150,128 162,200 100,166 38,200 50,128 0,76 69,66 ">
+                        </polygon>
+                        <clipPath id="stars">
+                          <use xlink:href="#star"></use>
+                          <use xlink:href="#star" x="20%"></use>
+                          <use xlink:href="#star" x="40%"></use>
+                          <use xlink:href="#star" x="60%"></use>
+                          <use xlink:href="#star" x="80%"></use>
+                        </clipPath>
+                      </defs>
+                      <rect class="rating__background" clip-path="url(#stars)"></rect>
+                      <rect width="{{ rating_value | times: 20 }}%" class="rating__value" clip-path="url(#stars)"></rect>
+                    </svg>
+                    {{ rating_value }}
+                  </div>
+                </h2>
+                <p class="courseMeta__box-description">
+                  ( {{ product.metafields.custom.rating_count | default: '216,623' }} reviews)
+                </p>
+              </div>
+            </div>
+          {% endif %}
+          {% if block.settings.course_level_show %}
+            <div class="courseMeta__box">
+              <div class="courseMeta__box-heading">
+                <h2 class="courseMeta__box-title">
+                  {{ product.metafields.custom.course_level | default: 'Beginner level' }}
+                </h2>
+                <p class="courseMeta__box-description">
+                  {{ block.settings.course_level_subtitle }}
+                </p>
+              </div>
+            </div>
+          {% endif %}
+          {% if block.settings.course_schedule_show %}
+            <div class="courseMeta__box">
+              <div class="courseMeta__box-heading">
+                <h2 class="courseMeta__box-title">
+                  {{ product.metafields.custom.course_schedule | default: 'Flexible schedule' }}
+                </h2>
+                <p class="courseMeta__box-description">
+                  {{ product.metafields.custom.course_duration | default: '2 months at 10 hours a week' }}
+                </p>
+              </div>
+            </div>
+          {% endif %}
+          {% if block.settings.career_credential_show %}
+            <div class="courseMeta__box">
+              <div class="courseMeta__box-heading">
+                <h2 class="courseMeta__box-title">
+                  {{ block.settings.career_credential_title }}
+                </h2>
+                <p class="courseMeta__box-description">
+                  {{ block.settings.career_credential_subtitle }}
+                </p>
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endfor %}
+
+    <div class="nxt-singleCourse__contents nxt-singleCourse">
+      <div class="nxt-singleCourse__contents-wrapper">
+        <div class="nxt-singleCourse__contents-left">
+          {% for block in section.blocks %}
+            {% if block.type == 'product_description' %}
+              <div class="nxt-contentBox">
+                {{ product.description }}
+              </div>
+            {% endif %}
+
+            {% if block.type == 'whats_included_card' %}
+              {% assign what_s_included = product.metafields.custom.what_s_included.value %}
+              {% if what_s_included %}
+                <div class="nxt-contentBox">
+                  <h2>{{ block.settings.title }}</h2>
+                  {% for item in what_s_included %}
+                    {% assign title = item.title.value %}
+                    {% assign sub_title = item.sub_title.value %}
+                    {% assign icon = item.image.value %}
+
+                    <div class="nxt-iconBox">
+                      <div class="nxt-iconBox-icon">
+                        <img src="{{ icon | image_url: width: 32 }}" alt="{{ title }}" width="32" height="32">
+                      </div>
+                      <div class="nxt-iconBox-content">
+                        <h3 class="nxt-iconBox-title">
+                          {{ title }}
+                        </h3>
+                        <p class="nxt-iconBox-description">
+                          {{ sub_title }}
+                        </p>
+                      </div>
+                    </div>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div class="nxt-singleCourse__contents-right">
+          {% for block in section.blocks %}
+            {% if block.type == 'skills_you_ll_gain_card' %}
+              <div class="nxt-contentBox">
+                <h2>{{ block.settings.title }}</h2>
+                <ul class="nxt-tagList">
+                  {% for skill in product.metafields.custom.skills_you_ll_gain.value %}
+                    <li>{{ skill }}</li>
+                  {% endfor %}
+
+                  <a href="{{ block.settings.button_link }}"> {{ block.settings.button_text }} </a>
+                </ul>
+              </div>
+            {% endif %}
+            {% if block.type == 'tools_you_ll_learn_card' %}
+              <div class="nxt-contentBox">
+                <h2>{{ block.settings.title }}</h2>
+                <ul class="nxt-tagList">
+                  {% for tool in product.metafields.custom.tools_you_ll_learn.value %}
+                    <li>{{ tool }}</li>
+                  {% endfor %}
+
+                  <a href="{{ block.settings.button_link }}"> {{ block.settings.button_text }} </a>
+                </ul>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      {% for block in section.blocks %}
+        {% if block.type == 'career_card' %}
+          <div class="nxt-career__card">
+            <div class="nxt-career__content">
+              <h2 class="nxt-career__title">{{ block.settings.title }}</h2>
+
+              <div class="nxt-career__features">
+                {{ block.settings.description }}
+              </div>
+
+              {% if product.metafields.custom.career_cta.value.url != blank %}
+                {% assign career_cta = product.metafields.custom.career_cta.value.url %}
+              {% else %}
+                {% assign career_cta = block.settings.button_link %}
+              {% endif %}
+
+              {% if career_cta != blank %}
+                <a href="{{ career_cta }}" class="nxt-career__cta">
+                  <span class="nxt-career__cta-text">{{ block.settings.button_text }}</span>
+                  <div class="nxt-career__arrow">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                          d="M13.1252 10.7499H4.75024C4.65119 10.7525 4.55266 10.7349 4.46067 10.6981C4.36867 10.6613 4.28516 10.6061 4.21524 10.5359C4.14485 10.4667 4.08944 10.3838 4.05245 10.2922C4.01547 10.2007 3.99769 10.1026 4.00024 10.0039C4.00024 9.79389 4.07224 9.61389 4.21524 9.46889C4.28444 9.39741 4.36771 9.34104 4.45979 9.30334C4.55188 9.26565 4.65077 9.24745 4.75024 9.24989H13.1252L9.45424 5.57889C9.38271 5.51109 9.32584 5.42935 9.28714 5.33871C9.24844 5.24806 9.22873 5.15045 9.22924 5.05189C9.22924 4.85089 9.30624 4.66989 9.45924 4.51089C9.52889 4.44144 9.61161 4.38647 9.70262 4.34915C9.79363 4.31184 9.89113 4.29291 9.98949 4.29347C10.0879 4.29403 10.1851 4.31406 10.2757 4.3524C10.3663 4.39075 10.4484 4.44666 10.5172 4.51689L15.4712 9.47689C15.541 9.54538 15.5961 9.62732 15.6332 9.71773C15.6703 9.80815 15.6887 9.90516 15.6872 10.0029C15.688 10.0993 15.6703 10.195 15.6352 10.2849C15.6 10.3735 15.5469 10.4538 15.4792 10.5209L10.5212 15.4789C10.4551 15.5506 10.3744 15.6072 10.2845 15.645C10.1946 15.6828 10.0977 15.7008 10.0002 15.6979C9.80405 15.6898 9.61823 15.6076 9.48024 15.4679C9.40781 15.397 9.35018 15.3123 9.3107 15.219C9.27122 15.1256 9.25067 15.0253 9.25024 14.9239C9.24957 14.8247 9.26968 14.7265 9.3093 14.6355C9.34891 14.5446 9.40715 14.463 9.48024 14.3959L13.1252 10.7499Z"
+                          fill="#36F4A4" />
+                      <path
+                          d="M13.1252 10.7499H4.75024C4.65119 10.7525 4.55266 10.7349 4.46067 10.6981C4.36867 10.6613 4.28516 10.6061 4.21524 10.5359C4.14485 10.4667 4.08944 10.3838 4.05245 10.2922C4.01547 10.2007 3.99769 10.1026 4.00024 10.0039C4.00024 9.79389 4.07224 9.61389 4.21524 9.46889C4.28444 9.39741 4.36771 9.34104 4.45979 9.30334C4.55188 9.26565 4.65077 9.24745 4.75024 9.24989H13.1252L9.45424 5.57889C9.38271 5.51109 9.32584 5.42935 9.28714 5.33871C9.24844 5.24806 9.22873 5.15045 9.22924 5.05189C9.22924 4.85089 9.30624 4.66989 9.45924 4.51089C9.52889 4.44144 9.61161 4.38647 9.70262 4.34915C9.79363 4.31184 9.89113 4.29291 9.98949 4.29347C10.0879 4.29403 10.1851 4.31406 10.2757 4.3524C10.3663 4.39075 10.4484 4.44666 10.5172 4.51689L15.4712 9.47689C15.541 9.54538 15.5961 9.62732 15.6332 9.71773C15.6703 9.80815 15.6887 9.90516 15.6872 10.0029C15.688 10.0993 15.6703 10.195 15.6352 10.2849C15.6 10.3735 15.5469 10.4538 15.4792 10.5209L10.5212 15.4789C10.4551 15.5506 10.3744 15.6072 10.2845 15.645C10.1946 15.6828 10.0977 15.7008 10.0002 15.6979C9.80405 15.6898 9.61823 15.6076 9.48024 15.4679C9.40781 15.397 9.35018 15.3123 9.3107 15.219C9.27122 15.1256 9.25067 15.0253 9.25024 14.9239C9.24957 14.8247 9.26968 14.7265 9.3093 14.6355C9.34891 14.5446 9.40715 14.463 9.48024 14.3959L13.1252 10.7499Z"
+                          fill="black" fill-opacity="0.2" />
+                    </svg>
+                  </div>
+                </a>
+              {% endif %}
+            </div>
+
+            <div class="nxt-career__image">
+              {% if block.settings.image != blank %}
+                <img
+                  src="{{ block.settings.image | image_url: width: 511 }}"
+                  alt="{{ product.title }} Career"
+                  width="511"
+                  height="202"
+                >
+              {% else %}
+                <img src="https://placehold.co/511x202" alt="{{ product.title }} Career" width="511" height="202">
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Single Course Contents",
+  "tag": "section",
+  "class": "nxt-singleCourse-contents__area",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout Settings"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Top Padding",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Bottom Padding",
+      "default": 80
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#020A08"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "meta_card",
+      "name": "Course Meta Card",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "course_series_show",
+          "label": "Course Series Show",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "course_series_title",
+          "label": "Course Series Title",
+          "default": "5 course series"
+        },
+        {
+          "type": "text",
+          "id": "course_series_subtitle",
+          "label": "Course Series Subtitle",
+          "default": "Get in-depth knowledge of a subject"
+        },
+        {
+          "type": "checkbox",
+          "id": "course_rating_show",
+          "label": "Course Rating Show",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "course_level_show",
+          "label": "Course Level Show",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "course_level_subtitle",
+          "label": "Course Level Subtitle",
+          "default": "No prior experience required"
+        },
+        {
+          "type": "checkbox",
+          "id": "course_schedule_show",
+          "label": "Course Schedule Show",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "career_credential_show",
+          "label": "Career Credential Show",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "career_credential_title",
+          "label": "Career Credential Title",
+          "default": "Earn a career credential"
+        },
+        {
+          "type": "text",
+          "id": "career_credential_subtitle",
+          "label": "Career Credential Subtitle",
+          "default": "Share your expertise with employers"
+        }
+      ],
+      "limit": 1
+    },
+    {
+      "type": "product_description",
+      "name": "Product Description",
+      "limit": 1
+    },
+    {
+      "type": "whats_included_card",
+      "name": "What's Included Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "What's included"
+        }
+      ],
+      "limit": 1
+    },
+    {
+      "type": "skills_you_ll_gain_card",
+      "name": "Skills You'll Gain Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Skills you'll gain"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Show all"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link",
+          "default": "\/collections\/all"
+        }
+      ],
+      "limit": 1
+    },
+    {
+      "type": "tools_you_ll_learn_card",
+      "name": "Tools You'll Learn Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Tools you'll learn"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Show all"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link",
+          "default": "\/collections\/all"
+        }
+      ],
+      "limit": 1
+    },
+    {
+      "type": "career_card",
+      "name": "Career Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Prepare for a career as a Python Developer"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Explore this role"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link",
+          "default": "\/collections\/all"
+        }
+      ],
+      "limit": 1
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Single Course Contents",
+      "category": "Single Course",
+      "blocks": [
+        {
+          "type": "meta_card"
+        },
+        {
+          "type": "product_description"
+        },
+        {
+          "type": "whats_included_card"
+        },
+        {
+          "type": "skills_you_ll_gain_card"
+        },
+        {
+          "type": "tools_you_ll_learn_card"
+        },
+        {
+          "type": "career_card"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

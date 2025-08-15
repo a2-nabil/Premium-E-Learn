@@ -1,0 +1,553 @@
+<style>
+    .srs-explored-course {
+        background: {{ section.settings.background_color | default: '#020A08' }};
+        padding: {{ section.settings.padding_top | default: 48 }}px 20px {{ section.settings.padding_bottom | default: 48 }}px;
+    }
+    
+    .srs-explored-course  .srs-container {
+        max-width: 1420px;
+        margin: 0 auto;
+    }
+    
+    .srs-explored-course  .srs-header {
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+        margin-bottom: 80px;
+    }
+    
+    .srs-explored-course   .srs-main-title {
+        color: {{ section.settings.text_color | default: '#ffffff' }};
+        font-size: 70px;
+        font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+        font-weight: 300;
+        line-height: 70px;
+        text-align: left;
+        margin: 0;
+    }
+    
+    .srs-explored-course  .srs-subtitle {
+        color: #676C6B;
+        font-size: 55px;
+        font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+        font-weight: 300;
+        line-height: 64px;
+        text-align: left;
+        margin: 0;
+    }
+    
+
+    
+    /* Course Card Wrapper Styles */
+    .srs-course-card-wrapper {
+      width: 100%;
+    }
+    
+    .srs-filter-container {
+      background: #041E18;
+      border-radius: 999px;
+      padding: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+    
+    .srs-filter-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .srs-category-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .srs-category-button {
+      background: white;
+      border: none;
+      border-radius: 999px;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: #020A08;
+    }
+    
+    .srs-dropdown-icon {
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .srs-dropdown-icon::after {
+      content: '';
+      width: 10px;
+      height: 5px;
+      border: 1.5px solid #020A08;
+      border-radius: 0.5px;
+      transform: rotate(45deg);
+      border-left: none;
+      border-top: none;
+    }
+    
+    .srs-dropdown-content {
+      display: none;
+      position: absolute;
+      background: white;
+      min-width: 200px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      border-radius: 8px;
+      z-index: 1;
+      top: 100%;
+      left: 0;
+      margin-top: 5px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      overflow: hidden;
+    }
+    
+    .srs-dropdown-content.show {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .srs-dropdown-content a {
+      color: #020A08;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 14px;
+      transition: background-color 0.2s ease;
+    }
+    
+    .srs-dropdown-content a:hover {
+      background: #f1f1f1;
+    }
+    
+    .srs-category-dropdown:hover .srs-dropdown-content {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .srs-course-count {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      color: white;
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+    }
+    
+    .srs-course-count strong {
+      font-weight: 700;
+    }
+    
+    .srs-reset-button {
+      background: white;
+      border: none;
+      border-radius: 999px;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: #020A08;
+    }
+    
+    .srs-reset-icon {
+      width: 20px;
+      height: 20px;
+      position: relative;
+    }
+    
+    .srs-reset-icon::before {
+      content: '';
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      border: 2px solid #020A08;
+      border-radius: 50%;
+      top: 2px;
+      left: 2px;
+    }
+    
+    .srs-reset-icon::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 8px;
+      background: #020A08;
+      top: 8px;
+      left: 9px;
+      transform: rotate(45deg);
+    }
+    
+    .srs-products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+    
+    .srs-product-item {
+      transition: opacity 0.3s ease;
+    }
+    
+    .srs-product-item.loading {
+      opacity: 0.6;
+    }
+    
+    .srs-no-products {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 40px;
+      color: #676C6B;
+      font-family: 'Inter Tight', sans-serif;
+    }
+    
+    .srs-load-more-container {
+      grid-column: 1 / -1;
+      text-align: center;
+      margin-top: 40px;
+    }
+    
+    .srs-load-more-button {
+      background: #36F4A4;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 24px;
+      color: #020A08;
+      font-family: 'Inter Tight', sans-serif;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    
+    .srs-load-more-button:hover {
+      background: #2DD894;
+    }
+    
+    .srs-load-more-button:disabled {
+      background: #676C6B;
+      cursor: not-allowed;
+    }
+    
+    .srs-collection-option {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .srs-collection-count {
+      color: #676C6B;
+      font-size: 12px;
+    }
+    
+    .srs-collection-option.active {
+      background: #f1f1f1;
+      font-weight: 600;
+    }
+    .srs-explored-course   .view-more-bundles-button {
+    display: flex;
+    align-items: center;
+    padding: 10px 32px;
+    border: 2px solid white;
+    border-radius: 9999px;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    font-family: "Inter Variable", sans-serif;
+    font-weight: 400;
+    line-height: 24px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    width: fit-content;
+    margin: 40px auto 0;
+}
+.srs-explored-course  .view-more-bundles-button:hover {
+    background: white;
+    color: #000A1E;
+}
+    
+    @media (max-width: 768px) {
+        .srs-explored-course   .srs-main-title {
+            font-size: 40px;
+            line-height: 40px;
+        }
+        
+        .srs-explored-course   .srs-subtitle {
+            font-size: 30px;
+            line-height: 35px;
+        }
+        
+        .srs-filter-container {
+          flex-direction: column;
+          gap: 15px;
+          padding: 15px;
+        }
+        
+        .srs-filter-left {
+          flex-direction: column;
+          gap: 10px;
+        }
+        
+        .srs-products-grid {
+          grid-template-columns: 1fr;
+          gap: 15px;
+        }
+    }
+</style>
+
+<section class="srs-explored-course">
+    <div class="srs-container">
+        <div class="srs-header">
+            <h1 class="srs-main-title">{{ section.settings.main_title | default: 'Explore Our Most Loved Courses' }}</h1>
+            <p class="srs-subtitle">{{ section.settings.subtitle | default: 'Handpicked by 90,000+ learners and rated 4.8/5 on average.' }}</p>
+        </div>
+        
+
+        
+        {%- liquid
+          # Handle AJAX requests
+          if request.query_string contains 'ajax=true'
+            assign is_ajax = true
+          else
+            assign is_ajax = false
+          endif
+          assign collection_handle = request.query_string | split: 'collection=' | last | split: '&' | first
+          assign limit = request.query_string | split: 'limit=' | last | split: '&' | first | default: section.settings.products_per_page
+          assign page = request.query_string | split: 'page=' | last | split: '&' | first | default: 1
+          
+          # Set collections
+          assign default_collection = section.settings.default_collection | default: collections.all
+          assign current_collection = collections[collection_handle] | default: default_collection
+          assign products_to_show = current_collection.products
+          assign product_limit = limit | default: section.settings.products_per_page
+          assign show_filter = section.settings.show_collection_filter
+            assign view_more_button_text = section.settings.view_more_button_text
+  assign view_more_button_url = section.settings.view_more_button_url
+          
+          # Handle pagination for AJAX requests
+          if is_ajax
+            assign offset = limit | times: page | minus: limit
+            assign products_to_show = current_collection.products | slice: offset, limit
+          endif
+          
+          # Get all collections for filter dropdown
+          assign all_collections = collections | where: "products_count", ">", 0
+        -%}
+
+        {%- if is_ajax -%}
+          {%- comment -%} Return only products for AJAX requests {%- endcomment -%}
+          {%- if products_to_show.size > 0 -%}
+            {%- for product in products_to_show -%}
+              <div class="srs-product-item" data-product-id="{{ product.id }}">
+                {% render 'card-product', 
+                   card_product: product, 
+                   section_id: section.id,
+                   show_vendor: true,
+                   show_rating: true %}
+              </div>
+            {%- endfor -%}
+          {%- else -%}
+            <div class="srs-no-products">
+              <p>No courses found in this category.</p>
+            </div>
+          {%- endif -%}
+        {%- else -%}
+          {%- comment -%} Return full wrapper for normal requests {%- endcomment -%}
+          <div class="srs-course-card-wrapper" 
+               data-section-id="{{ section.id }}"
+               data-default-collection="{{ default_collection.handle }}"
+               data-current-collection="{{ current_collection.handle }}"
+               data-product-limit="{{ product_limit }}">
+            
+            {%- if show_filter -%}
+              <div class="srs-filter-container">
+                <div class="srs-filter-left">
+                  <div class="srs-category-dropdown">
+                    <button class="srs-category-button" data-current-collection="{{ current_collection.handle }}">
+                      {{ current_collection.title }}
+                      <div class="srs-dropdown-icon"></div>
+                    </button>
+                    <div class="srs-dropdown-content">
+                      {%- for collection_item in all_collections -%}
+                        <a href="#" 
+                           data-collection-handle="{{ collection_item.handle }}"
+                           data-collection-id="{{ collection_item.id }}"
+                           class="srs-collection-option{% if collection_item.handle == current_collection.handle %} active{% endif %}">
+                          {{ collection_item.title }}
+                          <span class="srs-collection-count">({{ collection_item.products_count }})</span>
+                        </a>
+                      {%- endfor -%}
+                    </div>
+                  </div>
+                  <p class="srs-course-count">
+                    <span>Showing </span>
+                    <strong class="srs-current-count">{{ products_to_show.size }}</strong>
+                    <span> Courses out of </span>
+                    <strong class="srs-total-count">{{ current_collection.products_count }}</strong>
+                  </p>
+                </div>
+                <button class="srs-reset-button" data-default-collection="{{ default_collection.handle }}">
+                  Reset filters
+                  <div class="srs-reset-icon"></div>
+                </button>
+              </div>
+            {%- endif -%}
+            
+            <div class="srs-products-grid" data-products-container>
+              {%- if products_to_show.size > 0 -%}
+                {%- for product in products_to_show limit: product_limit -%}
+                  <div class="srs-product-item" data-product-id="{{ product.id }}">
+                    {% render 'card-product', 
+                       card_product: product, 
+                       section_id: section.id,
+                       show_vendor: true,
+                       show_rating: true %}
+                  </div>
+                {%- endfor -%}
+              {%- else -%}
+                <div class="srs-no-products">
+                  <p>No courses found in this category.</p>
+                </div>
+              {%- endif -%}
+            </div>
+            
+                         {%- if section.settings.show_load_more and products_to_show.size > product_limit -%}
+               <div class="srs-load-more-container">
+                 <button class="srs-load-more-button" data-load-more>
+                   Load More Courses
+                 </button>
+               </div>
+             {%- endif -%}
+          </div>
+        {%- endif -%}
+        {%- if view_more_button_text != blank and view_more_button_url != blank -%}
+                <a href="{{ view_more_button_url }}" class="view-more-bundles-button">{{ view_more_button_text }}</a>
+            {%- endif -%}
+    </div>
+</section>
+
+<script src="{{ 'srs-course-filter.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "SRS Explored Section",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "main_title",
+      "label": "Main Title",
+      "default": "Explore Our Most Loved Courses"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Handpicked by 90,000+ learners and rated 4.8/5 on average."
+    },
+    {
+      "type": "collection",
+      "id": "default_collection",
+      "label": "Default Collection",
+      "info": "Collection to show by default"
+    },
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "min": 4,
+      "max": 24,
+      "step": 4,
+      "default": 12,
+      "label": "Products per page"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_filter",
+      "label": "Show collection filter",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_load_more",
+      "label": "Show load more button",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#020A08"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 48
+    },
+    {
+      "type": "text",
+      "id": "view_more_button_text",
+      "label": "View More Button Text",
+      "default": "View More Career Bundles"
+    },
+    {
+      "type": "url",
+      "id": "view_more_button_url",
+      "label": "View More Button URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "SRS Explored Section"
+    }
+  ]
+}
+{% endschema %}

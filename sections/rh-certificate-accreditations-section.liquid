@@ -1,0 +1,665 @@
+{% style %}
+    .rh-p-learn-certificate-acrediantions-section {
+  background: {{ section.settings.background_color | default: '#000a1e' }};
+  padding: {{ section.settings.padding_top_desktop | default: 128 }}px {{ section.settings.padding_horizontal_desktop | default: 20 }}px {{ section.settings.padding_bottom_desktop | default: 128 }}px {{ section.settings.padding_horizontal_desktop | default: 20 }}px;
+}
+
+.rh-p-learn-certificate-acrediantions-section .container_rh {
+  max-width: 1420px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.rh-certificate-main-wrapper_rh {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 69px;
+  width: 100%;
+}
+
+.rh-certificate-content-wrapper_rh {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 24px;
+  max-width: 810px;
+  width: 100%;
+}
+
+.rh-certificate-header-wrapper_rh {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.rh-certificate-title_rh {
+  color: white;
+  font-size: 55px;
+  font-family: "Neue Haas Grotesk Display Pro", Arial, sans-serif;
+  font-weight: 300;
+  line-height: 64px;
+  word-wrap: break-word;
+  margin: 0;
+  width: 100%;
+}
+
+.rh-certificate-description_rh {
+  color: #c0c2c1;
+  font-size: 18px;
+  font-family: "Neue Haas Grotesk Display Pro", Arial, sans-serif;
+  font-weight: 600;
+  line-height: 22.56px;
+  letter-spacing: 0.72px;
+  word-wrap: break-word;
+  margin: 0;
+}
+
+.rh-certificate-logos-section_rh {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 32px;
+  width: 100%;
+}
+
+.rh-certificate-logos-wrapper_rh {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 23px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.rh-certificate-logo-item_rh {
+  overflow: hidden;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 217px;
+  min-height: 104px;
+  flex: 0 0 auto;
+}
+
+.rh-certificate-logo-img_rh {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Responsive Design for Certificate Section */
+@media (max-width: 1440px) {
+  .rh-p-learn-certificate-acrediantions-section {
+    padding: {{ section.settings.padding_top_large | default: 96 }}px {{ section.settings.padding_horizontal_large | default: 20 }}px {{ section.settings.padding_bottom_large | default: 96 }}px {{ section.settings.padding_horizontal_large | default: 20 }}px;
+  }
+
+  .rh-p-learn-certificate-acrediantions-section .container_rh {
+    max-width: 1200px;
+  }
+
+  .rh-certificate-logos-wrapper_rh {
+    gap: 20px;
+  }
+
+  .rh-certificate-logo-item_rh {
+    min-width: 190px;
+    min-height: 95px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .rh-p-learn-certificate-acrediantions-section {
+    padding: {{ section.settings.padding_top_medium | default: 80 }}px {{ section.settings.padding_horizontal_medium | default: 20 }}px {{ section.settings.padding_bottom_medium | default: 80 }}px {{ section.settings.padding_horizontal_medium | default: 20 }}px;
+  }
+
+  .rh-certificate-title_rh {
+    font-size: 48px;
+    line-height: 56px;
+  }
+
+  .rh-certificate-main-wrapper_rh {
+    gap: 50px;
+  }
+
+  .rh-certificate-logos-wrapper_rh {
+    gap: 16px;
+  }
+
+  .rh-certificate-logo-item_rh {
+    min-width: 170px;
+    min-height: 85px;
+  }
+}
+
+@media (max-width: 992px) {
+  .rh-p-learn-certificate-acrediantions-section {
+    padding: {{ section.settings.padding_top_small | default: 64 }}px {{ section.settings.padding_horizontal_small | default: 20 }}px {{ section.settings.padding_bottom_small | default: 64 }}px {{ section.settings.padding_horizontal_small | default: 20 }}px;
+  }
+
+  .rh-certificate-title_rh {
+    font-size: 42px;
+    line-height: 50px;
+  }
+
+  .rh-certificate-description_rh {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .rh-certificate-main-wrapper_rh {
+    gap: 40px;
+  }
+
+  .rh-certificate-logos-wrapper_rh {
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .rh-certificate-logo-item_rh {
+    min-width: 150px;
+    min-height: 75px;
+    flex: 1 1 calc(33.333% - 8px);
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .rh-p-learn-certificate-acrediantions-section {
+    padding: {{ section.settings.padding_top_tablet | default: 48 }}px {{ section.settings.padding_horizontal_tablet | default: 20 }}px {{ section.settings.padding_bottom_tablet | default: 48 }}px {{ section.settings.padding_horizontal_tablet | default: 20 }}px;
+  }
+
+  .rh-certificate-title_rh {
+    font-size: 36px;
+    line-height: 42px;
+  }
+
+  .rh-certificate-description_rh {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .rh-certificate-main-wrapper_rh {
+    gap: 32px;
+  }
+
+  .rh-certificate-content-wrapper_rh {
+    gap: 16px;
+  }
+
+  .rh-certificate-logos-wrapper_rh {
+    gap: 10px;
+  }
+
+  .rh-certificate-logo-item_rh {
+    min-width: 120px;
+    min-height: 60px;
+    flex: 1 1 calc(50% - 5px);
+    max-width: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .rh-p-learn-certificate-acrediantions-section {
+    padding: {{ section.settings.padding_top_mobile | default: 32 }}px {{ section.settings.padding_horizontal_mobile | default: 16 }}px {{ section.settings.padding_bottom_mobile | default: 32 }}px {{ section.settings.padding_horizontal_mobile | default: 16 }}px;
+  }
+
+  .rh-certificate-title_rh {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .rh-certificate-description_rh {
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+  }
+
+  .rh-certificate-main-wrapper_rh {
+    gap: 24px;
+  }
+
+  .rh-certificate-content-wrapper_rh {
+    gap: 12px;
+  }
+
+  .rh-certificate-logos-wrapper_rh {
+    gap: 8px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .rh-certificate-logo-item_rh {
+    min-width: 100%;
+    min-height: 50px;
+    flex: none;
+    max-width: none;
+  }
+}
+
+@media (max-width: 320px) {
+  .rh-p-learn-certificate-acrediantions-section {
+    padding: {{ section.settings.padding_top_mobile_small | default: 24 }}px {{ section.settings.padding_horizontal_mobile_small | default: 12 }}px {{ section.settings.padding_bottom_mobile_small | default: 24 }}px {{ section.settings.padding_horizontal_mobile_small | default: 12 }}px;
+  }
+
+  .rh-certificate-title_rh {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .rh-certificate-description_rh {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+      .rh-certificate-logo-item_rh {
+        min-height: 45px;
+    }
+}
+{% endstyle %}
+
+
+<div class="rh-p-learn-certificate-acrediantions-section">
+        <div class="container_rh">
+            <div class="rh-certificate-main-wrapper_rh">
+                <div class="rh-certificate-content-wrapper_rh">
+                    <div class="rh-certificate-header-wrapper_rh">
+                        <h2 class="rh-certificate-title_rh">{{ section.settings.title | default: "Our Certifications & Accreditations" }}</h2>
+                    </div>
+                    {% if section.settings.description != blank %}
+                    <p class="rh-certificate-description_rh">{{ section.settings.description | default: "We partner with trusted global organisations to ensure your certificate holds real-world value and recognition." }}</p>
+                    {% endif %}
+                </div>
+                <div class="rh-certificate-logos-section_rh">
+                    <div class="rh-certificate-logos-wrapper_rh">
+                        {% for block in section.blocks %}
+                            {% if block.type == 'certification_logo' %}
+                                <div class="rh-certificate-logo-item_rh" {{ block.shopify_attributes }}>
+                                    {% if block.settings.logo != blank %}
+                                        <img src="{{ block.settings.logo | img_url: '217x104' }}" 
+                                             alt="{{ block.settings.alt_text | default: 'Certification Logo' }}" 
+                                             class="rh-certificate-logo-img_rh" 
+                                             height="auto"
+                                             width="auto"
+                                             loading="lazy" />
+                                    {% else %}
+                                        <img src="https://dummyimage.com/217x104/1E3A8A/FFFFFF?text=Certification" 
+                                             alt="{{ block.settings.alt_text | default: 'Certification Logo' }}" 
+                                             class="rh-certificate-logo-img_rh" 
+                                             height="auto"
+                                             width="auto"
+                                             loading="lazy" />
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                        
+                        {% comment %} Default logos if no blocks are added {% endcomment %}
+                        {% if section.blocks.size == 0 %}
+                            <div class="rh-certificate-logo-item_rh">
+                                <img src="https://dummyimage.com/217x104/1E3A8A/FFFFFF?text=ISO+9001" alt="ISO 9001 Certification" class="rh-certificate-logo-img_rh" height="auto" width="auto" loading="lazy" />
+                            </div>
+                            <div class="rh-certificate-logo-item_rh">
+                                <img src="https://dummyimage.com/217x104/DC2626/FFFFFF?text=CPD+Certified" alt="CPD Certification" class="rh-certificate-logo-img_rh" height="auto" width="auto" loading="lazy" />
+                            </div>
+                            <div class="rh-certificate-logo-item_rh">
+                                <img src="https://dummyimage.com/217x104/059669/FFFFFF?text=IIBA+Partner" alt="IIBA Partnership" class="rh-certificate-logo-img_rh" height="auto" width="auto" loading="lazy" />
+                            </div>
+                            <div class="rh-certificate-logo-item_rh">
+                                <img src="https://dummyimage.com/217x104/7C3AED/FFFFFF?text=PMI+Approved" alt="PMI Approved" class="rh-certificate-logo-img_rh" height="auto" width="auto" loading="lazy" />
+                            </div>
+                            <div class="rh-certificate-logo-item_rh">
+                                <img src="https://dummyimage.com/217x104/EA580C/FFFFFF?text=ACCA+Partner" alt="ACCA Partnership" class="rh-certificate-logo-img_rh" height="auto" width="auto" loading="lazy" />
+                            </div>
+                            <div class="rh-certificate-logo-item_rh">
+                                <img src="https://dummyimage.com/217x104/0F766E/FFFFFF?text=CIPD+Approved" alt="CIPD Approved" class="rh-certificate-logo-img_rh" height="auto" width="auto" loading="lazy" />
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% schema %}
+{
+  "name": "Cert Accreditation",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content Settings"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Our Certifications & Accreditations"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "We partner with trusted global organisations to ensure your certificate holds real-world value and recognition."
+    },
+    {
+      "type": "header",
+      "content": "Design Settings"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#000a1e"
+    },
+    {
+      "type": "header",
+      "content": "Desktop Padding (1441px and above)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Top Padding",
+      "min": 0,
+      "max": 200,
+      "step": 8,
+      "unit": "px",
+      "default": 128
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Bottom Padding",
+      "min": 0,
+      "max": 200,
+      "step": 8,
+      "unit": "px",
+      "default": 128
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal_desktop",
+      "label": "Horizontal Padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Large Screen Padding (1201px - 1440px)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_large",
+      "label": "Top Padding",
+      "min": 0,
+      "max": 200,
+      "step": 8,
+      "unit": "px",
+      "default": 96
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_large",
+      "label": "Bottom Padding",
+      "min": 0,
+      "max": 200,
+      "step": 8,
+      "unit": "px",
+      "default": 96
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal_large",
+      "label": "Horizontal Padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Medium Screen Padding (993px - 1200px)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_medium",
+      "label": "Top Padding",
+      "min": 0,
+      "max": 200,
+      "step": 8,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_medium",
+      "label": "Bottom Padding",
+      "min": 0,
+      "max": 200,
+      "step": 8,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal_medium",
+      "label": "Horizontal Padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Small Screen Padding (769px - 992px)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_small",
+      "label": "Top Padding",
+      "min": 0,
+      "max": 200,
+      "step": 8,
+      "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_small",
+      "label": "Bottom Padding",
+      "min": 0,
+      "max": 200,
+      "step": 8,
+      "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal_small",
+      "label": "Horizontal Padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Tablet Padding (481px - 768px)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_tablet",
+      "label": "Top Padding",
+      "min": 0,
+      "max": 200,
+      "step": 8,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_tablet",
+      "label": "Bottom Padding",
+      "min": 0,
+      "max": 200,
+      "step": 8,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal_tablet",
+      "label": "Horizontal Padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Mobile Padding (321px - 480px)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Top Padding",
+      "min": 0,
+      "max": 200,
+      "step": 8,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Bottom Padding",
+      "min": 0,
+      "max": 200,
+      "step": 8,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal_mobile",
+      "label": "Horizontal Padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Small Mobile Padding (320px and below)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile_small",
+      "label": "Top Padding",
+      "min": 0,
+      "max": 200,
+      "step": 8,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile_small",
+      "label": "Bottom Padding",
+      "min": 0,
+      "max": 200,
+      "step": 8,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal_mobile_small",
+      "label": "Horizontal Padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 12
+    }
+  ],
+  "blocks": [
+    {
+      "type": "certification_logo",
+      "name": "Certification Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo Image"
+        },
+        {
+          "type": "text",
+          "id": "alt_text",
+          "label": "Alt Text",
+          "default": "Certification Logo"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "SA Certifications & Accreditations",
+      "blocks": [
+        {
+          "type": "certification_logo",
+          "settings": {
+            "alt_text": "ISO 9001 Certification"
+          }
+        },
+        {
+          "type": "certification_logo",
+          "settings": {
+            "alt_text": "CPD Certification"
+          }
+        },
+        {
+          "type": "certification_logo",
+          "settings": {
+            "alt_text": "IIBA Partnership"
+          }
+        },
+        {
+          "type": "certification_logo",
+          "settings": {
+            "alt_text": "PMI Approved"
+          }
+        },
+        {
+          "type": "certification_logo",
+          "settings": {
+            "alt_text": "ACCA Partnership"
+          }
+        },
+        {
+          "type": "certification_logo",
+          "settings": {
+            "alt_text": "CIPD Approved"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

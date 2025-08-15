@@ -1,0 +1,617 @@
+<style>
+      .nxt-hero-home {
+          position: relative;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+          font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+          padding: {{ section.settings.section_padding_top }}px 0 {{ section.settings.section_padding_bottom }}px 0;
+      }
+  .nxt-hero-home a:empty,.nxt-hero-home  ul:empty,.nxt-hero-home  dl:empty,.nxt-hero-home  div:empty,.nxt-hero-home  section:empty,.nxt-hero-home  article:empty,.nxt-hero-home  p:empty, .nxt-hero-home h1:empty, .nxt-hero-home h2:empty, .nxt-hero-home h3:empty, .nxt-hero-home h4:empty,.nxt-hero-home  h5:empty,.nxt-hero-home  h6:empty{
+  display: block;
+  }
+      .nxt-hero-home .video-background {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          z-index: 1;
+      }
+
+      .nxt-hero-home .background-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: {{ section.settings.overlay_color}};
+          opacity:{{  section.settings.overlay_opacity }}%;
+          z-index: 2;
+      }
+
+      .nxt-container {
+        max-width: 1420px;
+        width: 100%;
+        margin: 0 auto;
+
+    }
+      .nxt-hero-home  .nxt-container {
+          position: relative;
+          z-index: 3;
+          text-align: {{ section.settings.content_alignment }};
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          row-gap: 30px;
+          column-gap: 10px;
+          max-width: 1460px;
+          padding: 0 20px;
+      }
+
+      .nxt-hero-home  .hero-title {
+          color: white;
+          font-size: {{ section.settings.title_font_size_desktop }}px;
+          font-weight: {{ section.settings.title_font_weight }};
+          line-height: {{ section.settings.title_font_size_desktop }}px;
+          /* max-width: 939px; */
+          margin: 0;
+          margin-bottom: 40px;
+          text-align: {{ section.settings.content_alignment }};
+      }
+
+      .nxt-hero-home .nxt-singleCourseHero_content {
+          max-width: {{ section.settings.content_max_width }}px;
+          text-align: {{ section.settings.content_alignment }};
+      }
+
+      .nxt-hero-home .hero-description {
+          color: white;
+          font-size: {{ section.settings.description_font_size_desktop }}px;
+          font-weight: 400;
+          line-height: {{ section.settings.description_font_size_desktop | plus: 3.36 }}px;
+          letter-spacing: 0.36px;
+          margin-bottom: 40px;
+      }
+
+      .nxt-hero-home .hero-buttons {
+          display: flex;
+          align-items: center;
+          gap: 40px;
+          flex-wrap: wrap;
+      }
+
+      .nxt-hero-home .primary-button {
+          padding: 16px 32px;
+          background: {{ section.settings.primary_button_bg_color }};
+          border-radius: 9999px;
+          color: {{ section.settings.primary_button_text_color }};
+          font-size: 18px;
+          font-family: 'Inter Variable', sans-serif;
+          font-weight: 400;
+          line-height: 24px;
+          text-decoration: none;
+          display: inline-block;
+          transition: all 0.3s ease;
+          border: none;
+          cursor: pointer;
+          {% if section.settings.primary_button_style == 'outlined' %}
+          border: 2px solid {{ section.settings.primary_button_bg_color }};
+          background: transparent;
+          {% endif %}
+      }
+
+      .nxt-hero-home .primary-button:hover {
+          background: #f0f0f0;
+          transform: translateY(-2px);
+      }
+
+      .nxt-hero-home .secondary-button {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          color: {{ section.settings.secondary_button_color }};
+          font-size: 16px;
+          font-family: 'Inter Variable', sans-serif;
+          font-weight: 400;
+          line-height: 24px;
+          text-decoration: none;
+          transition: all 0.3s ease;
+      }
+
+      .nxt-hero-home .secondary-button:hover {
+          opacity: 0.8;
+      }
+
+      .nxt-hero-home .play-icon {
+          width: 7.43px;
+          height: 8.28px;
+          background: white;
+          outline: 0.55px white solid;
+          outline-offset: -0.28px;
+      }
+
+
+      .nxt-singleCourseHero_media {
+        display: flex;
+        max-width: 698px;
+    }
+    .nxt-singleCourseHero_media img {
+        width: 100%;
+        max-width: 100%;
+        object-fit: cover;
+        border-radius: 12px;
+        height: auto;
+    }
+
+    
+    
+
+    @media (max-width: 1200px) {
+        .nxt-hero-home .nxt-singleCourseHero_content{
+            max-width: 600px;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        .nxt-hero-home  .nxt-container {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+      @media (max-width: 768px) {
+          .nxt-hero-home .hero-title {
+              font-size: {{ section.settings.title_font_size_mobile }}px;
+              line-height: {{ section.settings.title_font_size_mobile }}px;
+          }
+
+          .nxt-hero-home .hero-description {
+              font-size: {{ section.settings.description_font_size_mobile }}px;
+              line-height: {{ section.settings.description_font_size_mobile | plus: 4 }}px;
+          }
+
+          .nxt-hero-home .hero-buttons {
+              flex-direction: column;
+              gap: 20px;
+          }
+      }
+
+      {% if section.settings.enable_animations %}
+      .nxt-hero-home .hero-title,
+      .nxt-hero-home .hero-description,
+      .nxt-hero-home .hero-buttons {
+          opacity: 0;
+          animation: {{ section.settings.animation_type }} {{ section.settings.animation_duration }}s ease-out forwards;
+      }
+
+      .nxt-hero-home .hero-title {
+          animation-delay: 0.2s;
+      }
+
+      .nxt-hero-home .hero-description {
+          animation-delay: 0.4s;
+      }
+
+      .nxt-hero-home .hero-buttons {
+          animation-delay: 0.6s;
+      }
+
+      @keyframes fade-in {
+          from { opacity: 0; }
+          to { opacity: 1; }
+      }
+
+      @keyframes slide-up {
+          from {
+              opacity: 0;
+              transform: translateY(30px);
+          }
+          to {
+              opacity: 1;
+              transform: translateY(0);
+          }
+      }
+
+      @keyframes slide-left {
+          from {
+              opacity: 0;
+              transform: translateX(-30px);
+          }
+          to {
+              opacity: 1;
+              transform: translateX(0);
+          }
+      }
+
+      @keyframes zoom-in {
+          from {
+              opacity: 0;
+              transform: scale(0.9);
+          }
+          to {
+              opacity: 1;
+              transform: scale(1);
+          }
+      }
+      {% endif %}
+</style>
+<div
+  class="nxt-hero-home"
+  {% if section.settings.background_type == 'color' %}
+    style="background-color: {{ section.settings.background_color }};"
+  {% endif %}
+>
+  {% if section.settings.background_type == 'video' %}
+    {% assign video_url = product.metafields.custom.course_background_video_link.value.url  %}
+    <video class="video-background" autoplay muted loop>
+      <source src="{% if video_url != blank %}{{ video_url }}{% else %}{{ section.settings.video_url }}{% endif %}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  {% endif %}
+
+  {% if section.settings.background_type == 'image' and section.settings.background_image != blank %}
+    <div
+      class="background-image"
+      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('{{ section.settings.background_image | image_url }}'); background-size: cover; background-position: center; z-index: 1;"
+    ></div>
+  {% endif %}
+
+  <div class="background-overlay"></div>
+  <div class="nxt-container">
+    <div class="nxt-singleCourseHero_content">
+      <h1 class="hero-title">{{ product.title }}</h1>
+
+      <div class="hero-content">
+        {% if product.metafields.custom.short_description %}
+          <p class="hero-description">{{ product.metafields.custom.short_description }}</p>
+        {% endif %}
+        <div class="hero-buttons">
+          <form method="post" action="/cart/add" class="nxt-courseActionBtn__wrapper">
+            <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+            <input type="hidden" name="return_to" value="/checkout">
+            <button type="submit" name="add" class="primary-button">Enroll now</button>
+          </form>
+
+          {% if section.settings.secondary_button_text != blank and section.settings.secondary_button_link != blank %}
+            <a href="{{ section.settings.secondary_button_link }}" class="secondary-button">
+              {% if section.settings.show_play_icon %}
+                <svg width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 8.04149V1.95849C1.0002 1.7655 1.05117 1.57595 1.14779 1.40889C1.24442 1.24182 1.3833 1.10312 1.55049 1.00671C1.71768 0.910298 1.90729 0.85957 2.10028 0.859619C2.29328 0.859669 2.48286 0.910494 2.65 1.00699L7.886 4.04849C8.05269 4.14519 8.19106 4.28398 8.28724 4.45097C8.38342 4.61796 8.43405 4.80728 8.43405 4.99999C8.43405 5.1927 8.38342 5.38203 8.28724 5.54902C8.19106 5.71601 8.05269 5.8548 7.886 5.95149L2.65 8.99299C2.48286 9.08949 2.29328 9.14032 2.10028 9.14036C1.90729 9.14041 1.71768 9.08969 1.55049 8.99327C1.3833 8.89686 1.24442 8.75816 1.14779 8.5911C1.05117 8.42403 1.0002 8.23449 1 8.04149Z" fill="{{ section.settings.secondary_button_color }}" stroke="{{ section.settings.secondary_button_color }}" stroke-width="0.55" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              {% endif %}
+              <span>{{ section.settings.secondary_button_text }}</span>
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <div class="nxt-singleCourseHero_media">
+      <img src="{{ product.featured_image | image_url: width: 698 }}" alt="course thumbnail" width="698" height="392">
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "NX Single Course Hero",
+  "tag": "section",
+  "class": "nxt-singleCourseHero__area",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Background Settings"
+    },
+    {
+      "type": "select",
+      "id": "background_type",
+      "label": "Background Type",
+      "options": [
+        {
+          "value": "video",
+          "label": "Video"
+        },
+        {
+          "value": "image",
+          "label": "Image"
+        },
+        {
+          "value": "color",
+          "label": "Solid Color"
+        }
+      ],
+      "default": "video"
+    },
+    {
+      "type": "url",
+      "id": "video_url",
+      "label": "Video URL",
+      "info": "Enter direct MP4 or WebM video URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image",
+      "info": "Used when background type is set to 'Image'"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#000000",
+      "info": "Used when background type is set to 'Color'"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Overlay Opacity",
+      "default": 50
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay Color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Content Settings"
+    },
+    {
+      "type": "select",
+      "id": "primary_button_style",
+      "label": "Primary Button Style",
+      "options": [
+        {
+          "value": "filled",
+          "label": "Filled"
+        },
+        {
+          "value": "outlined",
+          "label": "Outlined"
+        }
+      ],
+      "default": "filled"
+    },
+    {
+      "type": "color",
+      "id": "primary_button_bg_color",
+      "label": "Primary Button Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "primary_button_text_color",
+      "label": "Primary Button Text Color",
+      "default": "#020A08"
+    },
+    {
+      "type": "header",
+      "content": "Secondary Button"
+    },
+    {
+      "type": "text",
+      "id": "secondary_button_text",
+      "label": "Secondary Button Text",
+      "default": "Start Free Trial – 7 Days Access"
+    },
+    {
+      "type": "url",
+      "id": "secondary_button_link",
+      "label": "Secondary Button Link"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_play_icon",
+      "label": "Show Play Icon",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "secondary_button_color",
+      "label": "Secondary Button Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Typography Settings"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size_desktop",
+      "min": 32,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "Title Font Size (Desktop)",
+      "default": 96
+    },
+    {
+      "type": "range",
+      "id": "title_font_size_mobile",
+      "min": 24,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "label": "Title Font Size (Mobile)",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "description_font_size_desktop",
+      "min": 14,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "Description Font Size (Desktop)",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "description_font_size_mobile",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Description Font Size (Mobile)",
+      "default": 18
+    },
+    {
+      "type": "select",
+      "id": "title_font_weight",
+      "label": "Title Font Weight",
+      "options": [
+        {
+          "value": "100",
+          "label": "Thin"
+        },
+        {
+          "value": "200",
+          "label": "Extra Light"
+        },
+        {
+          "value": "300",
+          "label": "Light"
+        },
+        {
+          "value": "400",
+          "label": "Regular"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi Bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        },
+        {
+          "value": "800",
+          "label": "Extra Bold"
+        },
+        {
+          "value": "900",
+          "label": "Black"
+        }
+      ],
+      "default": "300"
+    },
+    {
+      "type": "header",
+      "content": "Layout Settings"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "min": 40,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Section Padding Top",
+      "default": 52
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "min": 40,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Section Padding Bottom",
+      "default": 44
+    },
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "label": "Content Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "content_max_width",
+      "min": 400,
+      "max": 800,
+      "step": 10,
+      "unit": "px",
+      "label": "Content Max Width",
+      "default": 740
+    },
+    {
+      "type": "header",
+      "content": "Animation Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_animations",
+      "label": "Enable Animations",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "animation_type",
+      "label": "Animation Type",
+      "options": [
+        {
+          "value": "fade-in",
+          "label": "Fade In"
+        },
+        {
+          "value": "slide-up",
+          "label": "Slide Up"
+        },
+        {
+          "value": "slide-left",
+          "label": "Slide Left"
+        },
+        {
+          "value": "zoom-in",
+          "label": "Zoom In"
+        }
+      ],
+      "default": "fade-in"
+    },
+    {
+      "type": "range",
+      "id": "animation_duration",
+      "min": 0.3,
+      "max": 2.0,
+      "step": 0.1,
+      "unit": "s",
+      "label": "Animation Duration",
+      "default": 0.8
+    }
+  ],
+  "presets": [
+    {
+      "name": "NX Single Course Hero",
+      "category": "Single Course"
+    }
+  ]
+}
+{% endschema %}

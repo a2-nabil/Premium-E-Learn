@@ -1,0 +1,262 @@
+/* card css  */
+
+.rh-p-elearn-course-card{
+    /* max-width: 336px; */
+    width: 100%;
+    /* min-width: 280px; */
+    border: 1px solid #133B32;
+    background: #041E18;
+    position: relative;
+    z-index: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 24px;
+    box-sizing: border-box;
+}
+.rh-p-elearn-course-card .rh-p-elearn-course-card-bg-overlay{
+    position: absolute;
+    display: block !important;
+    top: -102px;
+    left: 2px;
+    width: 419px;
+    height: 419px;
+    background: radial-gradient(70.71% 70.71% at 50% 50%, #3E4646 0%, #0F3335 40%, #041E18 66.67%, #041E18 100%);
+    border-radius: 340px;
+    z-index: 1;
+}
+.rh-p-elearn-course-card .rh-p-elearn-course-card-img{
+    width: 100%;
+    height: 160px;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 12px;
+}
+.rh-p-elearn-course-card .rh-p-elearn-course-card-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+.rh-p-elearn-course-card .rh-p-elearn-course-card-content{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+}
+.rh-p-elearn-course-card .rh-p-elearn-course-card-content .rh-tags{
+    color: #36F4A4;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    letter-spacing: normal;
+    margin: 0 0 12px;
+    text-transform: uppercase;
+    font-family: "Consolas", sans-serif;
+}
+.rh-p-elearn-course-card .rh-p-elearn-course-card-content .rh-p-elearn-course-card-title{
+    color: #fff;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 500;
+    letter-spacing: normal;
+    height: 56px;
+    margin: 0 0 16px;
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    text-align: left;
+    overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 2;
+           line-clamp: 2;
+   -webkit-box-orient: vertical;
+}
+.rh-p-elearn-course-card .rh-p-elearn-course-card-content .rh-course-rating{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 8px;
+}
+
+.rh-p-elearn-course-card .rh-p-elearn-course-card-content .rh-course-rating .rh-course-rating-stars{
+    display: flex !important;
+    align-items: center;
+    gap: 2px;
+}
+
+.rh-p-elearn-course-card .rh-p-elearn-course-card-content .rh-course-rating .rh-course-rating-stars .star{
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.rh-p-elearn-course-card .rh-p-elearn-course-card-content .rh-course-rating .rh-course-rating-stars .star:hover{
+    transform: scale(1.1);
+}
+
+
+.rh-p-elearn-course-card .rh-p-elearn-course-card-content .rh-p-elearn-course-card-price{
+    color: #30DEEE;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: normal;
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    text-align: left;
+    overflow: hidden;
+}
+.rh-p-elearn-course-card .rh-p-elearn-course-card-content .rh-p-elearn-course-card-price .rh-p-elearn-course-card-price-new{
+    font-weight: 600;
+}
+.rh-p-elearn-course-card .rh-p-elearn-course-card-content .rh-p-elearn-course-card-price .rh-p-elearn-course-card-price-old{
+    font-weight: 400;
+    text-decoration: line-through;
+}
+
+.rh-p-elearn-course-card .rh-p-elearn-course-button-group{
+    display: flex;
+    align-items: center;
+    max-height: 44px;
+    gap: 8px;
+    margin: 32px 0 0;
+}
+.rh-p-elearn-course-card .rh-p-elearn-course-button-group .rh-p-elearn-course-button-group-detail-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 52px);
+    height: 100%;
+    background: transparent;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    letter-spacing: normal;
+    font-family: "Inter", sans-serif;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 9999px;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+.rh-p-elearn-course-card .rh-p-elearn-course-button-group .rh-p-elearn-course-button-group-detail-button:hover{
+    background: #36F4A4;
+    color: #041E18;
+    border-color: #36F4A4;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(54, 244, 164, 0.3);
+}
+.rh-p-elearn-course-card .rh-p-elearn-course-button-group .rh-p-elearn-course-button-group-cart-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    height: 100%;
+    background: transparent;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    border-radius: 9999px;
+    padding: 12px;
+    transition: all 0.3s ease;
+}
+
+.rh-p-elearn-course-card .rh-p-elearn-course-button-group .rh-p-elearn-course-button-group-cart-button:hover{
+    background: #30DEEE;
+    border-color: #30DEEE;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(48, 222, 238, 0.3);
+}
+
+.rh-p-elearn-course-card .rh-p-elearn-course-button-group .rh-p-elearn-course-button-group-cart-button:hover img{
+    filter: brightness(0) saturate(100%) invert(7%) sepia(25%) saturate(3671%) hue-rotate(152deg) brightness(95%) contrast(95%);
+}
+.rh-p-elearn-course-card .rh-p-elearn-course-button-group .rh-p-elearn-course-button-group-cart-button img{
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 360px) {
+    .rh-p-elearn-course-card {
+        padding: 16px;
+        min-width: 280px;
+    }
+    
+    .rh-p-elearn-course-card .rh-p-elearn-course-card-img {
+        margin-bottom: 8px;
+    }
+    
+    .rh-p-elearn-course-card .rh-p-elearn-course-card-content .rh-p-elearn-course-card-title {
+        font-size: 18px;
+        line-height: 24px;
+        height: 48px;
+        margin: 0 0 12px;
+    }
+    
+    .rh-p-elearn-course-card .rh-p-elearn-course-card-content .rh-tags {
+        font-size: 11px;
+        margin: 0 0 8px;
+    }
+    
+    .rh-p-elearn-course-card .rh-p-elearn-course-card-content .rh-p-elearn-course-card-price {
+        font-size: 18px;
+        line-height: 24px;
+    }
+    
+    .rh-p-elearn-course-card .rh-p-elearn-course-button-group {
+        margin: 24px 0 0;
+        gap: 6px;
+    }
+    
+    .rh-p-elearn-course-card .rh-p-elearn-course-button-group .rh-p-elearn-course-button-group-detail-button {
+        font-size: 14px;
+        line-height: 20px;
+        padding: 8px 16px;
+    }
+    
+    .rh-p-elearn-course-card .rh-p-elearn-course-button-group .rh-p-elearn-course-button-group-cart-button {
+        padding: 10px;
+    }
+    
+    .rh-p-elearn-course-card .rh-p-elearn-course-button-group .rh-p-elearn-course-button-group-cart-button img {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (max-width: 320px) {
+    .rh-p-elearn-course-card {
+        padding: 12px;
+    }
+    
+    .rh-p-elearn-course-card .rh-p-elearn-course-card-img {
+        height: 140px;
+    }
+    
+    .rh-p-elearn-course-card .rh-p-elearn-course-card-content .rh-p-elearn-course-card-title {
+        font-size: 16px;
+        line-height: 20px;
+        height: 40px;
+    }
+    
+    .rh-p-elearn-course-card .rh-p-elearn-course-card-content .rh-p-elearn-course-card-price {
+        font-size: 16px;
+        line-height: 22px;
+    }
+    
+    .rh-p-elearn-course-card .rh-p-elearn-course-button-group {
+        margin: 16px 0 0;
+        gap: 4px;
+    }
+    
+    .rh-p-elearn-course-card .rh-p-elearn-course-button-group .rh-p-elearn-course-button-group-detail-button {
+        font-size: 13px;
+        padding: 6px 12px;
+    }
+    
+    .rh-p-elearn-course-card .rh-p-elearn-course-button-group .rh-p-elearn-course-button-group-cart-button {
+        padding: 8px;
+    }
+}

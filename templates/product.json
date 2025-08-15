@@ -1,0 +1,371 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "nxt_single_course_hero_M8PYiE": {
+      "type": "nxt-singleCourse-hero",
+      "name": "NX Single Course Hero",
+      "settings": {
+        "background_type": "video",
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/2c65e7e108d6468da618b6631cf7b522.mp4",
+        "background_color": "#000000",
+        "overlay_opacity": 50,
+        "overlay_color": "#000000",
+        "primary_button_style": "filled",
+        "primary_button_bg_color": "#ffffff",
+        "primary_button_text_color": "#020a08",
+        "secondary_button_text": "Start Free Trial – 7 Days Access",
+        "secondary_button_link": "shopify://collections/all",
+        "show_play_icon": true,
+        "secondary_button_color": "#ffffff",
+        "title_font_size_desktop": 96,
+        "title_font_size_mobile": 48,
+        "description_font_size_desktop": 24,
+        "description_font_size_mobile": 18,
+        "title_font_weight": "300",
+        "section_padding_top": 52,
+        "section_padding_bottom": 44,
+        "content_alignment": "left",
+        "content_max_width": 740,
+        "enable_animations": true,
+        "animation_type": "fade-in",
+        "animation_duration": 0.8
+      }
+    },
+    "nxt_single_course_contents_WUkahh": {
+      "type": "nxt-singleCourse-contents",
+      "blocks": {
+        "meta_card_GKH9kK": {
+          "type": "meta_card",
+          "settings": {
+            "course_series_show": true,
+            "course_series_title": "5 course series",
+            "course_series_subtitle": "Get in-depth knowledge of a subject",
+            "course_rating_show": true,
+            "course_level_show": true,
+            "course_level_subtitle": "No prior experience required",
+            "course_schedule_show": true,
+            "career_credential_show": true,
+            "career_credential_title": "Earn a career credential",
+            "career_credential_subtitle": "Share your expertise with employers"
+          }
+        },
+        "product_description_qdgKCe": {
+          "type": "product_description",
+          "settings": {}
+        },
+        "whats_included_card_F3McAg": {
+          "type": "whats_included_card",
+          "settings": {
+            "title": "What's included"
+          }
+        },
+        "skills_you_ll_gain_card_ezGTBW": {
+          "type": "skills_you_ll_gain_card",
+          "settings": {
+            "title": "Skills you'll gain",
+            "button_text": "Show all",
+            "button_link": "shopify://collections/all"
+          }
+        },
+        "tools_you_ll_learn_card_T4cfCU": {
+          "type": "tools_you_ll_learn_card",
+          "settings": {
+            "title": "Tools you'll learn",
+            "button_text": "Show all",
+            "button_link": "shopify://collections/all"
+          }
+        },
+        "career_card_TgW86K": {
+          "type": "career_card",
+          "settings": {
+            "image": "shopify://shop_images/career-img_2fb0d839-dd3c-4d35-a677-c0bf767bd1cb.png",
+            "title": "Prepare for a career as a Python Developer",
+            "description": "<ul><li>Learn in-demand skills from university and industry experts</li><li>Master a subject or tool with hands-on projects</li><li>Develop a deep understanding of key concepts</li><li>Earn a career certificate from University of Michigan</li></ul>",
+            "button_text": "Explore this role",
+            "button_link": "shopify://collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "meta_card_GKH9kK",
+        "product_description_qdgKCe",
+        "whats_included_card_F3McAg",
+        "skills_you_ll_gain_card_ezGTBW",
+        "tools_you_ll_learn_card_T4cfCU",
+        "career_card_TgW86K"
+      ],
+      "name": "Single Course Contents",
+      "settings": {
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "background_color": "#020a08"
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "description",
+        "share"
+      ],
+      "disabled": true,
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "stacked",
+        "mobile_thumbnails": "hide",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "Explore more from Software Development",
+        "subheading": "Handpicked by 90,000+ learners and rated 4.8/5 on average.",
+        "heading_size": "h2",
+        "initial_products_to_show": 4,
+        "max_products_to_show": 12,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-4",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "background_color": "#020a08",
+        "padding_top": 0,
+        "padding_bottom": 100
+      }
+    },
+    "rh_certificate_accreditations_section_U7CeCE": {
+      "type": "rh-certificate-accreditations-section",
+      "blocks": {
+        "certification_logo_rhLnQd": {
+          "type": "certification_logo",
+          "settings": {
+            "logo": "shopify://shop_images/Frame_52.png",
+            "alt_text": "ISO 9001 Certification"
+          }
+        },
+        "certification_logo_E3cYLB": {
+          "type": "certification_logo",
+          "settings": {
+            "logo": "shopify://shop_images/Frame_53.png",
+            "alt_text": "CPD Certification"
+          }
+        },
+        "certification_logo_QMmmW4": {
+          "type": "certification_logo",
+          "settings": {
+            "logo": "shopify://shop_images/Frame_51.png",
+            "alt_text": "IIBA Partnership"
+          }
+        },
+        "certification_logo_6UAfwD": {
+          "type": "certification_logo",
+          "settings": {
+            "logo": "shopify://shop_images/Frame_54.png",
+            "alt_text": "PMI Approved"
+          }
+        },
+        "certification_logo_Ubbwrp": {
+          "type": "certification_logo",
+          "settings": {
+            "logo": "shopify://shop_images/Frame_55.png",
+            "alt_text": "ACCA Partnership"
+          }
+        },
+        "certification_logo_JNtbWQ": {
+          "type": "certification_logo",
+          "settings": {
+            "logo": "shopify://shop_images/Frame_56.png",
+            "alt_text": "CIPD Approved"
+          }
+        }
+      },
+      "block_order": [
+        "certification_logo_rhLnQd",
+        "certification_logo_E3cYLB",
+        "certification_logo_QMmmW4",
+        "certification_logo_6UAfwD",
+        "certification_logo_Ubbwrp",
+        "certification_logo_JNtbWQ"
+      ],
+      "name": "SA Certifications & Accreditations",
+      "settings": {
+        "title": "Our Certifications & Accreditations",
+        "description": "We partner with trusted global organisations to ensure your certificate holds real-world value and recognition.",
+        "background_color": "#000a1e",
+        "padding_top_desktop": 128,
+        "padding_bottom_desktop": 128,
+        "padding_horizontal_desktop": 20,
+        "padding_top_large": 96,
+        "padding_bottom_large": 96,
+        "padding_horizontal_large": 20,
+        "padding_top_medium": 80,
+        "padding_bottom_medium": 80,
+        "padding_horizontal_medium": 20,
+        "padding_top_small": 64,
+        "padding_bottom_small": 64,
+        "padding_horizontal_small": 20,
+        "padding_top_tablet": 48,
+        "padding_bottom_tablet": 48,
+        "padding_horizontal_tablet": 20,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32,
+        "padding_horizontal_mobile": 16,
+        "padding_top_mobile_small": 24,
+        "padding_bottom_mobile_small": 24,
+        "padding_horizontal_mobile_small": 12
+      }
+    },
+    "rh_future_building_section_FRGbYx": {
+      "type": "rh-future-building-section",
+      "blocks": {
+        "student_image_kfVpHA": {
+          "type": "student_image",
+          "settings": {
+            "image": "shopify://shop_images/Photo_of_employee_holding_a_product_and_entering_details_about_it_on_their_phone.png",
+            "alt_text": "Happy Student Learning Online",
+            "add_offset": true
+          }
+        },
+        "student_image_fqeQkG": {
+          "type": "student_image",
+          "settings": {
+            "image": "shopify://shop_images/Photo_of_hand_holding_clutch_purse_for_sale.png",
+            "alt_text": "Professional Student Studying",
+            "add_offset": false
+          }
+        },
+        "statistic_NQNQT8": {
+          "type": "statistic",
+          "settings": {
+            "stat_text": "93% satisfaction rate"
+          }
+        },
+        "statistic_wk4pX8": {
+          "type": "statistic",
+          "settings": {
+            "stat_text": "500+ companies recognise us"
+          }
+        },
+        "statistic_MaYW9i": {
+          "type": "statistic",
+          "settings": {
+            "stat_text": "New learners every 30 minutes"
+          }
+        }
+      },
+      "block_order": [
+        "student_image_kfVpHA",
+        "student_image_fqeQkG",
+        "statistic_NQNQT8",
+        "statistic_wk4pX8",
+        "statistic_MaYW9i"
+      ],
+      "name": "SA Future Building Section",
+      "settings": {
+        "title": "Join 90,000+ People Building Their Future on E-Learn",
+        "cta_text": "Sign up now",
+        "cta_url": "",
+        "padding_top_desktop": 128,
+        "padding_bottom_desktop": 128,
+        "padding_horizontal_desktop": 20,
+        "padding_top_large": 96,
+        "padding_bottom_large": 96,
+        "padding_horizontal_large": 20,
+        "padding_top_medium": 80,
+        "padding_bottom_medium": 80,
+        "padding_horizontal_medium": 20,
+        "padding_top_small": 64,
+        "padding_bottom_small": 64,
+        "padding_horizontal_small": 20,
+        "padding_top_tablet": 48,
+        "padding_bottom_tablet": 48,
+        "padding_horizontal_tablet": 20,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32,
+        "padding_horizontal_mobile": 16,
+        "padding_top_mobile_small": 24,
+        "padding_bottom_mobile_small": 24,
+        "padding_horizontal_mobile_small": 12
+      }
+    }
+  },
+  "order": [
+    "nxt_single_course_hero_M8PYiE",
+    "nxt_single_course_contents_WUkahh",
+    "main",
+    "related-products",
+    "rh_certificate_accreditations_section_U7CeCE",
+    "rh_future_building_section_FRGbYx"
+  ]
+}

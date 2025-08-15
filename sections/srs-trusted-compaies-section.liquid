@@ -1,0 +1,785 @@
+{%- style -%}
+  .srs-trusted-company-section {
+    background: {{ section.settings.background_color }};
+    padding: {{ section.settings.padding_top }}px {{ section.settings.padding_horizontal }}px {{ section.settings.padding_bottom }}px {{ section.settings.padding_horizontal }}px;
+    display: flex;
+    align-items: center;
+    font-family: {% case section.settings.font_family %}
+      {% when 'neue-haas' %}'Neue Haas Grotesk Display Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif
+      {% when 'system' %}-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif
+      {% when 'arial' %}'Arial', sans-serif
+      {% when 'helvetica' %}'Helvetica', sans-serif
+      {% when 'georgia' %}'Georgia', serif
+      {% when 'times' %}'Times New Roman', serif
+      {% else %}'Neue Haas Grotesk Display Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif
+    {% endcase %};
+    position: relative;
+    overflow: hidden;
+  }
+
+  @media (min-width: 1025px) {
+    section.srs-trusted-company-section:before {
+      content: "";
+      width: 100%;
+      height: {{ section.settings.gradient_height }}px;
+      background: linear-gradient(180deg, {{ section.settings.background_color }} 0%, {{ section.settings.background_color | color_modify: 'alpha', 0 }} 100%);
+      position: absolute;
+      top: {{ section.settings.gradient_top_position }}px;
+    }
+    section.srs-trusted-company-section:after {
+      content: "";
+      width: 100%;
+      height: {{ section.settings.gradient_height }}px;
+      background: linear-gradient(0deg, {{ section.settings.background_color }} 0%, {{ section.settings.background_color | color_modify: 'alpha', 0 }} 100%);
+      position: absolute;
+      bottom: -47px;
+    }
+  }
+
+  .srs-trusted-company-section .srs-container {
+    max-width: {{ section.settings.container_max_width }}px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .srs-trusted-company-section .trusted-header {
+    text-align: {{ section.settings.header_alignment }};
+    margin-bottom: {{ section.settings.header_margin_bottom }}px;
+  }
+
+  .srs-trusted-company-section .trusted-title {
+    color: {{ section.settings.title_color }};
+    font-size: {{ section.settings.title_font_size }}px;
+    font-weight: {{ section.settings.title_font_weight }};
+    line-height: {{ section.settings.title_line_height }}px;
+    margin-bottom: {{ section.settings.title_margin_bottom }}px;
+  }
+
+  .srs-trusted-company-section .trusted-subtitle {
+    color: {{ section.settings.subtitle_color }};
+    font-size: {{ section.settings.subtitle_font_size }}px;
+    font-weight: {{ section.settings.subtitle_font_weight }};
+    line-height: {{ section.settings.subtitle_line_height }}px;
+    letter-spacing: {{ section.settings.subtitle_letter_spacing }}px;
+    max-width: {{ section.settings.subtitle_max_width }}px;
+  }
+
+  .srs-trusted-company-section .companies-grid {
+    display: grid;
+    grid-template-columns: repeat({{ section.settings.desktop_columns }}, 1fr);
+    gap: {{ section.settings.grid_gap }}px;
+    margin: 0 auto;
+  }
+
+  .srs-trusted-company-section .company-card {
+    background: {{ section.settings.card_background_color }};
+    border-radius: {{ section.settings.card_border_radius }}px;
+    padding: 0 {{ section.settings.card_padding }}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: {{ section.settings.card_min_height }}px;
+    transition: transform {{ section.settings.hover_animation_duration }}s ease, box-shadow {{ section.settings.hover_animation_duration }}s ease;
+    {% if section.settings.enable_card_border %}
+    border: {{ section.settings.card_border_width }}px solid {{ section.settings.card_border_color }};
+    {% endif %}
+  }
+
+  .srs-trusted-company-section .company-card:hover {
+    transform: translateY(-{{ section.settings.hover_lift_distance }}px);
+    box-shadow: {{ section.settings.hover_shadow }};
+  }
+
+  .srs-trusted-company-section .company-logo {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    width: auto;
+    height: auto;
+    filter: {{ section.settings.logo_filter }};
+  }
+
+  /* Responsive design */
+  @media (max-width: 1200px) {
+    .srs-trusted-company-section .companies-grid {
+      grid-template-columns: repeat({{ section.settings.tablet_columns }}, 1fr);
+    }
+  }
+
+  @media (max-width: 900px) {
+    .srs-trusted-company-section .companies-grid {
+      grid-template-columns: repeat({{ section.settings.mobile_columns }}, 1fr);
+    }
+    
+    .srs-trusted-company-section .trusted-title {
+      font-size: {{ section.settings.title_font_size_mobile }}px;
+      line-height: {{ section.settings.title_line_height_mobile }}px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .srs-trusted-company-section .companies-grid {
+      grid-template-columns: repeat({{ section.settings.small_mobile_columns }}, 1fr);
+      gap: {{ section.settings.mobile_grid_gap }}px;
+    }
+    
+    .srs-trusted-company-section .trusted-title {
+      font-size: {{ section.settings.title_font_size_small_mobile }}px;
+      line-height: {{ section.settings.title_line_height_small_mobile }}px;
+    }
+    
+    .srs-trusted-company-section .trusted-subtitle {
+      font-size: {{ section.settings.subtitle_font_size_mobile }}px;
+    }
+    
+    .srs-trusted-company-section {
+      padding: {{ section.settings.padding_top_mobile }}px {{ section.settings.padding_horizontal_mobile }}px {{ section.settings.padding_bottom_mobile }}px {{ section.settings.padding_horizontal_mobile }}px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .srs-trusted-company-section .companies-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+{%- endstyle -%}
+
+<section class="srs-trusted-company-section" id="srs-trusted-section-{{ section.id }}">
+  <div class="srs-container">
+    {% if section.settings.show_header %}
+      <header class="trusted-header">
+        {% if section.settings.title != blank %}
+          <h{{ section.settings.title_tag }} class="trusted-title">{{ section.settings.title }}</h{{ section.settings.title_tag }}>
+        {% endif %}
+        {% if section.settings.subtitle != blank %}
+          <p class="trusted-subtitle">{{ section.settings.subtitle }}</p>
+        {% endif %}
+      </header>
+    {% endif %}
+    
+    {% if section.blocks.size > 0 %}
+      <div class="companies-grid">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'company' %}
+              <div class="company-card" {{ block.shopify_attributes }}>
+                {% if block.settings.company_logo != blank %}
+                  <img 
+                    src="{{ block.settings.company_logo | image_url: width: block.settings.logo_width }}" 
+                    alt="{{ block.settings.company_name | default: 'Company Logo' }}" 
+                    class="company-logo"
+                    loading="lazy"
+                    width="{{ block.settings.logo_width }}"
+                    height="{{ block.settings.logo_height }}"
+                  >
+                {% elsif block.settings.company_name != blank %}
+                  <div class="company-logo-text" style="color: {{ block.settings.text_color }}; font-size: {{ block.settings.text_size }}px; font-weight: {{ block.settings.text_weight }};">
+                    {{ block.settings.company_name }}
+                  </div>
+                {% endif %}
+              </div>
+          {% endcase %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Trusted Companies Section",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_header",
+      "label": "Show Header",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Trusted by Companies"
+    },
+    {
+      "type": "select",
+      "id": "title_tag",
+      "label": "Title Tag",
+      "options": [
+        { "value": "h1", "label": "H1" },
+        { "value": "h2", "label": "H2" },
+        { "value": "h3", "label": "H3" },
+        { "value": "h4", "label": "H4" },
+        { "value": "h5", "label": "H5" },
+        { "value": "h6", "label": "H6" }
+      ],
+      "default": "h1"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "We're proud to be trusted by 500+ institutions and brands globally."
+    },
+    {
+      "type": "select",
+      "id": "header_alignment",
+      "label": "Header Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "Typography Settings"
+    },
+    {
+      "type": "select",
+      "id": "font_family",
+      "label": "Font Family",
+      "options": [
+        { "value": "neue-haas", "label": "Neue Haas Grotesk" },
+        { "value": "system", "label": "System Default" },
+        { "value": "arial", "label": "Arial" },
+        { "value": "helvetica", "label": "Helvetica" },
+        { "value": "georgia", "label": "Georgia" },
+        { "value": "times", "label": "Times New Roman" }
+      ],
+      "default": "neue-haas"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "min": 20,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "label": "Title Font Size (Desktop)",
+      "default": 55
+    },
+    {
+      "type": "range",
+      "id": "title_font_size_mobile",
+      "min": 16,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "Title Font Size (Mobile)",
+      "default": 42
+    },
+    {
+      "type": "range",
+      "id": "title_font_size_small_mobile",
+      "min": 14,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Title Font Size (Small Mobile)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "title_line_height",
+      "min": 1,
+      "max": 2,
+      "step": 0.1,
+      "label": "Title Line Height (Desktop)",
+      "default": 1.2
+    },
+    {
+      "type": "range",
+      "id": "title_line_height_mobile",
+      "min": 1,
+      "max": 2,
+      "step": 0.1,
+      "label": "Title Line Height (Mobile)",
+      "default": 1.1
+    },
+    {
+      "type": "range",
+      "id": "title_line_height_small_mobile",
+      "min": 1,
+      "max": 2,
+      "step": 0.1,
+      "label": "Title Line Height (Small Mobile)",
+      "default": 1.2
+    },
+    {
+      "type": "range",
+      "id": "title_font_weight",
+      "min": 100,
+      "max": 900,
+      "step": 100,
+      "label": "Title Font Weight",
+      "default": 300
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_size",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle Font Size (Desktop)",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_size_mobile",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle Font Size (Mobile)",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "subtitle_line_height",
+      "min": 1,
+      "max": 2,
+      "step": 0.1,
+      "label": "Subtitle Line Height",
+      "default": 1.3
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_weight",
+      "min": 100,
+      "max": 900,
+      "step": 100,
+      "label": "Subtitle Font Weight",
+      "default": 600
+    },
+    {
+      "type": "range",
+      "id": "subtitle_letter_spacing",
+      "min": 0,
+      "max": 2,
+      "step": 0.1,
+      "unit": "px",
+      "label": "Subtitle Letter Spacing",
+      "default": 0.7
+    },
+    {
+      "type": "range",
+      "id": "subtitle_max_width",
+      "min": 200,
+      "max": 800,
+      "step": 10,
+      "unit": "px",
+      "label": "Subtitle Max Width",
+      "default": 610
+    },
+    {
+      "type": "header",
+      "content": "Color Settings"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#000A1E"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle Color",
+      "default": "#C0C2C1"
+    },
+    {
+      "type": "color",
+      "id": "card_background_color",
+      "label": "Card Background Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_card_border",
+      "label": "Enable Card Border",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Card Border Color",
+      "default": "#E5E7EB"
+    },
+    {
+      "type": "range",
+      "id": "card_border_width",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "label": "Card Border Width",
+      "default": 1
+    },
+    {
+      "type": "header",
+      "content": "Layout Settings"
+    },
+    {
+      "type": "range",
+      "id": "container_max_width",
+      "min": 800,
+      "max": 2000,
+      "step": 20,
+      "unit": "px",
+      "label": "Container Max Width",
+      "default": 1420
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top (Desktop)",
+      "default": 128
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom (Desktop)",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Horizontal (Desktop)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding Top (Mobile)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding Bottom (Mobile)",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal_mobile",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding Horizontal (Mobile)",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "header_margin_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Header Margin Bottom",
+      "default": 65
+    },
+    {
+      "type": "range",
+      "id": "title_margin_bottom",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Title Margin Bottom",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Grid Settings"
+    },
+    {
+      "type": "range",
+      "id": "desktop_columns",
+      "min": 1,
+      "max": 8,
+      "step": 1,
+      "label": "Desktop Columns",
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "tablet_columns",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "label": "Tablet Columns",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "mobile_columns",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "label": "Mobile Columns",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "small_mobile_columns",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "label": "Small Mobile Columns",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Grid Gap (Desktop)",
+      "default": 23
+    },
+    {
+      "type": "range",
+      "id": "mobile_grid_gap",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Grid Gap (Mobile)",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Card Settings"
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "min": 10,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Card Padding",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "card_min_height",
+      "min": 60,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "Card Min Height",
+      "default": 104
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Card Border Radius",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Hover Effects"
+    },
+    {
+      "type": "range",
+      "id": "hover_lift_distance",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Hover Lift Distance",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "hover_animation_duration",
+      "min": 0.1,
+      "max": 1,
+      "step": 0.1,
+      "unit": "s",
+      "label": "Hover Animation Duration",
+      "default": 0.3
+    },
+    {
+      "type": "text",
+      "id": "hover_shadow",
+      "label": "Hover Shadow",
+      "default": "0 8px 25px rgba(0, 0, 0, 0.15)",
+      "info": "CSS box-shadow value"
+    },
+    {
+      "type": "header",
+      "content": "Background Effects"
+    },
+    {
+      "type": "range",
+      "id": "gradient_height",
+      "min": 50,
+      "max": 300,
+      "step": 10,
+      "unit": "px",
+      "label": "Gradient Height",
+      "default": 170
+    },
+    {
+      "type": "range",
+      "id": "gradient_top_position",
+      "min": 100,
+      "max": 500,
+      "step": 10,
+      "unit": "px",
+      "label": "Top Gradient Position",
+      "default": 280
+    },
+    {
+      "type": "header",
+      "content": "Logo Settings"
+    },
+    {
+      "type": "select",
+      "id": "logo_filter",
+      "label": "Logo Filter",
+      "options": [
+        { "value": "none", "label": "None" },
+        { "value": "grayscale(100%)", "label": "Grayscale" },
+        { "value": "brightness(0.8)", "label": "Darker" },
+        { "value": "brightness(1.2)", "label": "Brighter" },
+        { "value": "contrast(1.2)", "label": "Higher Contrast" },
+        { "value": "contrast(0.8)", "label": "Lower Contrast" }
+      ],
+      "default": "none"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "company",
+      "name": "Company",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "company_logo",
+          "label": "Company Logo"
+        },
+        {
+          "type": "text",
+          "id": "company_name",
+          "label": "Company Name",
+          "info": "Used as alt text and fallback if no logo is uploaded"
+        },
+                 {
+           "type": "range",
+           "id": "logo_width",
+           "min": 50,
+           "max": 300,
+           "step": 10,
+           "unit": "px",
+           "label": "Logo Width",
+           "default": 160
+         },
+         {
+           "type": "range",
+           "id": "logo_height",
+           "min": 30,
+           "max": 200,
+           "step": 10,
+           "unit": "px",
+           "label": "Logo Height",
+           "default": 100
+         },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color (if no logo)",
+          "default": "#000000"
+        },
+        {
+          "type": "range",
+          "id": "text_size",
+          "min": 12,
+          "max": 24,
+          "step": 1,
+          "unit": "px",
+          "label": "Text Size (if no logo)",
+          "default": 16
+        },
+        {
+          "type": "range",
+          "id": "text_weight",
+          "min": 100,
+          "max": 900,
+          "step": 100,
+          "label": "Text Weight (if no logo)",
+          "default": 500
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Trusted Companies Section",
+      "blocks": [
+        {
+          "type": "company"
+        },
+        {
+          "type": "company"
+        },
+        {
+          "type": "company"
+        },
+        {
+          "type": "company"
+        },
+        {
+          "type": "company"
+        },
+        {
+          "type": "company"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

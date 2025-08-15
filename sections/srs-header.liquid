@@ -1,0 +1,1087 @@
+<style>
+
+        header.srs-header {
+            background: #020A08;
+            padding: 0 20px;
+                font-family: 'Inter Variable', sans-serif;
+        }
+header.srs-header a:empty,header.srs-header  ul:empty,header.srs-header  dl:empty, header.srs-header div:empty, header.srs-header section:empty, header.srs-header article:empty, header.srs-header p:empty, header.srs-header h1:empty, header.srs-header h2:empty, header.srs-header h3:empty, header.srs-header h4:empty, header.srs-header h5:empty, header.srs-header h6:empty{
+    display: block;
+}
+header.srs-header p{
+margin: 0;
+}
+        header.srs-header .header-container {
+            max-width: 1420px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 72px;
+        }
+
+        header.srs-header .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        header.srs-header .logo-icon {
+            width: 42.5px;
+            height: 39.67px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header.srs-header .logo-icon .cap {
+            width: 42.5px;
+            height: 32.53px;
+            background: #7B46A5;
+        }
+
+        header.srs-header .logo-icon .bookmark {
+            width: 28.51px;
+            height: 16.94px;
+            position: absolute;
+            left: 6.91px;
+            top: 22.73px;
+            background: #7B46A5;
+        }
+
+        header.srs-header .logo-icon .highlight {
+            width: 6.14px;
+            height: 9.56px;
+            position: absolute;
+            left: 28.13px;
+            top: 22.97px;
+            background: #D6BBEA;
+        }
+
+        header.srs-header .logo-image {
+            max-width: 200px;
+            height: 39.67px;
+            object-fit: contain;
+        }
+
+        header.srs-header .logo-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        header.srs-header .logo-title {
+            display: flex;
+            align-items: center;
+        }
+
+        header.srs-header .logo-title h1 {
+            color: white;
+            font-size: 24px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            line-height: 24px;
+        }
+
+        header.srs-header .logo-title .dash {
+            font-weight: 500;
+        }
+
+        header.srs-header .logo-subtitle {
+            color: white;
+            font-size: 11px;
+            font-family: 'Architects Daughter', cursive;
+            font-weight: 400;
+            line-height: 11px;
+            letter-spacing: 0.22px;
+        }
+
+        .nav-section {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            flex: 1;
+            padding-left: 70px;
+        }
+
+        @media (max-width: 1065px) {
+            .nav-section {
+                padding-left: 10px;
+            }
+        }
+
+        header.srs-header .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 24px 0;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            transition: opacity 0.3s ease;
+            position: relative;
+            cursor: pointer;
+        }
+
+        header.srs-header .nav-link:hover {
+            opacity: 0.8;
+        }
+
+        header.srs-header .nav-link p {
+            margin: 0;
+            color: white;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+        }
+
+        header.srs-header .dropdown-icon {
+            width: 17px;
+            height: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        header.srs-header .nav-link:hover .dropdown-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Dropdown Menu Styles */
+        header.srs-header .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #020A08;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            min-width: 250px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            padding: 8px 0;
+        }
+
+        header.srs-header .nav-link:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        header.srs-header .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 20px;
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 400;
+            transition: background 0.3s ease;
+        }
+
+        header.srs-header .dropdown-item:hover {
+            background: #020A08;
+            color: #7B46A5;
+        }
+
+        .dropdown-item-icon {
+            width: 20px;
+            height: 20px;
+            background: #7B46A5;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        header.srs-header .dropdown-category {
+            padding: 8px 20px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 4px;
+        }
+
+        header.srs-header .dropdown-divider {
+            height: 1px;
+            background: #eee;
+            margin: 8px 0;
+        }
+
+        /* Mobile Dropdown Styles */
+        header.srs-header .mobile-dropdown {
+            display: none;
+            background: rgba(255, 255, 255, 0.05);
+            margin: 10px 0;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        header.srs-header .mobile-dropdown.active {
+            display: block;
+        }
+
+        header.srs-header .mobile-dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            border-left: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        header.srs-header .mobile-dropdown-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-left-color: #7B46A5;
+        }
+
+        header.srs-header .mobile-dropdown-category {
+            padding: 8px 20px;
+            font-size: 12px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 4px;
+        }
+
+        header.srs-header .mobile-dropdown-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            background: none;
+            border: none;
+            color: white;
+            padding: 15px 0;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        header.srs-header .mobile-dropdown-toggle .dropdown-icon {
+            transition: transform 0.3s ease;
+        }
+
+        header.srs-header .mobile-dropdown-toggle.active .dropdown-icon {
+            transform: rotate(180deg);
+        }
+
+        header.srs-header .actions-section {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            flex-shrink: 0;
+        }
+
+        header.srs-header .action-icon {
+            width: 25px;
+            height: 24px;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        header.srs-header .action-icon:hover {
+            opacity: 0.8;
+        }
+
+        header.srs-header .cart-icon {
+            position: relative;
+        }
+
+        header.srs-header .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #7B46A5;
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+
+        header.srs-header .login-link {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            transition: opacity 0.3s ease;
+        }
+
+        header.srs-header .login-link:hover {
+            opacity: 0.8;
+        }
+
+        header.srs-header .signup-btn {
+            background: white;
+            color: #020A08;
+            padding: 10px 22px;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        header.srs-header .signup-btn:hover {
+            background: #f0f0f0;
+            transform: translateY(-1px);
+        }
+
+        header.srs-header .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        header.srs-header .hamburger-line {
+            width: 25px;
+            height: 3px;
+            background: white;
+            transition: all 0.3s ease;
+        }
+
+        header.srs-header .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 72px;
+            left: 0;
+            right: 0;
+            background: #020A08;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        header.srs-header .mobile-nav.active {
+            display: block;
+        }
+
+        header.srs-header .mobile-nav-link {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        header.srs-header .mobile-nav-link:last-child {
+            border-bottom: none;
+        }
+
+        header.srs-header .mobile-actions {
+            display: none;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        header.srs-header .mobile-actions.active {
+            display: flex;
+        }
+
+        header.srs-header .mobile-action-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            text-decoration: none;
+            padding: 10px 0;
+        }
+
+        /* Search Popup Styles */
+        .search-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 100px;
+        }
+
+        .search-popup.active {
+            display: flex;
+        }
+
+        .search-container {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            position: relative;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .search-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .search-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #020A08;
+            margin: 0;
+        }
+
+        .close-search {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+            padding: 5px;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .close-search:hover {
+            background: #f0f0f0;
+            color: #020A08;
+        }
+
+        .search-input-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .search-input:focus {
+            border-color: #7B46A5;
+        }
+
+        .search-input::placeholder {
+            color: #999;
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #7B46A5;
+            border: none;
+            border-radius: 6px;
+            padding: 8px 12px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .search-btn:hover {
+            background: #6a3d8f;
+        }
+
+        .search-btn svg {
+            width: 16px;
+            height: 16px;
+            fill: white;
+        }
+
+        .search-suggestions {
+            margin-top: 15px;
+        }
+
+        .suggestion-title {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .suggestion-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .suggestion-item:hover {
+            background: #f5f5f5;
+        }
+
+        .suggestion-icon {
+            width: 20px;
+            height: 20px;
+            background: #7B46A5;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            header.srs-header .nav-section {
+                display: none;
+            }
+
+            header.srs-header .actions-section {
+                display: none;
+            }
+
+            header.srs-header .hamburger-menu {
+                display: flex;
+            }
+
+            header.srs-header .mobile-actions {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header.srs-header .header-container {
+                min-height: 60px;
+            }
+
+            header.srs-header .logo-title h1 {
+                font-size: 20px;
+            }
+
+            header.srs-header .logo-subtitle {
+                font-size: 10px;
+            }
+
+            header.srs-header .mobile-nav {
+                top: 60px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header.srs-header {
+                padding: 0 15px;
+            }
+
+            header.srs-header .logo-section {
+                gap: 6px;
+            }
+
+            header.srs-header .logo-icon {
+                width: 35px;
+                height: 32px;
+            }
+
+            header.srs-header .logo-title h1 {
+                font-size: 18px;
+            }
+        }
+    </style>
+<header class="srs-header">
+        <div class="header-container">
+            <div class="logo-section">
+                {% if section.settings.logo_image != blank %}
+                    <img src="{{ section.settings.logo_image | img_url: 'medium' }}" alt="{{ shop.name }}" class="logo-image">
+                {% else %}
+                    <div class="logo-icon">
+                        <div class="cap"></div>
+                        <div class="bookmark"></div>
+                        <div class="highlight"></div>
+                    </div>
+                {% endif %}
+            </div>
+
+            <nav class="nav-section">
+                {% for link in linklists[section.settings.main_menu].links %}
+                    {% if link.links != blank %}
+                        <div class="nav-link">
+                            <p>{{ link.title }}</p>
+                            <svg class="dropdown-icon" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.31437 8.94963C9.7049 9.34015 9.7049 9.97332 9.31438 10.3638C8.92385 10.7544 8.29068 10.7544 7.90016 10.3638L3.65752 6.12121C3.26699 5.73068 3.26699 5.09751 3.65752 4.70699C4.04804 4.31646 4.68121 4.31646 5.07174 4.70699L9.31437 8.94963Z"
+                                    fill="white" />
+                                <path
+                                    d="M10.0684 10.3696C9.67791 10.7601 9.04474 10.7601 8.65422 10.3696C8.26369 9.97903 8.26369 9.34586 8.65422 8.95533L12.8969 4.71269C13.2874 4.32217 13.9206 4.32217 14.3111 4.71269C14.7016 5.10322 14.7016 5.73639 14.3111 6.12691L10.0684 10.3696Z"
+                                    fill="white" />
+                            </svg>
+                            <div class="dropdown-menu">
+                                {% for child_link in link.links %}
+                                    {% if child_link.links != blank %}
+                                        <div class="dropdown-category">{{ child_link.title }}</div>
+                                        {% for grandchild_link in child_link.links %}
+                                            <a href="{{ grandchild_link.url }}" class="dropdown-item">
+                                                <div class="dropdown-item-icon">{{ grandchild_link.title | slice: 0, 2 | upcase }}</div>
+                                                <p>{{ grandchild_link.title }}</p>
+                                            </a>
+                                        {% endfor %}
+                                        {% unless forloop.last %}
+                                            <div class="dropdown-divider"></div>
+                                        {% endunless %}
+                                    {% else %}
+                                        <a href="{{ child_link.url }}" class="dropdown-item">
+                                            <div class="dropdown-item-icon">{{ child_link.title | slice: 0, 2 | upcase }}</div>
+                                            <p>{{ child_link.title }}</p>
+                                        </a>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% else %}
+                        <a href="{{ link.url }}" class="nav-link">
+                            <p>{{ link.title }}</p>
+                        </a>
+                    {% endif %}
+                {% endfor %}
+            </nav>
+
+            <div class="actions-section">
+                <svg class="action-icon search-trigger" onclick="openSearchPopup()" viewBox="0 0 25 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M22.2614 20.2898L19.4314 17.4698C20.9655 15.5745 21.7139 13.1627 21.5223 10.7318C21.3306 8.30095 20.2134 6.03628 18.4011 4.40483C16.5889 2.77337 14.2196 1.89953 11.782 1.96348C9.34444 2.02744 7.0243 3.02431 5.30007 4.74855C3.57583 6.47279 2.57895 8.79292 2.515 11.2305C2.45104 13.6681 3.32489 16.0373 4.95634 17.8496C6.58779 19.6619 8.85246 20.7791 11.2834 20.9707C13.7143 21.1624 16.126 20.414 18.0214 18.8798L20.8414 21.7098C20.9343 21.8036 21.0449 21.878 21.1668 21.9287C21.2886 21.9795 21.4193 22.0056 21.5514 22.0056C21.6834 22.0056 21.8141 21.9795 21.9359 21.9287C22.0578 21.878 22.1684 21.8036 22.2614 21.7098C22.3551 21.6169 22.4295 21.5063 22.4803 21.3844C22.531 21.2626 22.5572 21.1319 22.5572 20.9998C22.5572 20.8678 22.531 20.7371 22.4803 20.6153C22.4295 20.4934 22.3551 20.3828 22.2614 20.2898ZM4.55136 11.4998C4.55136 10.0165 4.99123 8.56644 5.81534 7.33307C6.63945 6.0997 7.81079 5.13841 9.18123 4.57075C10.5517 4.00309 12.0597 3.85457 13.5145 4.14396C14.9694 4.43335 16.3058 5.14765 17.3547 6.19655C18.4036 7.24544 19.1179 8.58181 19.4073 10.0367C19.6966 11.4915 19.5481 12.9995 18.9805 14.37C18.4128 15.7404 17.4515 16.9118 16.2181 17.7359C14.9848 18.56 13.5347 18.9998 12.0514 18.9998C10.0622 18.9998 8.15458 18.2097 6.74806 16.8031C5.34154 15.3966 4.55136 13.489 4.55136 11.4998Z"
+                        fill="white" />
+                </svg>
+                <a href="{{ routes.cart_url }}" class="action-icon cart-icon">
+                    <svg viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_26_1426)">
+                            <path
+                                d="M8.28381 15.5156H8.28491C8.28582 15.5156 8.28674 15.5154 8.28765 15.5154H21.0356C21.3495 15.5154 21.6254 15.3072 21.7117 15.0054L24.5242 5.16168C24.5848 4.94946 24.5423 4.72131 24.4095 4.54516C24.2766 4.36902 24.0688 4.26538 23.8481 4.26538H6.66223L6.1596 2.00348C6.08801 1.68176 5.80273 1.45288 5.47314 1.45288H1.25439C0.866028 1.45288 0.55127 1.76764 0.55127 2.15601C0.55127 2.54437 0.866028 2.85913 1.25439 2.85913H4.90918C4.99817 3.25995 7.31445 13.6834 7.44775 14.2831C6.7005 14.6079 6.17627 15.353 6.17627 16.2185C6.17627 17.3816 7.12255 18.3279 8.28564 18.3279H21.0356C21.424 18.3279 21.7388 18.0131 21.7388 17.6247C21.7388 17.2364 21.424 16.9216 21.0356 16.9216H8.28564C7.89801 16.9216 7.58252 16.6061 7.58252 16.2185C7.58252 15.8314 7.89691 15.5165 8.28381 15.5156ZM22.9159 5.67163L20.5052 14.1091H8.8496L6.97461 5.67163H22.9159Z"
+                                fill="white" />
+                            <path
+                                d="M7.58252 20.4373C7.58252 21.6003 8.52881 22.5466 9.69189 22.5466C10.855 22.5466 11.8013 21.6003 11.8013 20.4373C11.8013 19.2742 10.855 18.3279 9.69189 18.3279C8.52881 18.3279 7.58252 19.2742 7.58252 20.4373ZM9.69189 19.7341C10.0795 19.7341 10.395 20.0496 10.395 20.4373C10.395 20.8249 10.0795 21.1404 9.69189 21.1404C9.30426 21.1404 8.98877 20.8249 8.98877 20.4373C8.98877 20.0496 9.30426 19.7341 9.69189 19.7341Z"
+                                fill="white" />
+                            <path
+                                d="M17.52 20.4373C17.52 21.6003 18.4663 22.5466 19.6294 22.5466C20.7925 22.5466 21.7388 21.6003 21.7388 20.4373C21.7388 19.2742 20.7925 18.3279 19.6294 18.3279C18.4663 18.3279 17.52 19.2742 17.52 20.4373ZM19.6294 19.7341C20.017 19.7341 20.3325 20.0496 20.3325 20.4373C20.3325 20.8249 20.017 21.1404 19.6294 21.1404C19.2418 21.1404 18.9263 20.8249 18.9263 20.4373C18.9263 20.0496 19.2418 19.7341 19.6294 19.7341Z"
+                                fill="white" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_26_1426">
+                                <rect width="24" height="24" fill="white" transform="translate(0.55127 -0.000244141)" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                    {% if cart.item_count > 0 %}
+                        <span class="cart-count">{{ cart.item_count }}</span>
+                    {% endif %}
+                </a>
+                
+                {% if customer %}
+                    <a href="{{ routes.account_url }}" class="login-link">
+                        <p>My Account</p>
+                    </a>
+                {% else %}
+                    <a href="{{ routes.account_login_url }}" class="login-link">
+                        <p>Log in</p>
+                    </a>
+                    <a href="{{ routes.account_register_url }}" class="signup-btn">
+                        <p>Sign up</p>
+                    </a>
+                {% endif %}
+            </div>
+
+            <div class="hamburger-menu" onclick="toggleMobileNav()">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            </div>
+        </div>
+
+        <nav class="mobile-nav" id="mobileNav">
+            {% for link in linklists[section.settings.main_menu].links %}
+                {% if link.links != blank %}
+                    <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown('{{ link.handle }}')">
+                        <p>{{ link.title }}</p>
+                        <svg class="dropdown-icon" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9.31437 8.94963C9.7049 9.34015 9.7049 9.97332 9.31438 10.3638C8.92385 10.7544 8.29068 10.7544 7.90016 10.3638L3.65752 6.12121C3.26699 5.73068 3.26699 5.09751 3.65752 4.70699C4.04804 4.31646 4.68121 4.31646 5.07174 4.70699L9.31437 8.94963Z"
+                                fill="white" />
+                            <path
+                                d="M10.0684 10.3696C9.67791 10.7601 9.04474 10.7601 8.65422 10.3696C8.26369 9.97903 8.26369 9.34586 8.65422 8.95533L12.8969 4.71269C13.2874 4.32217 13.9206 4.32217 14.3111 4.71269C14.7016 5.10322 14.7016 5.73639 14.3111 6.12691L10.0684 10.3696Z"
+                                fill="white" />
+                        </svg>
+                    </button>
+                    <div class="mobile-dropdown" id="{{ link.handle }}-dropdown">
+                        {% for child_link in link.links %}
+                            {% if child_link.links != blank %}
+                                <div class="mobile-dropdown-category">{{ child_link.title }}</div>
+                                {% for grandchild_link in child_link.links %}
+                                    <a href="{{ grandchild_link.url }}" class="mobile-dropdown-item">
+                                        <div class="dropdown-item-icon">{{ grandchild_link.title | slice: 0, 2 | upcase }}</div>
+                                        <p>{{ grandchild_link.title }}</p>
+                                    </a>
+                                {% endfor %}
+                            {% else %}
+                                <a href="{{ child_link.url }}" class="mobile-dropdown-item">
+                                    <div class="dropdown-item-icon">{{ child_link.title | slice: 0, 2 | upcase }}</div>
+                                    <p>{{ child_link.title }}</p>
+                                </a>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <a href="{{ link.url }}" class="mobile-nav-link">
+                        <p>{{ link.title }}</p>
+                    </a>
+                {% endif %}
+            {% endfor %}
+
+            <div class="mobile-actions">
+                <a href="#" class="mobile-action-btn" onclick="openSearchPopup()">
+                    <svg class="action-icon" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M22.2614 20.2898L19.4314 17.4698C20.9655 15.5745 21.7139 13.1627 21.5223 10.7318C21.3306 8.30095 20.2134 6.03628 18.4011 4.40483C16.5889 2.77337 14.2196 1.89953 11.782 1.96348C9.34444 2.02744 7.0243 3.02431 5.30007 4.74855C3.57583 6.47279 2.57895 8.79292 2.515 11.2305C2.45104 13.6681 3.32489 16.0373 4.95634 17.8496C6.58779 19.6619 8.85246 20.7791 11.2834 20.9707C13.7143 21.1624 16.126 20.414 18.0214 18.8798L20.8414 21.7098C20.9343 21.8036 21.0449 21.878 21.1668 21.9287C21.2886 21.9795 21.4193 22.0056 21.5514 22.0056C21.6834 22.0056 21.8141 21.9795 21.9359 21.9287C22.0578 21.878 22.1684 21.8036 22.2614 21.7098C22.3551 21.6169 22.4295 21.5063 22.4803 21.3844C22.531 21.2626 22.5572 21.1319 22.5572 20.9998C22.5572 20.8678 22.531 20.7371 22.4803 20.6153C22.4295 20.4934 22.3551 20.3828 22.2614 20.2898ZM4.55136 11.4998C4.55136 10.0165 4.99123 8.56644 5.81534 7.33307C6.63945 6.0997 7.81079 5.13841 9.18123 4.57075C10.5517 4.00309 12.0597 3.85457 13.5145 4.14396C14.9694 4.43335 16.3058 5.14765 17.3547 6.19655C18.4036 7.24544 19.1179 8.58181 19.4073 10.0367C19.6966 11.4915 19.5481 12.9995 18.9805 14.37C18.4128 15.7404 17.4515 16.9118 16.2181 17.7359C14.9848 18.56 13.5347 18.9998 12.0514 18.9998C10.0622 18.9998 8.15458 18.2097 6.74806 16.8031C5.34154 15.3966 4.55136 13.489 4.55136 11.4998Z"
+                            fill="white" />
+                    </svg>
+                    <p>Search</p>
+                </a>
+                <a href="{{ routes.cart_url }}" class="mobile-action-btn">
+                    <svg class="action-icon" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_26_1426)">
+                            <path
+                                d="M8.28381 15.5156H8.28491C8.28582 15.5156 8.28674 15.5154 8.28765 15.5154H21.0356C21.3495 15.5154 21.6254 15.3072 21.7117 15.0054L24.5242 5.16168C24.5848 4.94946 24.5423 4.72131 24.4095 4.54516C24.2766 4.36902 24.0688 4.26538 23.8481 4.26538H6.66223L6.1596 2.00348C6.08801 1.68176 5.80273 1.45288 5.47314 1.45288H1.25439C0.866028 1.45288 0.55127 1.76764 0.55127 2.15601C0.55127 2.54437 0.866028 2.85913 1.25439 2.85913H4.90918C4.99817 3.25995 7.31445 13.6834 7.44775 14.2831C6.7005 14.6079 6.17627 15.353 6.17627 16.2185C6.17627 17.3816 7.12255 18.3279 8.28564 18.3279H21.0356C21.424 18.3279 21.7388 18.0131 21.7388 17.6247C21.7388 17.2364 21.424 16.9216 21.0356 16.9216H8.28564C7.89801 16.9216 7.58252 16.6061 7.58252 16.2185C7.58252 15.8314 7.89691 15.5165 8.28381 15.5156ZM22.9159 5.67163L20.5052 14.1091H8.8496L6.97461 5.67163H22.9159Z"
+                                fill="white" />
+                            <path
+                                d="M7.58252 20.4373C7.58252 21.6003 8.52881 22.5466 9.69189 22.5466C10.855 22.5466 11.8013 21.6003 11.8013 20.4373C11.8013 19.2742 10.855 18.3279 9.69189 18.3279C8.52881 18.3279 7.58252 19.2742 7.58252 20.4373ZM9.69189 19.7341C10.0795 19.7341 10.395 20.0496 10.395 20.4373C10.395 20.8249 10.0795 21.1404 9.69189 21.1404C9.30426 21.1404 8.98877 20.8249 8.98877 20.4373C8.98877 20.0496 9.30426 19.7341 9.69189 19.7341Z"
+                                fill="white" />
+                            <path
+                                d="M17.52 20.4373C17.52 21.6003 18.4663 22.5466 19.6294 22.5466C20.7925 22.5466 21.7388 21.6003 21.7388 20.4373C21.7388 19.2742 20.7925 18.3279 19.6294 18.3279C18.4663 18.3279 17.52 19.2742 17.52 20.4373ZM19.6294 19.7341C20.017 19.7341 20.3325 20.0496 20.3325 20.4373C20.3325 20.8249 20.017 21.1404 19.6294 21.1404C19.2418 21.1404 18.9263 20.8249 18.9263 20.4373C18.9263 20.0496 19.2418 19.7341 19.6294 19.7341Z"
+                                fill="white" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_26_1426">
+                                <rect width="24" height="24" fill="white" transform="translate(0.55127 -0.000244141)" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                    <p>Cart {% if cart.item_count > 0 %}({{ cart.item_count }}){% endif %}</p>
+                </a>
+                
+                {% if customer %}
+                    <a href="{{ routes.account_url }}" class="mobile-action-btn">
+                        <p>My Account</p>
+                    </a>
+                {% else %}
+                    <a href="{{ routes.account_login_url }}" class="mobile-action-btn">
+                        <p>Log in</p>
+                    </a>
+                    <a href="{{ routes.account_register_url }}" class="signup-btn">
+                        <p>Sign up</p>
+                    </a>
+                {% endif %}
+            </div>
+        </nav>
+    </header>
+
+    <!-- Search Popup -->
+    <div class="search-popup" id="searchPopup">
+        <div class="search-container">
+            <div class="search-header">
+                <h2 class="search-title">{{ section.settings.search_title | default: 'Search Courses' }}</h2>
+                <button class="close-search" onclick="closeSearchPopup()">×</button>
+            </div>
+            <form action="{{ routes.search_url }}" method="get" class="search-form">
+                <div class="search-input-container">
+                    <input type="text" class="search-input" id="searchInput" name="q"
+                        placeholder="{{ section.settings.search_placeholder | default: 'Search for courses, topics, or instructors...' }}" autocomplete="off">
+                    <button type="submit" class="search-btn">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M21 21L16.514 16.506L21 21ZM19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z"
+                                stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+            </form>
+            {% if section.settings.show_popular_searches %}
+                <div class="search-suggestions">
+                    <p class="suggestion-title">{{ section.settings.popular_searches_title | default: 'Popular Searches' }}</p>
+                    {% assign search_terms = section.settings.popular_search_terms | split: '\n' %}
+                    {% for search_term in search_terms %}
+                        {% if search_term != blank %}
+                            <a href="{{ routes.search_url }}?q={{ search_term | url_encode }}" class="suggestion-item">
+                                <div class="suggestion-icon">{{ search_term | slice: 0, 2 | upcase }}</div>
+                                <p>{{ search_term }}</p>
+                            </a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <script>
+        function toggleMobileNav() {
+            const mobileNav = document.getElementById('mobileNav');
+            const hamburger = document.querySelector('.hamburger-menu');
+
+            mobileNav.classList.toggle('active');
+            hamburger.classList.toggle('active');
+
+            // Animate hamburger lines
+            const lines = hamburger.querySelectorAll('.hamburger-line');
+            if (hamburger.classList.contains('active')) {
+                lines[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                lines[1].style.opacity = '0';
+                lines[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+            } else {
+                lines[0].style.transform = 'none';
+                lines[1].style.opacity = '1';
+                lines[2].style.transform = 'none';
+            }
+        }
+
+        // Close mobile nav when clicking outside
+        document.addEventListener('click', function (event) {
+            const mobileNav = document.getElementById('mobileNav');
+            const hamburger = document.querySelector('.hamburger-menu');
+
+            if (!mobileNav.contains(event.target) && !hamburger.contains(event.target)) {
+                mobileNav.classList.remove('active');
+                hamburger.classList.remove('active');
+
+                const lines = hamburger.querySelectorAll('.hamburger-line');
+                lines[0].style.transform = 'none';
+                lines[1].style.opacity = '1';
+                lines[2].style.transform = 'none';
+            }
+        });
+
+        // Search Popup Functions
+        function openSearchPopup() {
+            const searchPopup = document.getElementById('searchPopup');
+            const searchInput = document.getElementById('searchInput');
+
+            searchPopup.classList.add('active');
+            searchInput.focus();
+
+            // Close mobile nav if open
+            const mobileNav = document.getElementById('mobileNav');
+            const hamburger = document.querySelector('.hamburger-menu');
+            if (mobileNav.classList.contains('active')) {
+                mobileNav.classList.remove('active');
+                hamburger.classList.remove('active');
+
+                const lines = hamburger.querySelectorAll('.hamburger-line');
+                lines[0].style.transform = 'none';
+                lines[1].style.opacity = '1';
+                lines[2].style.transform = 'none';
+            }
+        }
+
+        function closeSearchPopup() {
+            const searchPopup = document.getElementById('searchPopup');
+            searchPopup.classList.remove('active');
+        }
+
+        function performSearch() {
+            const searchForm = document.querySelector('.search-form');
+            const searchInput = document.getElementById('searchInput');
+            const query = searchInput.value.trim();
+
+            if (query) {
+                searchForm.submit();
+            }
+        }
+
+        // Close search popup when clicking outside
+        document.addEventListener('click', function (event) {
+            const searchPopup = document.getElementById('searchPopup');
+            const searchContainer = document.querySelector('.search-container');
+
+            if (searchPopup.classList.contains('active') &&
+                !searchContainer.contains(event.target) &&
+                !event.target.classList.contains('search-trigger')) {
+                closeSearchPopup();
+            }
+        });
+
+        // Handle Enter key in search input
+        document.getElementById('searchInput').addEventListener('keypress', function (event) {
+            if (event.key === 'Enter') {
+                performSearch();
+            }
+        });
+
+        // Handle Escape key to close search popup
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') {
+                closeSearchPopup();
+            }
+        });
+
+        // Mobile Dropdown Functions
+        function toggleMobileDropdown(type) {
+            const dropdown = document.getElementById(type + '-dropdown');
+            const toggle = event.target.closest('.mobile-dropdown-toggle');
+
+            // Close all other dropdowns first
+            const allDropdowns = document.querySelectorAll('.mobile-dropdown');
+            const allToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+
+            allDropdowns.forEach(d => {
+                if (d !== dropdown) {
+                    d.classList.remove('active');
+                }
+            });
+
+            allToggles.forEach(t => {
+                if (t !== toggle) {
+                    t.classList.remove('active');
+                }
+            });
+
+            // Toggle current dropdown
+            dropdown.classList.toggle('active');
+            toggle.classList.toggle('active');
+        }
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function (event) {
+            if (!event.target.closest('.mobile-dropdown-toggle') && !event.target.closest('.mobile-dropdown')) {
+                const allDropdowns = document.querySelectorAll('.mobile-dropdown');
+                const allToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+
+                allDropdowns.forEach(d => d.classList.remove('active'));
+                allToggles.forEach(t => t.classList.remove('active'));
+            }
+        });
+    </script>
+
+    {% schema %}
+    {
+        "name": "Header",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "logo_image",
+                "label": "Logo Image"
+            },
+            {
+                "type": "text",
+                "id": "logo_text",
+                "label": "Logo Text",
+                "default": "E-Learn"
+            },
+            {
+                "type": "text",
+                "id": "logo_subtitle",
+                "label": "Logo Subtitle",
+                "default": "Premium Learning"
+            },
+            {
+                "type": "link_list",
+                "id": "main_menu",
+                "label": "Main Menu",
+                "default": "main-menu"
+            },
+            {
+                "type": "header",
+                "content": "Search Settings"
+            },
+            {
+                "type": "text",
+                "id": "search_title",
+                "label": "Search Title",
+                "default": "Search Courses"
+            },
+            {
+                "type": "text",
+                "id": "search_placeholder",
+                "label": "Search Placeholder",
+                "default": "Search for courses, topics, or instructors..."
+            },
+            {
+                "type": "checkbox",
+                "id": "show_popular_searches",
+                "label": "Show Popular Searches",
+                "default": true
+            },
+            {
+                "type": "text",
+                "id": "popular_searches_title",
+                "label": "Popular Searches Title",
+                "default": "Popular Searches"
+            },
+            {
+                "type": "textarea",
+                "id": "popular_search_terms",
+                "label": "Popular Search Terms (one per line)",
+                "default": "JavaScript\nPython\nReact\nData Science",
+                "info": "Enter each search term on a new line"
+            }
+        ],
+        "presets": [
+            {
+                "name": "SA Header",
+                "category": "Header",
+                "settings": {
+                    "logo_text": "E-Learn",
+                    "logo_subtitle": "Premium Learning",
+                    "search_title": "Search Courses",
+                    "search_placeholder": "Search for courses, topics, or instructors...",
+                    "show_popular_searches": true,
+                    "popular_searches_title": "Popular Searches",
+                    "popular_search_terms": "JavaScript\nPython\nReact\nData Science"
+                }
+            }
+        ]
+    }
+    {% endschema %}

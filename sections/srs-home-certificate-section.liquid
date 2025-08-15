@@ -1,0 +1,789 @@
+<style>
+    .srs-certificate-section * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  
+    .srs-certificate-section {
+      background: {{ section.settings.background_color }};
+      padding: {{ section.settings.section_padding_top }}px {{ section.settings.section_padding_sides }}px {{ section.settings.section_padding_bottom }}px;
+      font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+    }
+  
+    .srs-certificate-section .srs-container {
+      max-width: {{ section.settings.max_width }}px;
+      margin: 0 auto;
+      padding: 0 {{ section.settings.container_padding }}px;
+    }
+  
+    #{{ section.id }} .certificate-content {
+      display: flex;
+      flex-direction: {{ section.settings.desktop_layout }};
+      justify-content: space-between;
+      align-items: center;
+      gap: {{ section.settings.content_gap }}px;
+    }
+  
+    .srs-certificate-section .certificate-image-container {
+      flex: 1;
+      max-width: {{ section.settings.image_width }}%;
+      position: relative;
+    }
+
+    .srs-certificate-section .certificate-image {
+      width: 100%;
+      max-width: {{ section.settings.image_max_width }}px;
+      height: auto;
+      display: block;
+      border-radius: {{ section.settings.image_border_radius }}px;
+    }
+      .srs-certificate-section .certificate-image.row-reverse{
+    margin-left: auto;
+  }
+  
+    .srs-certificate-section .certificate-text-content {
+      flex: 1;
+      max-width: calc(100% - {{ section.settings.image_width }}% - {{ section.settings.content_gap }}px);
+      display: flex;
+      flex-direction: column;
+      gap: {{ section.settings.text_content_gap }}px;
+    }
+  
+    .srs-certificate-section .main-heading {
+      color: {{ section.settings.heading_color }};
+      font-size: {{ section.settings.heading_font_size }}px;
+      font-weight: {{ section.settings.heading_font_weight }};
+      line-height: {{ section.settings.heading_line_height }};
+      margin-bottom: {{ section.settings.heading_bottom_margin }}px;
+    }
+  
+    .srs-certificate-section .main-description {
+      color: {{ section.settings.description_color }};
+      font-size: {{ section.settings.description_font_size }}px;
+      font-weight: {{ section.settings.description_font_weight }};
+      line-height: {{ section.settings.description_line_height }};
+      letter-spacing: {{ section.settings.description_letter_spacing }}px;
+      margin-bottom: {{ section.settings.description_bottom_margin }}px;
+    }
+  
+    .srs-certificate-section .features-list {
+      display: flex;
+      flex-direction: column;
+      gap: {{ section.settings.features_gap }}px;
+    }
+  
+    .srs-certificate-section .feature-item {
+      padding-left: {{ section.settings.feature_border_left_padding }}px;
+      border-left: {{ section.settings.feature_border_left_width }}px solid {{ section.settings.feature_border_left_color }};
+      display: flex;
+      flex-direction: column;
+      gap: {{ section.settings.feature_item_gap }}px;
+    }
+  
+    .srs-certificate-section .feature-title {
+      color: {{ section.settings.feature_title_color }};
+      font-size: {{ section.settings.feature_title_font_size }}px;
+      font-weight: {{ section.settings.feature_title_font_weight }};
+      line-height: {{ section.settings.feature_title_line_height }};
+      letter-spacing: {{ section.settings.feature_title_letter_spacing }}px;
+    }
+  
+    .srs-certificate-section .feature-description {
+      color: {{ section.settings.feature_description_color }};
+      font-size: {{ section.settings.feature_description_font_size }}px;
+      font-weight: {{ section.settings.feature_description_font_weight }};
+      line-height: {{ section.settings.feature_description_line_height }};
+      letter-spacing: {{ section.settings.feature_description_letter_spacing }}px;
+    }
+  
+    .srs-certificate-section .discount-code {
+      color: {{ section.settings.discount_code_color }};
+      font-weight: {{ section.settings.discount_code_font_weight }};
+    }
+  
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+    #{{ section.id }} .certificate-content {
+        flex-direction: {{ section.settings.mobile_layout }};
+        text-align: {{ section.settings.mobile_text_align }};
+      }
+  
+      .srs-certificate-section .certificate-image-container,
+      .srs-certificate-section .certificate-text-content {
+        max-width: 100%;
+      }
+  
+      .srs-certificate-section .main-heading {
+        font-size: {{ section.settings.mobile_heading_font_size }}px;
+      }
+  
+      .srs-certificate-section .feature-title {
+        font-size: {{ section.settings.mobile_feature_title_font_size }}px;
+      }
+  
+      .srs-certificate-section .main-description {
+        font-size: {{ section.settings.mobile_description_font_size }}px;
+      }
+  
+      .srs-certificate-section .feature-description {
+        font-size: {{ section.settings.mobile_feature_description_font_size }}px;
+      }
+    }
+  
+    @media (max-width: 768px) {
+      .srs-certificate-section {
+        padding: {{ section.settings.mobile_section_padding_top }}px {{ section.settings.mobile_section_padding_sides }}px {{ section.settings.mobile_section_padding_bottom }}px;
+      }
+    }
+  </style>
+  
+  <section class="srs-certificate-section" id="{{ section.id }}">
+    <div class="srs-container">
+      <div class="certificate-content">
+        <div class="certificate-image-container">
+          {% if section.settings.certificate_image != blank %}
+            <img class="certificate-image {{ section.settings.desktop_layout }}" 
+                 src="{{ section.settings.certificate_image | img_url: '800x' }}" 
+                 alt="{{ section.settings.certificate_image.alt | escape }}" 
+                 loading="lazy" />
+          {% else %}
+            <img class="certificate-image {{ section.settings.desktop_layout }} " src="https://placehold.co/513x680" alt="Certificate" />
+          {% endif %}
+        </div>
+        <div class="certificate-text-content">
+          <div class="main-content">
+            <h1 class="main-heading">{{ section.settings.heading_text }}</h1>
+            <p class="main-description">{{ section.settings.description_text }}</p>
+          </div>
+          <div class="features-list">
+            {% for block in section.blocks %}
+              {% case block.type %}
+                {% when 'feature' %}
+                  <div class="feature-item" {{ block.shopify_attributes }}>
+                    <h2 class="feature-title">{{ block.settings.feature_title }}</h2>
+                    <p class="feature-description">{{ block.settings.feature_description }}</p>
+                  </div>
+                {% when 'discount' %}
+                  <div class="feature-item" {{ block.shopify_attributes }}>
+                    <h2 class="feature-title">{{ block.settings.discount_title }}</h2>
+                    <p class="feature-description">{{ block.settings.discount_description | replace: '[code]', '<span class="discount-code">' | append: '</span>' }}</p>
+                  </div>
+              {% endcase %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  {% schema %}
+  {
+    "name": "Certificate Section",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Layout Settings"
+      },
+      {
+        "type": "range",
+        "id": "max_width",
+        "min": 800,
+        "max": 2000,
+        "step": 20,
+        "unit": "px",
+        "label": "Section Max Width",
+        "default": 1460
+      },
+      {
+        "type": "range",
+        "id": "container_padding",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Container Side Padding",
+        "default": 20
+      },
+      {
+        "type": "range",
+        "id": "section_padding_top",
+        "min": 0,
+        "max": 200,
+        "step": 4,
+        "unit": "px",
+        "label": "Section Padding Top",
+        "default": 128
+      },
+      {
+        "type": "range",
+        "id": "section_padding_bottom",
+        "min": 0,
+        "max": 200,
+        "step": 4,
+        "unit": "px",
+        "label": "Section Padding Bottom",
+        "default": 128
+      },
+      {
+        "type": "range",
+        "id": "section_padding_sides",
+        "min": 0,
+        "max": 200,
+        "step": 4,
+        "unit": "px",
+        "label": "Section Padding Sides",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "content_gap",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Content Gap (Image to Text)",
+        "default": 40
+      },
+      {
+        "type": "select",
+        "id": "desktop_layout",
+        "label": "Desktop Layout",
+        "options": [
+          {
+            "value": "row",
+            "label": "Image Left, Text Right"
+          },
+          {
+            "value": "row-reverse",
+            "label": "Text Left, Image Right"
+          }
+        ],
+        "default": "row"
+      },
+      {
+        "type": "range",
+        "id": "text_content_gap",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Text Content Inner Gap",
+        "default": 24
+      },
+      {
+        "type": "range",
+        "id": "features_gap",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Features List Gap",
+        "default": 32
+      },
+      {
+        "type": "range",
+        "id": "feature_item_gap",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "unit": "px",
+        "label": "Feature Item Inner Gap",
+        "default": 8
+      },
+      {
+        "type": "range",
+        "id": "image_width",
+        "min": 10,
+        "max": 90,
+        "step": 1,
+        "unit": "%",
+        "label": "Image Width Percentage",
+        "default": 50
+      },
+      {
+        "type": "range",
+        "id": "image_max_width",
+        "min": 100,
+        "max": 1000,
+        "step": 10,
+        "unit": "px",
+        "label": "Image Max Width",
+        "default": 510
+      },
+      {
+        "type": "range",
+        "id": "image_border_radius",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "unit": "px",
+        "label": "Image Border Radius",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "Image Settings"
+      },
+      {
+        "type": "image_picker",
+        "id": "certificate_image",
+        "label": "Certificate Image"
+      },
+      {
+        "type": "header",
+        "content": "Content Settings"
+      },
+      {
+        "type": "textarea",
+        "id": "heading_text",
+        "label": "Heading Text",
+        "default": "Earn a UK-Endorsed Certificate<br/>That Opens Doors"
+      },
+      {
+        "type": "textarea",
+        "id": "description_text",
+        "label": "Description Text",
+        "default": "Showcase your skills with globally recognised certifications from E-Learn — fully CPD and QLS endorsed."
+      },
+      {
+        "type": "header",
+        "content": "Typography Settings"
+      },
+      {
+        "type": "range",
+        "id": "heading_font_size",
+        "min": 12,
+        "max": 72,
+        "step": 1,
+        "unit": "px",
+        "label": "Heading Font Size",
+        "default": 48
+      },
+      {
+        "type": "range",
+        "id": "heading_font_weight",
+        "min": 100,
+        "max": 900,
+        "step": 100,
+        "label": "Heading Font Weight",
+        "default": 300
+      },
+      {
+        "type": "range",
+        "id": "heading_line_height",
+        "min": 0.8,
+        "max": 2,
+        "step": 0.1,
+        "label": "Heading Line Height",
+        "default": 1.1
+      },
+      {
+        "type": "range",
+        "id": "heading_bottom_margin",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Heading Bottom Margin",
+        "default": 24
+      },
+      {
+        "type": "range",
+        "id": "description_font_size",
+        "min": 12,
+        "max": 36,
+        "step": 1,
+        "unit": "px",
+        "label": "Description Font Size",
+        "default": 20
+      },
+      {
+        "type": "range",
+        "id": "description_font_weight",
+        "min": 100,
+        "max": 900,
+        "step": 100,
+        "label": "Description Font Weight",
+        "default": 600
+      },
+      {
+        "type": "range",
+        "id": "description_line_height",
+        "min": 0.8,
+        "max": 2,
+        "step": 0.1,
+        "label": "Description Line Height",
+        "default": 1.4
+      },
+      {
+        "type": "range",
+        "id": "description_letter_spacing",
+        "min": 0,
+        "max": 2,
+        "step": 0.1,
+        "unit": "px",
+        "label": "Description Letter Spacing",
+        "default": 0.3
+      },
+      {
+        "type": "range",
+        "id": "description_bottom_margin",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Description Bottom Margin",
+        "default": 48
+      },
+      {
+        "type": "range",
+        "id": "feature_title_font_size",
+        "min": 12,
+        "max": 48,
+        "step": 1,
+        "unit": "px",
+        "label": "Feature Title Font Size",
+        "default": 32
+      },
+      {
+        "type": "range",
+        "id": "feature_title_font_weight",
+        "min": 100,
+        "max": 900,
+        "step": 100,
+        "label": "Feature Title Font Weight",
+        "default": 300
+      },
+      {
+        "type": "range",
+        "id": "feature_title_line_height",
+        "min": 0.8,
+        "max": 2,
+        "step": 0.1,
+        "label": "Feature Title Line Height",
+        "default": 1.1
+      },
+      {
+        "type": "range",
+        "id": "feature_title_letter_spacing",
+        "min": 0,
+        "max": 2,
+        "step": 0.1,
+        "unit": "px",
+        "label": "Feature Title Letter Spacing",
+        "default": 0.3
+      },
+      {
+        "type": "range",
+        "id": "feature_description_font_size",
+        "min": 12,
+        "max": 24,
+        "step": 1,
+        "unit": "px",
+        "label": "Feature Description Font Size",
+        "default": 18
+      },
+      {
+        "type": "range",
+        "id": "feature_description_font_weight",
+        "min": 100,
+        "max": 900,
+        "step": 100,
+        "label": "Feature Description Font Weight",
+        "default": 600
+      },
+      {
+        "type": "range",
+        "id": "feature_description_line_height",
+        "min": 0.8,
+        "max": 2,
+        "step": 0.1,
+        "label": "Feature Description Line Height",
+        "default": 1.2
+      },
+      {
+        "type": "range",
+        "id": "feature_description_letter_spacing",
+        "min": 0,
+        "max": 2,
+        "step": 0.1,
+        "unit": "px",
+        "label": "Feature Description Letter Spacing",
+        "default": 0.7
+      },
+      {
+        "type": "range",
+        "id": "feature_border_left_width",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "unit": "px",
+        "label": "Feature Border Left Width",
+        "default": 2
+      },
+      {
+        "type": "range",
+        "id": "feature_border_left_padding",
+        "min": 0,
+        "max": 30,
+        "step": 1,
+        "unit": "px",
+        "label": "Feature Border Left Padding",
+        "default": 16
+      },
+      {
+        "type": "header",
+        "content": "Color Settings"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#020A08"
+      },
+      {
+        "type": "color",
+        "id": "heading_color",
+        "label": "Heading Color",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "description_color",
+        "label": "Description Color",
+        "default": "#676C6B"
+      },
+      {
+        "type": "color",
+        "id": "feature_title_color",
+        "label": "Feature Title Color",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "feature_description_color",
+        "label": "Feature Description Color",
+        "default": "#676C6B"
+      },
+      {
+        "type": "color",
+        "id": "feature_border_left_color",
+        "label": "Feature Border Left Color",
+        "default": "#36F4A4"
+      },
+      {
+        "type": "color",
+        "id": "discount_code_color",
+        "label": "Discount Code Color",
+        "default": "#36F4A4"
+      },
+      {
+        "type": "range",
+        "id": "discount_code_font_weight",
+        "min": 100,
+        "max": 900,
+        "step": 100,
+        "label": "Discount Code Font Weight",
+        "default": 600
+      },
+      {
+        "type": "header",
+        "content": "Mobile Settings"
+      },
+      {
+        "type": "select",
+        "id": "mobile_layout",
+        "label": "Mobile Layout",
+        "options": [
+          {
+            "value": "column",
+            "label": "Stacked (Image above text)"
+          },
+          {
+            "value": "column-reverse",
+            "label": "Stacked (Text above image)"
+          },
+          {
+            "value": "row",
+            "label": "Side by side"
+          }
+        ],
+        "default": "column"
+      },
+      {
+        "type": "select",
+        "id": "mobile_text_align",
+        "label": "Mobile Text Alignment",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "center"
+      },
+      {
+        "type": "range",
+        "id": "mobile_section_padding_top",
+        "min": 0,
+        "max": 200,
+        "step": 4,
+        "unit": "px",
+        "label": "Mobile Section Padding Top",
+        "default": 64
+      },
+      {
+        "type": "range",
+        "id": "mobile_section_padding_bottom",
+        "min": 0,
+        "max": 200,
+        "step": 4,
+        "unit": "px",
+        "label": "Mobile Section Padding Bottom",
+        "default": 64
+      },
+      {
+        "type": "range",
+        "id": "mobile_section_padding_sides",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Mobile Section Padding Sides",
+        "default": 20
+      },
+      {
+        "type": "range",
+        "id": "mobile_heading_font_size",
+        "min": 12,
+        "max": 72,
+        "step": 1,
+        "unit": "px",
+        "label": "Mobile Heading Font Size",
+        "default": 28
+      },
+      {
+        "type": "range",
+        "id": "mobile_description_font_size",
+        "min": 12,
+        "max": 36,
+        "step": 1,
+        "unit": "px",
+        "label": "Mobile Description Font Size",
+        "default": 18
+      },
+      {
+        "type": "range",
+        "id": "mobile_feature_title_font_size",
+        "min": 12,
+        "max": 48,
+        "step": 1,
+        "unit": "px",
+        "label": "Mobile Feature Title Font Size",
+        "default": 24
+      },
+      {
+        "type": "range",
+        "id": "mobile_feature_description_font_size",
+        "min": 12,
+        "max": 24,
+        "step": 1,
+        "unit": "px",
+        "label": "Mobile Feature Description Font Size",
+        "default": 16
+      }
+    ],
+    "blocks": [
+      {
+        "type": "feature",
+        "name": "Feature Item",
+        "settings": [
+          {
+            "type": "text",
+            "id": "feature_title",
+            "label": "Feature Title",
+            "default": "Endorsed by UK Leaders"
+          },
+          {
+            "type": "text",
+            "id": "feature_description",
+            "label": "Feature Description",
+            "default": "Globally recognised by CPD, QLS & top institutions"
+          }
+        ]
+      },
+      {
+        "type": "discount",
+        "name": "Discount Item",
+        "settings": [
+          {
+            "type": "text",
+            "id": "discount_title",
+            "label": "Discount Title",
+            "default": "30% Off Today Only"
+          },
+          {
+            "type": "text",
+            "id": "discount_description",
+            "label": "Discount Description",
+            "default": "Use code [code] at checkout — limited time only",
+            "info": "Use [code] where you want the discount code to appear"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "SA Certificate Section",
+        "blocks": [
+          {
+            "type": "feature",
+            "settings": {
+              "feature_title": "Endorsed by UK Leaders",
+              "feature_description": "Globally recognised by CPD, QLS & top institutions"
+            }
+          },
+          {
+            "type": "feature",
+            "settings": {
+              "feature_title": "Printed & Digital Options",
+              "feature_description": "Receive downloadable + hardcopy certificate, anywhere in the world"
+            }
+          },
+          {
+            "type": "feature",
+            "settings": {
+              "feature_title": "Issued Within 24 Hours",
+              "feature_description": "Instant delivery upon course completion — no delays"
+            }
+          },
+          {
+            "type": "feature",
+            "settings": {
+              "feature_title": "LinkedIn & CV Ready",
+              "feature_description": "Share easily with employers and display on your profile with pride"
+            }
+          },
+          {
+            "type": "discount",
+            "settings": {
+              "discount_title": "30% Off Today Only",
+              "discount_description": "Use code [code] at checkout — limited time only"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  {% endschema %}

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium E-Learn</title>
+
+    <style>
+        .nxt-career__card {
+            max-width: 1420px;
+            padding: 24px 32px;
+            background: #041E18;
+            border-radius: 12px;
+            outline: 1px #133B32 solid;
+            outline-offset: -1px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .nxt-career__content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .nxt-career__title {
+            color: white;
+            font-size: 48px;
+            font-family: "Neue Haas Grotesk Display Pro", Arial, sans-serif;
+            font-weight: 300;
+            line-height: 54.72px;
+            word-wrap: break-word;
+        }
+
+        .nxt-career__features {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            max-width: 482px;
+        }
+
+        .nxt-career__feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nxt-career__feature-text {
+            color: white;
+            font-size: 16px;
+            font-family: "Inter Variable", Arial, sans-serif;
+            font-weight: 400;
+            line-height: 24px;
+            word-wrap: break-word;
+        }
+
+        .nxt-career__cta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .nxt-career__cta-text {
+            background: linear-gradient(0deg, #36F4A4, #36F4A4),
+                linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-fill-color: transparent;
+            font-size: 12px;
+            font-family: Consolas, monospace;
+            font-weight: 400;
+            text-transform: uppercase;
+            line-height: 16px;
+            word-wrap: break-word;
+        }
+
+        .nxt-career__arrow {
+            position: relative;
+        }
+
+        .nxt-career__image {
+            width: 511px;
+            height: 202px;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .nxt-career__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .nxt-career__card {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .nxt-career__title {
+                font-size: 32px;
+                line-height: 38px;
+            }
+
+            .nxt-career__image {
+                width: 100%;
+                max-width: 400px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="nxt-career__card">
+        <div class="nxt-career__content">
+            <h2 class="nxt-career__title">Prepare for a career as a Python Developer</h2>
+
+            <div class="nxt-career__features">
+                <div class="nxt-career__feature">
+                    <span class="nxt-career__feature-text">•</span>
+                    <span class="nxt-career__feature-text">Learn in-demand skills from university and industry
+                        experts</span>
+                </div>
+                <div class="nxt-career__feature">
+                    <span class="nxt-career__feature-text">•</span>
+                    <span class="nxt-career__feature-text">Master a subject or tool with hands-on projects</span>
+                </div>
+                <div class="nxt-career__feature">
+                    <span class="nxt-career__feature-text">•</span>
+                    <span class="nxt-career__feature-text">Develop a deep understanding of key concepts</span>
+                </div>
+                <div class="nxt-career__feature">
+                    <span class="nxt-career__feature-text">•</span>
+                    <span class="nxt-career__feature-text">Earn a career certificate from University of Michigan</span>
+                </div>
+            </div>
+
+            <a href="#" class="nxt-career__cta">
+                <span class="nxt-career__cta-text">Explore this role</span>
+                <div class="nxt-career__arrow">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M13.1252 10.7499H4.75024C4.65119 10.7525 4.55266 10.7349 4.46067 10.6981C4.36867 10.6613 4.28516 10.6061 4.21524 10.5359C4.14485 10.4667 4.08944 10.3838 4.05245 10.2922C4.01547 10.2007 3.99769 10.1026 4.00024 10.0039C4.00024 9.79389 4.07224 9.61389 4.21524 9.46889C4.28444 9.39741 4.36771 9.34104 4.45979 9.30334C4.55188 9.26565 4.65077 9.24745 4.75024 9.24989H13.1252L9.45424 5.57889C9.38271 5.51109 9.32584 5.42935 9.28714 5.33871C9.24844 5.24806 9.22873 5.15045 9.22924 5.05189C9.22924 4.85089 9.30624 4.66989 9.45924 4.51089C9.52889 4.44144 9.61161 4.38647 9.70262 4.34915C9.79363 4.31184 9.89113 4.29291 9.98949 4.29347C10.0879 4.29403 10.1851 4.31406 10.2757 4.3524C10.3663 4.39075 10.4484 4.44666 10.5172 4.51689L15.4712 9.47689C15.541 9.54538 15.5961 9.62732 15.6332 9.71773C15.6703 9.80815 15.6887 9.90516 15.6872 10.0029C15.688 10.0993 15.6703 10.195 15.6352 10.2849C15.6 10.3735 15.5469 10.4538 15.4792 10.5209L10.5212 15.4789C10.4551 15.5506 10.3744 15.6072 10.2845 15.645C10.1946 15.6828 10.0977 15.7008 10.0002 15.6979C9.80405 15.6898 9.61823 15.6076 9.48024 15.4679C9.40781 15.397 9.35018 15.3123 9.3107 15.219C9.27122 15.1256 9.25067 15.0253 9.25024 14.9239C9.24957 14.8247 9.26968 14.7265 9.3093 14.6355C9.34891 14.5446 9.40715 14.463 9.48024 14.3959L13.1252 10.7499Z"
+                            fill="#36F4A4" />
+                        <path
+                            d="M13.1252 10.7499H4.75024C4.65119 10.7525 4.55266 10.7349 4.46067 10.6981C4.36867 10.6613 4.28516 10.6061 4.21524 10.5359C4.14485 10.4667 4.08944 10.3838 4.05245 10.2922C4.01547 10.2007 3.99769 10.1026 4.00024 10.0039C4.00024 9.79389 4.07224 9.61389 4.21524 9.46889C4.28444 9.39741 4.36771 9.34104 4.45979 9.30334C4.55188 9.26565 4.65077 9.24745 4.75024 9.24989H13.1252L9.45424 5.57889C9.38271 5.51109 9.32584 5.42935 9.28714 5.33871C9.24844 5.24806 9.22873 5.15045 9.22924 5.05189C9.22924 4.85089 9.30624 4.66989 9.45924 4.51089C9.52889 4.44144 9.61161 4.38647 9.70262 4.34915C9.79363 4.31184 9.89113 4.29291 9.98949 4.29347C10.0879 4.29403 10.1851 4.31406 10.2757 4.3524C10.3663 4.39075 10.4484 4.44666 10.5172 4.51689L15.4712 9.47689C15.541 9.54538 15.5961 9.62732 15.6332 9.71773C15.6703 9.80815 15.6887 9.90516 15.6872 10.0029C15.688 10.0993 15.6703 10.195 15.6352 10.2849C15.6 10.3735 15.5469 10.4538 15.4792 10.5209L10.5212 15.4789C10.4551 15.5506 10.3744 15.6072 10.2845 15.645C10.1946 15.6828 10.0977 15.7008 10.0002 15.6979C9.80405 15.6898 9.61823 15.6076 9.48024 15.4679C9.40781 15.397 9.35018 15.3123 9.3107 15.219C9.27122 15.1256 9.25067 15.0253 9.25024 14.9239C9.24957 14.8247 9.26968 14.7265 9.3093 14.6355C9.34891 14.5446 9.40715 14.463 9.48024 14.3959L13.1252 10.7499Z"
+                            fill="black" fill-opacity="0.2" />
+                    </svg>
+                </div>
+            </a>
+        </div>
+
+        <div class="nxt-career__image">
+            <img src="https://placehold.co/511x202" alt="Python Developer Career" />
+        </div>
+    </div>
+
+</body>
+
+</html>

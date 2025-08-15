@@ -1,0 +1,242 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "srs_global_hero_nTBUV7": {
+      "type": "srs-global-hero",
+      "name": "SRS Global Hero",
+      "settings": {
+        "background_type": "video",
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/2c65e7e108d6468da618b6631cf7b522.mp4",
+        "background_color": "#000000",
+        "overlay_opacity": 50,
+        "overlay_color": "#000000",
+        "hero_title": "All Courses",
+        "hero_description": "Unlock Your Creative Potential: Learn the Skills to Dominate the Digital Landscape.",
+        "primary_button_text": "Browse All Courses",
+        "primary_button_link": "",
+        "primary_button_style": "filled",
+        "primary_button_bg_color": "#ffffff",
+        "primary_button_text_color": "#020a08",
+        "secondary_button_text": "Start Free Trial – 7 Days Access",
+        "secondary_button_link": "",
+        "show_play_icon": true,
+        "secondary_button_color": "#ffffff",
+        "title_font_size_desktop": 96,
+        "title_font_size_mobile": 48,
+        "description_font_size_desktop": 24,
+        "description_font_size_mobile": 18,
+        "title_font_weight": "300",
+        "section_padding_top": 140,
+        "section_padding_bottom": 140,
+        "content_alignment": "left",
+        "content_max_width": 530,
+        "enable_animations": true,
+        "animation_type": "fade-in",
+        "animation_duration": 0.8
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-4"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "custom_css": [
+        ".facets__form-vertical {border: 1px solid #133b32; border-radius: 12px; padding: 20px; background: #041e18;}",
+        ".facet-filters__field .select__select{background: #03080a;}"
+      ],
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 3,
+        "columns_mobile": "1",
+        "color_scheme": "scheme-4",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rh_certificate_accreditations_section_AUVRYF": {
+      "type": "rh-certificate-accreditations-section",
+      "blocks": {
+        "certification_logo_zYJaE7": {
+          "type": "certification_logo",
+          "settings": {
+            "logo": "shopify://shop_images/Frame_52.png",
+            "alt_text": "ISO 9001 Certification"
+          }
+        },
+        "certification_logo_qiNLRq": {
+          "type": "certification_logo",
+          "settings": {
+            "logo": "shopify://shop_images/Frame_53.png",
+            "alt_text": "CPD Certification"
+          }
+        },
+        "certification_logo_KJkVAm": {
+          "type": "certification_logo",
+          "settings": {
+            "logo": "shopify://shop_images/Frame_51.png",
+            "alt_text": "IIBA Partnership"
+          }
+        },
+        "certification_logo_LU3LUX": {
+          "type": "certification_logo",
+          "settings": {
+            "logo": "shopify://shop_images/Frame_54.png",
+            "alt_text": "PMI Approved"
+          }
+        },
+        "certification_logo_dXatti": {
+          "type": "certification_logo",
+          "settings": {
+            "logo": "shopify://shop_images/Frame_55.png",
+            "alt_text": "ACCA Partnership"
+          }
+        },
+        "certification_logo_pxcqQP": {
+          "type": "certification_logo",
+          "settings": {
+            "logo": "shopify://shop_images/Frame_56.png",
+            "alt_text": "CIPD Approved"
+          }
+        }
+      },
+      "block_order": [
+        "certification_logo_zYJaE7",
+        "certification_logo_qiNLRq",
+        "certification_logo_KJkVAm",
+        "certification_logo_LU3LUX",
+        "certification_logo_dXatti",
+        "certification_logo_pxcqQP"
+      ],
+      "name": "SA Certifications & Accreditations",
+      "settings": {
+        "title": "Our Certifications & Accreditations",
+        "description": "We partner with trusted global organisations to ensure your certificate holds real-world value and recognition.",
+        "background_color": "#000a1e",
+        "padding_top_desktop": 128,
+        "padding_bottom_desktop": 128,
+        "padding_horizontal_desktop": 20,
+        "padding_top_large": 96,
+        "padding_bottom_large": 96,
+        "padding_horizontal_large": 20,
+        "padding_top_medium": 80,
+        "padding_bottom_medium": 80,
+        "padding_horizontal_medium": 20,
+        "padding_top_small": 64,
+        "padding_bottom_small": 64,
+        "padding_horizontal_small": 20,
+        "padding_top_tablet": 48,
+        "padding_bottom_tablet": 48,
+        "padding_horizontal_tablet": 20,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32,
+        "padding_horizontal_mobile": 16,
+        "padding_top_mobile_small": 24,
+        "padding_bottom_mobile_small": 24,
+        "padding_horizontal_mobile_small": 12
+      }
+    },
+    "rh_future_building_section_wbPeGF": {
+      "type": "rh-future-building-section",
+      "blocks": {
+        "student_image_3VJpNQ": {
+          "type": "student_image",
+          "settings": {
+            "image": "shopify://shop_images/Photo_of_employee_holding_a_product_and_entering_details_about_it_on_their_phone.png",
+            "alt_text": "Happy Student Learning Online",
+            "add_offset": true
+          }
+        },
+        "student_image_9FJDBb": {
+          "type": "student_image",
+          "settings": {
+            "image": "shopify://shop_images/Photo_of_hand_holding_clutch_purse_for_sale.png",
+            "alt_text": "Professional Student Studying",
+            "add_offset": false
+          }
+        },
+        "statistic_FQ7Cex": {
+          "type": "statistic",
+          "settings": {
+            "stat_text": "93% satisfaction rate"
+          }
+        },
+        "statistic_9anRUE": {
+          "type": "statistic",
+          "settings": {
+            "stat_text": "500+ companies recognise us"
+          }
+        },
+        "statistic_khn7iA": {
+          "type": "statistic",
+          "settings": {
+            "stat_text": "New learners every 30 minutes"
+          }
+        }
+      },
+      "block_order": [
+        "student_image_3VJpNQ",
+        "student_image_9FJDBb",
+        "statistic_FQ7Cex",
+        "statistic_9anRUE",
+        "statistic_khn7iA"
+      ],
+      "name": "SA Future Building Section",
+      "settings": {
+        "title": "Join 90,000+ People Building Their Future on E-Learn",
+        "cta_text": "Sign up now",
+        "cta_url": "",
+        "padding_top_desktop": 128,
+        "padding_bottom_desktop": 128,
+        "padding_horizontal_desktop": 20,
+        "padding_top_large": 96,
+        "padding_bottom_large": 96,
+        "padding_horizontal_large": 20,
+        "padding_top_medium": 80,
+        "padding_bottom_medium": 80,
+        "padding_horizontal_medium": 20,
+        "padding_top_small": 64,
+        "padding_bottom_small": 64,
+        "padding_horizontal_small": 20,
+        "padding_top_tablet": 48,
+        "padding_bottom_tablet": 48,
+        "padding_horizontal_tablet": 20,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32,
+        "padding_horizontal_mobile": 16,
+        "padding_top_mobile_small": 24,
+        "padding_bottom_mobile_small": 24,
+        "padding_horizontal_mobile_small": 12
+      }
+    }
+  },
+  "order": [
+    "srs_global_hero_nTBUV7",
+    "banner",
+    "product-grid",
+    "rh_certificate_accreditations_section_AUVRYF",
+    "rh_future_building_section_wbPeGF"
+  ]
+}

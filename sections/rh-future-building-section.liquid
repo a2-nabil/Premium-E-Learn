@@ -1,0 +1,866 @@
+{% style %}
+.rh-future-building-section {
+    background: linear-gradient(180deg, rgba(2, 8, 8, 0.5) 0%, rgba(2, 8, 8, 0) 20%, rgba(2, 8, 8, 0) 90%, rgba(2, 8, 8, 0.5) 100%), radial-gradient(123.04% 118.79% at 87% 84%, rgba(2, 8, 8, 0.9) 0%, rgba(2, 8, 8, 0) 50%), radial-gradient(127.28% 130.11% at 10% 8%, rgba(2, 8, 8, 0.9) 0%, rgba(2, 8, 8, 0) 50%), radial-gradient(91.92% 90.51% at 65% 36%, rgba(63, 63, 75, 0.5) 0%, rgba(63, 63, 75, 0) 50%), radial-gradient(87.68% 86.27% at 38% 61%, rgba(63, 63, 75, 0.5) 0%, rgba(63, 63, 75, 0) 50%), radial-gradient(140.01% 90.51% at 99% 36%, rgba(63, 63, 75, 0.5) 0%, rgba(63, 63, 75, 0) 50%), radial-gradient(141.42% 87.68% at -4950% 62%, rgba(63, 63, 75, 0.5) 0%, rgba(63, 63, 75, 0) 50%), #09090A;
+    padding: {{ section.settings.padding_top_desktop | default: 128 }}px {{ section.settings.padding_horizontal_desktop | default: 20 }}px {{ section.settings.padding_bottom_desktop | default: 128 }}px {{ section.settings.padding_horizontal_desktop | default: 20 }}px;
+}
+
+.rh-future-building-section .container_rh{
+    max-width: 1420px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.rh-future-main-wrapper_rh {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 40px;
+    width: 100%;
+}
+
+.rh-future-header-section_rh {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.rh-future-title_rh {
+    text-align: center;
+    color: white;
+    font-size: 55px;
+    font-family: 'Neue Haas Grotesk Display Pro', Arial, sans-serif;
+    font-weight: 300;
+    line-height: 64px;
+    word-wrap: break-word;
+    margin: 0;
+    width: 100%;
+}
+
+.rh-future-content-section_rh {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 24px;
+    width: 100%;
+}
+
+.rh-future-images-section_rh {
+    flex: 1 1 0;
+    padding-right: 106px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 16px;
+}
+
+.rh-future-image-item_rh {
+    flex: 1 1 0;
+    max-width: 288px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.rh-future-image-offset_rh {
+    padding-bottom: 80px;
+}
+
+.rh-future-image-wrapper_rh {
+    width: 100%;
+    max-width: 288px;
+    overflow: hidden;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.rh-future-image_rh {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.rh-future-stats-section_rh {
+    flex: 1 1 0;
+    padding-left: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 63.99px;
+}
+
+.rh-future-stats-list_rh {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 24px;
+    width: 100%;
+}
+
+.rh-future-stat-item_rh {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.rh-future-stat-number_rh {
+    width: 64px;
+    padding-bottom: 10.84px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    color: #36F4A4;
+    font-size: 28px;
+    font-family: 'Neue Haas Grotesk Display Pro', Arial, sans-serif;
+    font-weight: 600;
+    line-height: 35.84px;
+    letter-spacing: 0.42px;
+    word-wrap: break-word;
+}
+
+.rh-future-stat-content_rh {
+    flex: 1 1 0;
+    padding-bottom: 11px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.rh-future-stat-border_rh {
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.rh-future-stat-text_rh {
+    color: white;
+    font-size: 48px;
+    font-family: 'Neue Haas Grotesk Display Pro', Arial, sans-serif;
+    font-weight: 300;
+    line-height: 54.72px;
+    word-wrap: break-word;
+    width: 100%;
+}
+
+.rh-future-cta-section_rh {
+    padding-bottom: 6px;
+    padding-left: 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.rh-future-cta-button_rh {
+    max-width: 666px;
+    padding: 14px 26px;
+    background: white;
+    overflow: hidden;
+    border-radius: 9999px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.rh-future-cta-button_rh:hover {
+    background: #36F4A4;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(54, 244, 164, 0.3);
+}
+
+.rh-future-cta-text_rh {
+    color: black;
+    font-size: 17.58px;
+    font-family: 'Inter Variable', 'Inter', Arial, sans-serif;
+    font-weight: 400;
+    line-height: 28px;
+    word-wrap: break-word;
+}
+
+/* Responsive Design for Future Building Section */
+@media (max-width: 1440px) {
+    .rh-future-building-section {
+        padding: {{ section.settings.padding_top_large | default: 96 }}px {{ section.settings.padding_horizontal_large | default: 20 }}px {{ section.settings.padding_bottom_large | default: 96 }}px {{ section.settings.padding_horizontal_large | default: 20 }}px;
+    }
+    
+    .rh-future-images-section_rh {
+        padding-right: 80px;
+    }
+    
+    .rh-future-image-item_rh {
+        max-width: 250px;
+    }
+    
+    .rh-future-image-wrapper_rh {
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .rh-future-building-section {
+        padding: {{ section.settings.padding_top_medium | default: 80 }}px {{ section.settings.padding_horizontal_medium | default: 20 }}px {{ section.settings.padding_bottom_medium | default: 80 }}px {{ section.settings.padding_horizontal_medium | default: 20 }}px;
+    }
+    
+    .rh-future-title_rh {
+        font-size: 48px;
+        line-height: 56px;
+    }
+    
+    .rh-future-images-section_rh {
+        padding-right: 60px;
+    }
+    
+    .rh-future-image-item_rh {
+        max-width: 220px;
+    }
+    
+    .rh-future-image-wrapper_rh {
+        max-width: 220px;
+    }
+    
+    .rh-future-stat-text_rh {
+        font-size: 42px;
+        line-height: 48px;
+    }
+    
+    .rh-future-main-wrapper_rh {
+        gap: 32px;
+    }
+}
+
+@media (max-width: 992px) {
+    .rh-future-building-section {
+        padding: {{ section.settings.padding_top_small | default: 64 }}px {{ section.settings.padding_horizontal_small | default: 20 }}px {{ section.settings.padding_bottom_small | default: 64 }}px {{ section.settings.padding_horizontal_small | default: 20 }}px;
+    }
+    
+    .rh-future-title_rh {
+        font-size: 42px;
+        line-height: 50px;
+    }
+    
+    .rh-future-content-section_rh {
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+    }
+    
+    .rh-future-images-section_rh {
+        padding-right: 0;
+        width: 100%;
+        max-width: 600px;
+    }
+    
+    .rh-future-stats-section_rh {
+        padding-left: 0;
+        width: 100%;
+        max-width: 600px;
+    }
+    
+    .rh-future-stat-text_rh {
+        font-size: 36px;
+        line-height: 42px;
+    }
+    
+    .rh-future-image-offset_rh {
+        padding-bottom: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .rh-future-building-section {
+        padding: {{ section.settings.padding_top_tablet | default: 48 }}px {{ section.settings.padding_horizontal_tablet | default: 20 }}px {{ section.settings.padding_bottom_tablet | default: 48 }}px {{ section.settings.padding_horizontal_tablet | default: 20 }}px;
+    }
+    
+    .rh-future-title_rh {
+        font-size: 36px;
+        line-height: 42px;
+    }
+    
+    .rh-future-images-section_rh {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    
+    .rh-future-image-item_rh {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .rh-future-image-wrapper_rh {
+        max-width: 100%;
+    }
+    
+    .rh-future-image-offset_rh {
+        padding-bottom: 0;
+    }
+    
+    .rh-future-stat-text_rh {
+        font-size: 28px;
+        line-height: 34px;
+    }
+    
+    .rh-future-stat-number_rh {
+        font-size: 24px;
+        line-height: 30px;
+    }
+    
+    .rh-future-stats-section_rh {
+        gap: 40px;
+    }
+    
+    .rh-future-cta-section_rh {
+        padding-left: 0;
+        text-align: center;
+    }
+    
+    .rh-future-cta-button_rh {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .rh-future-building-section {
+        padding: {{ section.settings.padding_top_mobile | default: 32 }}px {{ section.settings.padding_horizontal_mobile | default: 16 }}px {{ section.settings.padding_bottom_mobile | default: 32 }}px {{ section.settings.padding_horizontal_mobile | default: 16 }}px;
+    }
+    
+    .rh-future-title_rh {
+        font-size: 28px;
+        line-height: 34px;
+    }
+    
+    .rh-future-main-wrapper_rh {
+        gap: 24px;
+    }
+    
+    .rh-future-content-section_rh {
+        gap: 24px;
+    }
+    
+    .rh-future-stat-text_rh {
+        font-size: 22px;
+        line-height: 28px;
+    }
+    
+    .rh-future-stat-number_rh {
+        font-size: 20px;
+        line-height: 26px;
+        width: 48px;
+    }
+    
+    .rh-future-cta-button_rh {
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+    
+    .rh-future-cta-text_rh {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+@media (max-width: 320px) {
+    .rh-future-building-section {
+        padding: {{ section.settings.padding_top_mobile_small | default: 24 }}px {{ section.settings.padding_horizontal_mobile_small | default: 12 }}px {{ section.settings.padding_bottom_mobile_small | default: 24 }}px {{ section.settings.padding_horizontal_mobile_small | default: 12 }}px;
+    }
+    
+    .rh-future-title_rh {
+        font-size: 24px;
+        line-height: 30px;
+    }
+    
+    .rh-future-stat-text_rh {
+        font-size: 18px;
+        line-height: 24px;
+    }
+    
+    .rh-future-stat-number_rh {
+        font-size: 18px;
+        line-height: 24px;
+        width: 40px;
+    }
+    
+    .rh-future-cta-button_rh {
+        padding: 10px 16px;
+    }
+    
+    .rh-future-cta-text_rh {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+
+
+
+{% endstyle %}
+
+
+<div class="rh-future-building-section">
+        <div class="container_rh">
+            <div class="rh-future-main-wrapper_rh">
+                <div class="rh-future-header-section_rh">
+                    <h2 class="rh-future-title_rh">{{ section.settings.title | default: "Join 90,000+ People Building Their Future on E-Learn" }}</h2>
+                </div>
+                <div class="rh-future-content-section_rh">
+                    <div class="rh-future-images-section_rh">
+                        {% for block in section.blocks %}
+                            {% if block.type == 'student_image' %}
+                                <div class="rh-future-image-item_rh {% if block.settings.add_offset %}rh-future-image-offset_rh{% endif %}" {{ block.shopify_attributes }}>
+                                    <div class="rh-future-image-wrapper_rh">
+                                        {% if block.settings.image != blank %}
+                                            <img src="{{ block.settings.image | img_url: '288x384' }}" 
+                                                 alt="{{ block.settings.alt_text | default: 'E-Learn Student' }}" 
+                                                 class="rh-future-image_rh"
+                                                 width="auto"
+                                                 height="auto" 
+                                                 loading="lazy" />
+                                        {% else %}
+                                            <img src="https://dummyimage.com/288x384/4F46E5/FFFFFF?text=Student" 
+                                                 alt="{{ block.settings.alt_text | default: 'E-Learn Student' }}" 
+                                                 class="rh-future-image_rh" 
+                                                 width="auto"
+                                                 height="auto"
+                                                 loading="lazy" />
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                        
+                        {% comment %} Default images if no blocks are added {% endcomment %}
+                        {% if section.blocks.size == 0 %}
+                            <div class="rh-future-image-item_rh rh-future-image-offset_rh">
+                                <div class="rh-future-image-wrapper_rh">
+                                    <img src="https://dummyimage.com/288x384/10B981/FFFFFF?text=Happy+Student" 
+                                         alt="Happy Student Learning Online" 
+                                         class="rh-future-image_rh" 
+                                         width="auto"
+                                         height="auto"
+                                         loading="lazy" />
+                                </div>
+                            </div>
+                            <div class="rh-future-image-item_rh">
+                                <div class="rh-future-image-wrapper_rh">
+                                    <img src="https://dummyimage.com/288x384/F59E0B/FFFFFF?text=Pro+Student" 
+                                         alt="Professional Student Studying" 
+                                         class="rh-future-image_rh" 
+                                         width="auto"
+                                         height="auto"
+                                         loading="lazy" />
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="rh-future-stats-section_rh">
+                        <div class="rh-future-stats-list_rh">
+                            {% assign stat_blocks = section.blocks | where: 'type', 'statistic' %}
+                            {% for block in stat_blocks %}
+                                <div class="rh-future-stat-item_rh" {{ block.shopify_attributes }}>
+                                    <div class="rh-future-stat-number_rh">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</div>
+                                    <div class="rh-future-stat-content_rh {% unless forloop.last %}rh-future-stat-border_rh{% endunless %}">
+                                        <div class="rh-future-stat-text_rh">{{ block.settings.stat_text | default: "Enter statistic text" }}</div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            
+                            {% comment %} Default stats if no statistic blocks are added {% endcomment %}
+                            {% if stat_blocks.size == 0 %}
+                                <div class="rh-future-stat-item_rh">
+                                    <div class="rh-future-stat-number_rh">01</div>
+                                    <div class="rh-future-stat-content_rh rh-future-stat-border_rh">
+                                        <div class="rh-future-stat-text_rh">93% satisfaction rate</div>
+                                    </div>
+                                </div>
+                                <div class="rh-future-stat-item_rh">
+                                    <div class="rh-future-stat-number_rh">02</div>
+                                    <div class="rh-future-stat-content_rh rh-future-stat-border_rh">
+                                        <div class="rh-future-stat-text_rh">500+ companies recognise us</div>
+                                    </div>
+                                </div>
+                                <div class="rh-future-stat-item_rh">
+                                    <div class="rh-future-stat-number_rh">03</div>
+                                    <div class="rh-future-stat-content_rh">
+                                        <div class="rh-future-stat-text_rh">New learners every 30 minutes</div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </div>
+                        {% if section.settings.cta_text != blank %}
+                        <div class="rh-future-cta-section_rh">
+                            <a href="{{ section.settings.cta_url | default: '#' }}" class="rh-future-cta-button_rh">
+                                <span class="rh-future-cta-text_rh">{{ section.settings.cta_text | default: "Sign up now" }}</span>
+                            </a>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% schema %}
+{
+  "name": "Future Building Section",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content Settings"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Join 90,000+ People Building Their Future on E-Learn"
+    },
+    {
+      "type": "header",
+      "content": "Call to Action"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Button Text",
+      "default": "Sign up now"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "CTA Button URL"
+    },
+    {
+      "type": "header",
+      "content": "Design Settings"
+    },
+    {
+      "type": "header",
+      "content": "Desktop Padding (1441px and above)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Top Padding",
+      "min": 0,
+      "max": 200,
+      "step": 8,
+      "unit": "px",
+      "default": 128
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Bottom Padding",
+      "min": 0,
+      "max": 200,
+      "step": 8,
+      "unit": "px",
+      "default": 128
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal_desktop",
+      "label": "Horizontal Padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Large Screen Padding (1201px - 1440px)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_large",
+      "label": "Top Padding",
+      "min": 0,
+      "max": 200,
+      "step": 8,
+      "unit": "px",
+      "default": 96
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_large",
+      "label": "Bottom Padding",
+      "min": 0,
+      "max": 200,
+      "step": 8,
+      "unit": "px",
+      "default": 96
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal_large",
+      "label": "Horizontal Padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Medium Screen Padding (993px - 1200px)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_medium",
+      "label": "Top Padding",
+      "min": 0,
+      "max": 200,
+      "step": 8,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_medium",
+      "label": "Bottom Padding",
+      "min": 0,
+      "max": 200,
+      "step": 8,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal_medium",
+      "label": "Horizontal Padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Small Screen Padding (769px - 992px)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_small",
+      "label": "Top Padding",
+      "min": 0,
+      "max": 200,
+      "step": 8,
+      "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_small",
+      "label": "Bottom Padding",
+      "min": 0,
+      "max": 200,
+      "step": 8,
+      "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal_small",
+      "label": "Horizontal Padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Tablet Padding (481px - 768px)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_tablet",
+      "label": "Top Padding",
+      "min": 0,
+      "max": 200,
+      "step": 8,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_tablet",
+      "label": "Bottom Padding",
+      "min": 0,
+      "max": 200,
+      "step": 8,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal_tablet",
+      "label": "Horizontal Padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Mobile Padding (321px - 480px)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Top Padding",
+      "min": 0,
+      "max": 200,
+      "step": 8,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Bottom Padding",
+      "min": 0,
+      "max": 200,
+      "step": 8,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal_mobile",
+      "label": "Horizontal Padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Small Mobile Padding (320px and below)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile_small",
+      "label": "Top Padding",
+      "min": 0,
+      "max": 200,
+      "step": 8,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile_small",
+      "label": "Bottom Padding",
+      "min": 0,
+      "max": 200,
+      "step": 8,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal_mobile_small",
+      "label": "Horizontal Padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 12
+    }
+  ],
+  "blocks": [
+    {
+      "type": "student_image",
+      "name": "Student Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Student Image"
+        },
+        {
+          "type": "text",
+          "id": "alt_text",
+          "label": "Alt Text",
+          "default": "E-Learn Student"
+        },
+        {
+          "type": "checkbox",
+          "id": "add_offset",
+          "label": "Add vertical offset",
+          "default": false,
+          "info": "Adds spacing to create staggered image layout"
+        }
+      ]
+    },
+    {
+      "type": "statistic",
+      "name": "Statistic",
+      "settings": [
+        {
+          "type": "text",
+          "id": "stat_text",
+          "label": "Statistic Text",
+          "default": "Enter your statistic here"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "SA Future Building Section",
+      "blocks": [
+        {
+          "type": "student_image",
+          "settings": {
+            "alt_text": "Happy Student Learning Online",
+            "add_offset": true
+          }
+        },
+        {
+          "type": "student_image",
+          "settings": {
+            "alt_text": "Professional Student Studying",
+            "add_offset": false
+          }
+        },
+        {
+          "type": "statistic",
+          "settings": {
+            "stat_text": "93% satisfaction rate"
+          }
+        },
+        {
+          "type": "statistic",
+          "settings": {
+            "stat_text": "500+ companies recognise us"
+          }
+        },
+        {
+          "type": "statistic",
+          "settings": {
+            "stat_text": "New learners every 30 minutes"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

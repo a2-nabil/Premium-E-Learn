@@ -1,0 +1,439 @@
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'section-related-products.css' | asset_url | stylesheet_tag }}
+
+{% if section.settings.image_shape == 'blob' %}
+  {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
+
+{%- style -%}
+      .nxt-related__area{
+        background-color: {{ section.settings.background_color }};
+        padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+        padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      @media screen and (min-width: 750px) {
+        .nxt-related__area{
+          padding-top: {{ section.settings.padding_top }}px;
+          padding-bottom: {{ section.settings.padding_bottom }}px;
+        }
+      }
+    .nxt-related__area .hidden-courses {
+        display: none;
+    }
+    .nxt-related__area .course-actions {
+      display: flex;
+      margin-top: 40px;
+      align-items: center;
+      gap: 24px;
+      text-align: center;
+    }
+    .nxt-related__area .show-more-courses {
+      color: #fff;
+      border-radius: 9999px;
+      border: 2px solid #FFFFFF;
+      padding: 12px 24px;
+      background-color: transparent;
+      cursor: pointer;
+      font-family: "Inter", sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      transition: all .3s ease;
+      outline: none;
+    }
+    .nxt-related__area .show-more-courses:hover {
+      background-color: #FFFFFF;
+      color: #020A08;
+      border-color: #ffffff;
+    }
+    .nxt-related__title {
+      font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+      font-weight: 300;
+      font-size: 70px;
+      line-height: 100%;
+      margin: 0;
+      color: #FFFFFF;
+  }
+  .nxt-related__subtitle {
+      font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+      font-weight: 300;
+      font-size: 55px;
+      line-height: 64px;
+      color: #676C6B;
+      margin: 13px 0 0;
+  }
+  @media (max-width: 1199px) {
+    :root{
+        --grid-desktop-vertical-spacing: 20px;
+        --grid-desktop-horizontal-spacing: 20px;
+    }
+}
+@media (max-width: 1070px) {
+     .nxt-related__area .grid .grid__item {
+        width: calc(50% - var(--grid-desktop-horizontal-spacing) / 2);
+        max-width: calc(50% - var(--grid-desktop-horizontal-spacing) / 2);
+    }
+}
+  @media (max-width: 1024px) {
+    .nxt-related__title {
+      font-size: 55px;
+      line-height: 64px;
+    }
+    .nxt-related__subtitle {
+      font-size: 40px;
+      line-height: 48px;
+    }
+  }
+  @media (max-width: 767px) {
+    .nxt-related__title {
+      font-size: 40px;
+      line-height: 48px;
+    }
+    .nxt-related__subtitle {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+  @media (max-width: 540px) {
+    .nxt-related__area .grid .grid__item {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <product-recommendations
+    class="nxt-container related-products section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+    data-url="{{ routes.product_recommendations_url }}?limit={{ section.settings.max_products_to_show }}"
+    data-section-id="{{ section.id }}"
+    data-product-id="{{ product.id }}"
+  >
+    {% assign initial_products_to_show = section.settings.initial_products_to_show %}
+    {% if recommendations.performed and recommendations.products_count > 0 %}
+      <h2 class="related-products__heading inline-richtext {{ section.settings.heading_size }} nxt-related__title">
+        {{ section.settings.heading }}
+      </h2>
+      <p class="nxt-related__subtitle">{{ section.settings.subheading }}</p>
+      <ul
+        class="grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
+        role="list"
+      >
+        {% assign skip_card_product_styles = false %}
+        {% for recommendation in recommendations.products %}
+          {% assign item_index = forloop.index %}
+          <li
+            class="grid__item{% if item_index > initial_products_to_show %} hidden-courses{% endif %}"
+            {% if item_index > initial_products_to_show %}
+              data-hidden-course
+            {% endif %}
+          >
+            {% render 'card-product',
+              card_product: recommendation,
+              media_aspect_ratio: section.settings.image_ratio,
+              image_shape: section.settings.image_shape,
+              show_secondary_image: section.settings.show_secondary_image,
+              show_vendor: section.settings.show_vendor,
+              show_rating: section.settings.show_rating,
+              skip_styles: skip_card_product_styles
+            %}
+          </li>
+          {%- assign skip_card_product_styles = true -%}
+        {% endfor %}
+      </ul>
+      {% if recommendations.products_count > 4 %}
+        {% assign remaining_count = recommendations.products_count | minus: 4 %}
+        <div class="course-actions">
+          <button
+            class="show-more-courses"
+            data-section-id="{{ section.id }}"
+            data-remaining-count="{{ remaining_count }}"
+          >
+            Show {{ remaining_count }} more
+          </button>
+        </div>
+      {% endif %}
+    {% endif %}
+  </product-recommendations>
+  {% if section.settings.image_shape == 'arch' %}
+    {{ 'mask-arch.svg' | inline_asset_content }}
+  {%- endif -%}
+</div>
+<script>
+  function initializeShowMoreButtons() {
+    const showMoreButtons = document.querySelectorAll('.show-more-courses:not([data-initialized])');
+
+    showMoreButtons.forEach(function (showMoreButton) {
+      showMoreButton.setAttribute('data-initialized', 'true');
+
+      const sectionId = showMoreButton.getAttribute('data-section-id');
+      const remainingCount = showMoreButton.getAttribute('data-remaining-count');
+
+      let sectionElement = showMoreButton.closest('.nxt-related__area');
+      if (!sectionElement) {
+        sectionElement = showMoreButton.closest('product-recommendations');
+      }
+      if (!sectionElement) {
+        sectionElement = document.querySelector('.section-' + sectionId + '-padding');
+      }
+
+      if (!sectionElement) {
+        return;
+      }
+
+      const hiddenCourses = sectionElement.querySelectorAll('[data-hidden-course]');
+      const originalButtonText = showMoreButton.textContent.trim();
+      let isExpanded = false;
+
+      if (hiddenCourses.length > 0) {
+        showMoreButton.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          if (!isExpanded) {
+            hiddenCourses.forEach(function (course) {
+              course.classList.remove('hidden-courses');
+            });
+            showMoreButton.textContent = 'Show Less';
+            isExpanded = true;
+          } else {
+            hiddenCourses.forEach(function (course) {
+              course.classList.add('hidden-courses');
+            });
+            showMoreButton.textContent = originalButtonText;
+            isExpanded = false;
+          }
+        });
+      } else {
+        showMoreButton.style.display = 'none';
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    initializeShowMoreButtons();
+    setTimeout(initializeShowMoreButtons, 1000);
+  });
+
+  document.addEventListener('shopify:section:load', initializeShowMoreButtons);
+  document.addEventListener('shopify:block:select', initializeShowMoreButtons);
+</script>
+{% schema %}
+{
+  "name": "t:sections.related-products.name",
+  "tag": "section",
+  "class": "nxt-related__area",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.related-products.settings.paragraph__1.content"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "default": "Explore more from Software Development",
+      "label": "t:sections.related-products.settings.heading.label"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "subheading",
+      "label": "Sub heading",
+      "default": "Handpicked by 90,000+ learners and rated 4.8/5 on average."
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        },
+        {
+          "value": "hxl",
+          "label": "t:sections.all.heading_size.options__4.label"
+        },
+        {
+          "value": "hxxl",
+          "label": "t:sections.all.heading_size.options__5.label"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "range",
+      "id": "initial_products_to_show",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "default": 4,
+      "label": "Initial products to show"
+    },
+    {
+      "type": "range",
+      "id": "max_products_to_show",
+      "min": 2,
+      "max": 16,
+      "step": 1,
+      "default": 12,
+      "label": "Max products to show"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 4,
+      "label": "t:sections.related-products.settings.columns_desktop.label"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "default": "2",
+      "label": "t:sections.related-products.settings.columns_mobile.label",
+      "options": [
+        {
+          "value": "1",
+          "label": "t:sections.related-products.settings.columns_mobile.options__1.label"
+        },
+        {
+          "value": "2",
+          "label": "t:sections.related-products.settings.columns_mobile.options__2.label"
+        }
+      ]
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "info": "t:sections.all.colors.has_cards_info",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.related-products.settings.header__2.content"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "t:sections.related-products.settings.image_ratio.options__1.label"
+        },
+        {
+          "value": "portrait",
+          "label": "t:sections.related-products.settings.image_ratio.options__2.label"
+        },
+        {
+          "value": "square",
+          "label": "t:sections.related-products.settings.image_ratio.options__3.label"
+        }
+      ],
+      "default": "adapt",
+      "label": "t:sections.related-products.settings.image_ratio.label"
+    },
+    {
+      "type": "select",
+      "id": "image_shape",
+      "options": [
+        {
+          "value": "default",
+          "label": "t:sections.all.image_shape.options__1.label"
+        },
+        {
+          "value": "arch",
+          "label": "t:sections.all.image_shape.options__2.label"
+        },
+        {
+          "value": "blob",
+          "label": "t:sections.all.image_shape.options__3.label"
+        },
+        {
+          "value": "chevronleft",
+          "label": "t:sections.all.image_shape.options__4.label"
+        },
+        {
+          "value": "chevronright",
+          "label": "t:sections.all.image_shape.options__5.label"
+        },
+        {
+          "value": "diamond",
+          "label": "t:sections.all.image_shape.options__6.label"
+        },
+        {
+          "value": "parallelogram",
+          "label": "t:sections.all.image_shape.options__7.label"
+        },
+        {
+          "value": "round",
+          "label": "t:sections.all.image_shape.options__8.label"
+        }
+      ],
+      "default": "default",
+      "label": "t:sections.all.image_shape.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_secondary_image",
+      "default": false,
+      "label": "t:sections.related-products.settings.show_secondary_image.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "default": false,
+      "label": "t:sections.related-products.settings.show_vendor.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "default": false,
+      "label": "t:sections.related-products.settings.show_rating.label",
+      "info": "t:sections.related-products.settings.show_rating.info"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#020A08"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 0
+    }
+  ]
+}
+{% endschema %}

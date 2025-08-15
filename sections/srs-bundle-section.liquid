@@ -1,0 +1,689 @@
+{% schema %}
+{
+  "name": "SRS Bundle Course Section",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Header"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "Career Path Bundles"
+    },
+    {
+      "type": "textarea",
+      "id": "section_subtitle",
+      "label": "Section Subtitle",
+      "default": "Become Job-Ready With Handpicked Course Bundles. We've grouped courses into career-focused tracks to save you time."
+    },
+    {
+      "type": "header",
+      "content": "Product Selection"
+    },
+    {
+      "type": "product_list",
+      "id": "products",
+      "label": "Select Products",
+      "limit": 6,
+      "info": "Choose up to 6 products to display in the bundle cards"
+    },
+    {
+      "type": "header",
+      "content": "Display Options"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "label": "Show Product Rating",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "default_rating",
+      "label": "Default Rating",
+      "min": 1,
+      "max": 5,
+      "step": 0.5,
+      "default": 4.5,
+      "info": "Rating to display when product has no reviews"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_price",
+      "label": "Show Product Price",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_compare_price",
+      "label": "Show Compare at Price",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cart_button",
+      "label": "Show Add to Cart Button",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_detail_button",
+      "label": "Show View Details Button",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "detail_button_text",
+      "label": "Detail Button Text",
+      "default": "View Details"
+    },
+    {
+      "type": "image_picker",
+      "id": "cart_button_icon",
+      "label": "Cart Button Icon",
+      "info": "Optional custom icon for the cart button"
+    },
+    {
+      "type": "header",
+      "content": "Call to Action"
+    },
+    {
+      "type": "text",
+      "id": "view_more_button_text",
+      "label": "View More Button Text",
+      "default": "View More Career Bundles"
+    },
+    {
+      "type": "url",
+      "id": "view_more_button_url",
+      "label": "View More Button URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "SRS Bundle Course Section",
+      "category": "Custom Sections"
+    }
+  ]
+}
+{% endschema %}
+<style>
+    .srs-bundle-section{
+        background: #000A1E;
+        padding: 130px 20px;
+    }
+   .srs-bundle-section .srs-container{
+        max-width: 1420px;
+        margin: 0 auto;
+    }
+   .srs-bundle-section .srs-header-bundle {
+        margin-bottom: 60px;
+    }
+  .srs-bundle-section  .srs-header-title {
+        color: white;
+        font-size: 70px;
+        font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+        font-weight: 300;
+        line-height: 70px;
+        margin: 0 0 13px 0;
+        text-align: left;
+    }
+  .srs-bundle-section  .srs-header-subtitle {
+        color: #676C6B;
+        font-size: 55px;
+        font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+        font-weight: 300;
+        line-height: 64px;
+        margin: 0;
+        text-align: left;
+    }
+   .srs-bundle-section .srs-bundle-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+   .srs-bundle-section .srs-bundle-card-wrapper {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        width: 100%;
+    }
+  .srs-bundle-section  .rh-p-elearn-course-card {
+        max-width: 457px;
+        width: 100%;
+        min-width: 280px;
+        border: 1px solid #133b32;
+        background: #041e18;
+        border-radius: 12px;
+        overflow: hidden;
+        padding: 24px;
+        box-sizing: border-box;
+        position: relative;
+    }
+  .srs-bundle-section  .rh-p-elearn-course-card-bg-overlay {
+        position: absolute;
+display: block!important;
+top: 0px;
+left: 129px;
+width: 419px;
+height: 419px;
+background: radial-gradient(70.71% 70.71% at 50% 50%,#3e4646,#0f3335 40%,#041e18 66.67% 100%);
+border-radius: 340px;
+z-index: 1;
+    }
+   .srs-bundle-section .rh-p-elearn-course-card-img {
+        width: 100%;
+        height: 240px;
+        border-radius: 4px;
+        overflow: hidden;
+        position: relative;
+        z-index: 2;
+        margin-bottom: 12px;
+    }
+   .srs-bundle-section .rh-p-elearn-course-card-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+   .srs-bundle-section .rh-p-elearn-course-card-content {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        z-index: 2;
+    }
+  .srs-bundle-section  .course-tag {
+        color: #36F4A4;
+        font-size: 12px;
+        font-family: "Consolas", monospace;
+        font-weight: 400;
+        text-transform: uppercase;
+        line-height: 16px;
+        margin: 0;
+        margin: 0 0 8px 0;
+    }
+   .srs-bundle-section .course-title {
+        color: white;
+        font-size: 20px;
+        font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+        font-weight: 500;
+        line-height: 28px;
+        letter-spacing: 0.30px;
+        margin: 0 0 24px 0;
+    }
+   .srs-bundle-section .course-includes-title {
+        color: white;
+        font-size: 18px;
+        font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+        font-weight: 600;
+        line-height: 22.56px;
+        letter-spacing: 0.72px;
+        margin: 0 0 8px 0;
+    }
+   .srs-bundle-section .course-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 8px;
+    }
+   .srs-bundle-section .course-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+   .srs-bundle-section .course-checkbox {
+        width: 20px;
+        height: 20px;
+        background: #36F4A4;
+        border-radius: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+   .srs-bundle-section .course-checkbox::after {
+        content: "✓";
+        color: #041e18;
+        font-size: 12px;
+        font-weight: bold;
+    }
+  .srs-bundle-section  .course-item-text {
+        color: white;
+        font-size: 16px;
+        font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: 0.72px;
+        margin: 0;
+    }
+   .srs-bundle-section .view-more-link {
+        color: #36F4A4;
+        font-size: 16px;
+        font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+        font-weight: 500;
+        text-decoration: underline;
+        line-height: 24px;
+        letter-spacing: 0.72px;
+        margin: 0;
+        padding: 0;
+    background: transparent;
+    border: none;
+    }
+   .srs-bundle-section .srs-price-star-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-top: 32px;
+    }
+   .srs-bundle-section .price-rating-group {
+        display: flex;
+        flex-direction: column;
+        {% comment %} gap: 8px; {% endcomment %}
+    }
+  .srs-bundle-section  .rh-course-rating {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 0 !important;
+    }
+   .srs-bundle-section .rh-course-rating-stars {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+    }
+   .srs-bundle-section .star {
+        cursor: pointer;
+        transition: transform 0.2s ease;
+    }
+   .srs-bundle-section .star:hover {
+        transform: scale(1.1);
+    }
+ .srs-bundle-section   .rh-p-elearn-course-card-price {
+        color: #30deee;
+        font-size: 20px;
+        line-height: 28px;
+        font-family: "Inter", sans-serif;
+    }
+   .srs-bundle-section .rh-p-elearn-course-card-price-new {
+        font-weight: 600;
+    }
+   .srs-bundle-section .rh-p-elearn-course-card-price-old {
+        font-weight: 400;
+        text-decoration: line-through;
+        margin-left: 8px;
+    }
+   .srs-bundle-section .rh-p-elearn-course-button-group {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+   .srs-bundle-section .rh-p-elearn-course-button-group-detail-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: calc(100% - 52px);
+        background: transparent;
+        border: 1px solid #ffffff;
+        color: #ffffff;
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 400;
+        font-family: "Inter", sans-serif;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 9999px;
+        padding: 10px 20px;
+        transition: all 0.3s ease;
+    }
+  .srs-bundle-section  .rh-p-elearn-course-button-group-detail-button:hover {
+        background: #36f4a4;
+        color: #041e18;
+        border-color: #36f4a4;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(54, 244, 164, 0.3);
+    }
+   .srs-bundle-section .rh-p-elearn-course-button-group-cart-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        border: 1px solid #ffffff;
+        color: #ffffff;
+        border-radius: 9999px;
+        padding: 12px;
+        transition: all 0.3s ease;
+    }
+   .srs-bundle-section .rh-p-elearn-course-button-group-cart-button:hover {
+        background: #30deee;
+        border-color: #30deee;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(48, 222, 238, 0.3);
+    }
+   .srs-bundle-section .rh-p-elearn-course-button-group-cart-button:hover img {
+        filter: brightness(0) saturate(100%) invert(7%) sepia(25%) saturate(3671%)
+            hue-rotate(152deg) brightness(95%) contrast(95%);
+    }
+   .srs-bundle-section .rh-p-elearn-course-button-group-cart-button img {
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+    }
+  .srs-bundle-section  .view-more-bundles-button {
+        display: inline-flex;
+        align-items: center;
+        padding: 10px 32px;
+        border: 2px solid white;
+        border-radius: 9999px;
+        background: transparent;
+        color: white;
+        font-size: 16px;
+        font-family: "Inter Variable", sans-serif;
+        font-weight: 400;
+        line-height: 24px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+   .srs-bundle-section .view-more-bundles-button:hover {
+        background: white;
+        color: #000A1E;
+    }
+
+    /* Responsive styles for smaller screens */
+
+    @media (max-width: 1024px){
+    .srs-bundle-section .srs-bundle-card-wrapper{
+    flex-wrap: wrap;
+    }
+}
+    @media (max-width: 768px) {
+      .srs-bundle-section  .srs-header-title {
+            font-size: 50px;
+            line-height: 55px;
+        }
+      .srs-bundle-section  .srs-header-subtitle {
+            font-size: 40px;
+            line-height: 45px;
+        }
+    }
+
+    @media (max-width: 360px) {
+      .srs-bundle-section  .rh-p-elearn-course-card {
+            padding: 16px;
+            min-width: 280px;
+        }
+      .srs-bundle-section  .rh-p-elearn-course-card-img {
+            margin-bottom: 8px;
+        }
+      .srs-bundle-section  .course-title {
+            font-size: 18px;
+            line-height: 24px;
+            margin: 0 0 12px 0;
+        }
+       .srs-bundle-section .course-tag {
+            font-size: 11px;
+            margin: 0;
+            {% comment %} margin: 0 0 8px 0; {% endcomment %}
+        }
+      .srs-bundle-section  .rh-p-elearn-course-card-price {
+            font-size: 18px;
+            line-height: 24px;
+        }
+       .srs-bundle-section .rh-p-elearn-course-button-group {
+            margin: 24px 0 0;
+            gap: 6px;
+        }
+      .srs-bundle-section  .rh-p-elearn-course-button-group-detail-button {
+            font-size: 14px;
+            line-height: 20px;
+            padding: 8px 16px;
+        }
+      .srs-bundle-section  .rh-p-elearn-course-button-group-cart-button {
+            padding: 10px;
+        }
+      .srs-bundle-section  .rh-p-elearn-course-button-group-cart-button img {
+            width: 18px;
+            height: 18px;
+        }
+    }
+
+    @media (max-width: 320px) {
+       .srs-bundle-section .rh-p-elearn-course-card {
+            padding: 12px;
+        }
+       .srs-bundle-section .rh-p-elearn-course-card-img {
+            max-height: 140px;
+        }
+      .srs-bundle-section  .course-title {
+            font-size: 16px;
+            line-height: 20px;
+        }
+       .srs-bundle-section .rh-p-elearn-course-card-price {
+            font-size: 16px;
+            line-height: 22px;
+        }
+       .srs-bundle-section .rh-p-elearn-course-button-group {
+            margin: 16px 0 0;
+            gap: 4px;
+        }
+       .srs-bundle-section .rh-p-elearn-course-button-group-detail-button {
+            font-size: 13px;
+            padding: 6px 12px;
+        }
+       .srs-bundle-section .rh-p-elearn-course-button-group-cart-button {
+            padding: 8px;
+        }
+    }
+    </style>
+
+{%- liquid
+  assign section_id = 'srs-bundle-course-' | append: section.id
+  assign products = section.settings.products
+  assign section_title = section.settings.section_title
+  assign section_subtitle = section.settings.section_subtitle
+  assign view_more_button_text = section.settings.view_more_button_text
+  assign view_more_button_url = section.settings.view_more_button_url
+  assign show_rating = section.settings.show_rating
+  assign default_rating = section.settings.default_rating
+  assign show_price = section.settings.show_price
+  assign show_compare_price = section.settings.show_compare_price
+  assign show_cart_button = section.settings.show_cart_button
+  assign show_detail_button = section.settings.show_detail_button
+  assign detail_button_text = section.settings.detail_button_text
+  assign cart_button_icon = section.settings.cart_button_icon
+-%}
+
+<section class="srs-bundle-section" id="{{ section_id }}">
+    <div class="srs-container">
+        {%- if section_title != blank or section_subtitle != blank -%}
+            <div class="srs-header-bundle">
+                {%- if section_title != blank -%}
+                    <h1 class="srs-header-title">{{ section_title }}</h1>
+                {%- endif -%}
+                {%- if section_subtitle != blank -%}
+                    <p class="srs-header-subtitle">{{ section_subtitle }}</p>
+                {%- endif -%}
+            </div>
+        {%- endif -%}
+        
+        <div class="srs-bundle-content">
+            {%- if products != blank -%}
+                <div class="srs-bundle-card-wrapper">
+                    {%- for product in products -%}
+                        {%- if product != blank -%}
+                            {%- liquid
+                                assign product_rating = 0
+                                assign custom_rating = product.metafields.custom.rating
+                                if custom_rating != blank and custom_rating != null
+                                  assign product_rating = custom_rating
+                                endif
+                                
+                                assign product_tag = product.vendor
+                                if product.tags.size > 0
+                                  assign product_tag = product.tags.first
+                                endif
+                              -%}
+                            <div class="rh-p-elearn-course-card">
+                                <div class="rh-p-elearn-course-card-bg-overlay"></div>
+                                
+                                {%- if product.featured_media != blank -%}
+                                    <div class="rh-p-elearn-course-card-img">
+                                        <img src="{{ product.featured_media | image_url: width: 457 }}" 
+                                             alt="{{ product.featured_media.alt | default: product.title }}"
+                                             loading="lazy"
+                                             width="{{ product.featured_media.width }}"
+                                             height="{{ product.featured_media.height }}">
+                                    </div>
+                                {%- endif -%}
+                                
+                                <div class="rh-p-elearn-course-card-content">
+                                    {%- if product.vendor != blank -%}
+                                        <p class="course-tag">{{ product_tag | replace: '-', ' ' | capitalize }}</p>
+                                    {%- endif -%}
+                                    
+                                    <h2 class="course-title">{{ product.title }}</h2>
+                                    
+                                    {%- assign bundle_courses = product.metafields.custom.bundle_course_list.value -%}
+                                    {%- if bundle_courses != blank -%}
+                                        <div class="course-includes">
+                                            <h3 class="course-includes-title">Includes Courses:</h3>
+                                            <div class="course-list" id="course-list-{{ section_id }}-{{ product.id }}">
+                                                {%- for course in bundle_courses -%}
+                                                    {%- if course != blank -%}
+                                                        <div class="course-item {% if forloop.index > 3 %}course-item-hidden{% endif %}" {% if forloop.index > 3 %}style="display: none;"{% endif %}>
+                                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M8.08894 15.9346C7.93311 16.0913 7.72061 16.1788 7.49977 16.1788C7.27894 16.1788 7.06644 16.0913 6.91061 15.9346L2.20561 11.2288C1.71727 10.7404 1.71727 9.94878 2.20561 9.46128L2.79477 8.87211C3.28311 8.38378 4.07394 8.38378 4.56227 8.87211L7.49977 11.8096L15.4373 3.87211C15.9256 3.38378 16.7173 3.38378 17.2048 3.87211L17.7939 4.46128C18.2823 4.94961 18.2823 5.74128 17.7939 6.22878L8.08894 15.9346Z" fill="#36F4A4"/>
+                                                            </svg>
+                                                            <p class="course-item-text">{{ course | truncate: 50 }}</p>
+                                                        </div>
+                                                    {%- endif -%}
+                                                {%- endfor -%}
+                                            </div>
+                                            {%- if bundle_courses.size > 3 -%}
+                                                <button type="button" class="view-more-link toggle-courses-btn" data-product-id="{{ product.id }}" data-section-id="{{ section_id }}">View More</button>
+                                            {%- endif -%}
+                                        </div>
+                                    {%- endif -%}
+                                    
+                                    <div class="srs-price-star-wrapper">
+                                        <div class="price-rating-group">
+                                            {%- if show_rating -%}
+                                                <div class="rh-course-rating">
+                                                    <div class="rh-course-rating-stars" id="starRating-{{ section_id }}-{{ product.id }}" data-rating="{{ product_rating }}">
+                                                        <!-- Stars will be generated by JavaScript -->
+                                                    </div>
+                                                </div>
+                                            {%- endif -%}
+                                            
+                                            {%- if show_price -%}
+                                                <div class="rh-p-elearn-course-card-price">
+                                                    <span class="rh-p-elearn-course-card-price-new">{{ product.price | money }}</span>
+                                                    {%- if show_compare_price and product.compare_at_price > product.price -%}
+                                                        <span class="rh-p-elearn-course-card-price-old">{{ product.compare_at_price | money }}</span>
+                                                    {%- endif -%}
+                                                </div>
+                                            {%- endif -%}
+                                        </div>
+                                        
+                                        <div class="rh-p-elearn-course-button-group">
+                                            {%- if show_cart_button -%}
+                                                {% assign product_form_id = 'quick-add-' | append: section_id | append: product.id %}
+        {%- if product.variants_count == 1 -%}
+          <product-form data-section-id="{{ section.id }}">
+            {%- form 'product',
+              product,
+              id: product_form_id,
+              class: 'form',
+              novalidate: 'novalidate',
+              data-type: 'add-to-cart-form'
+            -%}
+              <input
+                type="hidden"
+                name="id"
+                value="{{ product.selected_or_first_available_variant.id }}"
+                class="product-variant-id"
+                {% if product.selected_or_first_available_variant.available == false %}
+                  disabled
+                {% endif %}
+              >
+              <button
+                type="submit"
+                name="add"
+                class="rh-p-elearn-course-button-group-cart-button"
+                title="Add to Cart"
+                {% if product.selected_or_first_available_variant.available == false %}
+                  disabled
+                {% endif %}
+              >
+                <img src="{{ 'icon-cart-m.svg' | asset_url }}" alt="Add to cart">
+              </button>
+            {%- endform -%}
+          </product-form>
+        {%- else -%}
+          <a href="{{ product.url }}" title="Add to Cart" class="rh-p-elearn-course-button-group-cart-button">
+            <img src="{{ 'icon-cart-m.svg' | asset_url }}" alt="Add to cart">
+          </a>
+        {%- endif -%}
+                                            {%- endif -%}
+                                            
+                                            {%- if show_detail_button -%}
+                                                <a href="{{ product.url }}" class="rh-p-elearn-course-button-group-detail-button">
+                                                    {{ detail_button_text }}
+                                                </a>
+                                            {%- endif -%}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {%- endif -%}
+                    {%- endfor -%}
+                </div>
+            {%- endif -%}
+            
+            {%- if view_more_button_text != blank and view_more_button_url != blank -%}
+                <a href="{{ view_more_button_url }}" class="view-more-bundles-button">{{ view_more_button_text }}</a>
+            {%- endif -%}
+        </div>
+    </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize toggle functionality for bundle courses
+    const toggleButtons = document.querySelectorAll('.toggle-courses-btn');
+    
+    toggleButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            const productId = this.getAttribute('data-product-id');
+            const sectionId = this.getAttribute('data-section-id');
+            const courseList = document.getElementById(`course-list-${sectionId}-${productId}`);
+            const hiddenCourses = courseList.querySelectorAll('.course-item-hidden');
+            
+            if (hiddenCourses.length > 0) {
+                // Show all courses
+                hiddenCourses.forEach(function(course) {
+                    course.style.display = 'flex';
+                    course.classList.remove('course-item-hidden');
+                });
+                this.textContent = 'View Less';
+            } else {
+                // Hide courses beyond the first 3
+                const allCourses = courseList.querySelectorAll('.course-item');
+                allCourses.forEach(function(course, index) {
+                    if (index >= 3) {
+                        course.style.display = 'none';
+                        course.classList.add('course-item-hidden');
+                    }
+                });
+                this.textContent = 'View More';
+            }
+        });
+    });
+});
+</script>
+
+
