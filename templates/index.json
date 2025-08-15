@@ -35,7 +35,7 @@
         "description_font_size_mobile": 18,
         "title_font_weight": "300",
         "section_padding_top": 140,
-        "section_padding_bottom": 140,
+        "section_padding_bottom": 160,
         "content_alignment": "left",
         "content_max_width": 540,
         "enable_animations": true,
@@ -45,6 +45,9 @@
     },
     "srs_explore_section_wyEPpc": {
       "type": "srs-explore-section",
+      "custom_css": [
+        ".srs-explored-course {border-top-left-radius: 48px; border-top-right-radius: 48px; box-shadow: 0px 1px 0px 0px #272c3166 inset; position: relative; z-index: 999; margin-top: -50px;}"
+      ],
       "name": "SRS Explored Courses",
       "settings": {
         "main_title": "Explore Our Most Loved Courses",
@@ -296,6 +299,29 @@
         "mobile_description_font_size": 18,
         "mobile_feature_title_font_size": 24,
         "mobile_feature_description_font_size": 16
+      }
+    },
+    "srs_bundle_section_kwFBRn": {
+      "type": "srs-bundle-section",
+      "name": "SRS Bundle Course Section",
+      "settings": {
+        "section_title": "Career Path Bundles",
+        "section_subtitle": "Become Job-Ready With Handpicked Course Bundles. We've grouped courses into career-focused tracks to save you time.",
+        "products": [
+          "beginning-python",
+          "content-writing",
+          "foundations-of-nutrition-and-healthy-eating"
+        ],
+        "show_rating": true,
+        "default_rating": 4.5,
+        "show_price": true,
+        "show_compare_price": true,
+        "show_cart_button": true,
+        "show_detail_button": true,
+        "detail_button_text": "View Details",
+        "cart_button_icon": "shopify://shop_images/fi_1170678.png",
+        "view_more_button_text": "View More Career Bundles",
+        "view_more_button_url": "shopify://collections/all"
       }
     },
     "srs_testimonial_section_UbFMn7": {
@@ -805,29 +831,6 @@
         "gradient_height": 170,
         "gradient_top_position": 200,
         "logo_filter": "none"
-      }
-    },
-    "srs_bundle_section_kwFBRn": {
-      "type": "srs-bundle-section",
-      "name": "SRS Bundle Course Section",
-      "settings": {
-        "section_title": "Career Path Bundles",
-        "section_subtitle": "Become Job-Ready With Handpicked Course Bundles. We've grouped courses into career-focused tracks to save you time.",
-        "products": [
-          "beginning-python",
-          "content-writing",
-          "foundations-of-nutrition-and-healthy-eating"
-        ],
-        "show_rating": true,
-        "default_rating": 4.5,
-        "show_price": true,
-        "show_compare_price": true,
-        "show_cart_button": true,
-        "show_detail_button": true,
-        "detail_button_text": "View Details",
-        "cart_button_icon": "shopify://shop_images/fi_1170678.png",
-        "view_more_button_text": "View More Career Bundles",
-        "view_more_button_url": "shopify://collections/all"
       }
     },
     "rh_certificate_accreditations_section_EeRJd8": {

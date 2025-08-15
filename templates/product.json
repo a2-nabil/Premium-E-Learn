@@ -31,7 +31,7 @@
         "description_font_size_mobile": 18,
         "title_font_weight": "300",
         "section_padding_top": 52,
-        "section_padding_bottom": 44,
+        "section_padding_bottom": 84,
         "content_alignment": "left",
         "content_max_width": 740,
         "enable_animations": true,

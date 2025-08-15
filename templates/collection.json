@@ -14,7 +14,7 @@
       "name": "SRS Global Hero",
       "settings": {
         "background_type": "video",
-        "video_url": "https://cdn.shopify.com/videos/c/o/v/2c65e7e108d6468da618b6631cf7b522.mp4",
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/b8bab7b35e044e8c80fbfef29693bc41.mp4",
         "background_color": "#000000",
         "overlay_opacity": 50,
         "overlay_color": "#000000",
@@ -56,7 +56,7 @@
       "type": "main-collection-product-grid",
       "custom_css": [
         ".facets__form-vertical {border: 1px solid #133b32; border-radius: 12px; padding: 20px; background: #041e18;}",
-        ".facet-filters__field .select__select{background: #03080a;}"
+        ".facet-filters__field .select__select {background: #03080a;}"
       ],
       "settings": {
         "products_per_page": 16,

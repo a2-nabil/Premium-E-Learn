@@ -10,6 +10,10 @@
             border-top-left-radius: 48px;
             border-top-right-radius: 48px;
             box-shadow: 0px 1px 0px 0px #272C3166 inset;
+            background-color: inherit;
+            margin-top: -40px;
+            position: relative;
+            z-index: 10;
           }
         @media (min-width: 768px) {
             .nxt-singleCourse__wrapper {
@@ -513,11 +517,17 @@
           <div class="nxt-career__card">
             <div class="nxt-career__content">
               <h2 class="nxt-career__title">{{ block.settings.title }}</h2>
-
               <div class="nxt-career__features">
-                {{ block.settings.description }}
+                {% if product.metafields.custom.careers_details_list.value %}
+                  <ul>
+                    {% for feature in product.metafields.custom.careers_details_list.value %}
+                      <li>{{ feature }}</li>
+                    {% endfor %}
+                  </ul>
+                {% else %}
+                  {{ block.settings.description }}
+                {% endif %}
               </div>
-
               {% if product.metafields.custom.career_cta.value.url != blank %}
                 {% assign career_cta = product.metafields.custom.career_cta.value.url %}
               {% else %}
