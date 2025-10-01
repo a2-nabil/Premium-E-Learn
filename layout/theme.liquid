@@ -53,6 +53,86 @@
       assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
       assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
     %}
+<!-- Preload font files -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="preload" href="https://cdn.shopify.com/s/files/1/0957/2722/3121/files/NeueHaasDisplayThin.woff?v=1755232984" as="font" type="font/woff" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.shopify.com/s/files/1/0957/2722/3121/files/NeueHaasDisplayLight.woff?v=1755232981" as="font" type="font/woff" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.shopify.com/s/files/1/0957/2722/3121/files/NeueHaasDisplayRoman.woff?v=1755232983" as="font" type="font/woff" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.shopify.com/s/files/1/0957/2722/3121/files/NeueHaasDisplayMediu.woff?v=1755232982" as="font" type="font/woff" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.shopify.com/s/files/1/0957/2722/3121/files/NeueHaasDisplayBold.woff?v=1755232986" as="font" type="font/woff" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.shopify.com/s/files/1/0957/2722/3121/files/NeueHaasDisplayBlack.woff?v=1755232985" as="font" type="font/woff" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.shopify.com/s/files/1/0957/2722/3121/files/InterVariable.woff?v=1755236584" as="font" type="font/woff" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.shopify.com/s/files/1/0957/2722/3121/files/Consolas_Regular.woff?v=1755239330" as="font" type="font/woff" crossorigin="anonymous">
+
+<style>
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro';
+  src: url('https://cdn.shopify.com/s/files/1/0957/2722/3121/files/NeueHaasDisplayThin.woff?v=1755232984') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro';
+  src: url('https://cdn.shopify.com/s/files/1/0957/2722/3121/files/NeueHaasDisplayLight.woff?v=1755232981') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro';
+  src: url('https://cdn.shopify.com/s/files/1/0957/2722/3121/files/NeueHaasDisplayRoman.woff?v=1755232983') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro';
+  src: url('https://cdn.shopify.com/s/files/1/0957/2722/3121/files/NeueHaasDisplayMediu.woff?v=1755232982') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro';
+  src: url('https://cdn.shopify.com/s/files/1/0957/2722/3121/files/NeueHaasDisplayBold.woff?v=1755232986') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro';
+  src: url('https://cdn.shopify.com/s/files/1/0957/2722/3121/files/NeueHaasDisplayBlack.woff?v=1755232985') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+@font-face {
+  font-family: 'Inter Variable';
+  src: url('https://cdn.shopify.com/s/files/1/0957/2722/3121/files/InterVariable.woff?v=1755236584') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Consolas';
+  src: url('https://cdn.shopify.com/s/files/1/0957/2722/3121/files/Consolas_Regular.woff?v=1755239330') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+</style>
 
     {% style %}
       {{ settings.type_body_font | font_face: font_display: 'swap' }}

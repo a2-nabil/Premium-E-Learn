@@ -1,0 +1,350 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "nxt_advanced_section_kVgGCq": {
+      "type": "nxt-advanced-section",
+      "blocks": {
+        "text_jKPUyN": {
+          "type": "text",
+          "settings": {
+            "text": "Who Are We?",
+            "text_color": "#ffffff",
+            "text_size": 96,
+            "text_line_height": 96,
+            "text_font_weight": "300",
+            "text_align": "left",
+            "text_margin_bottom": 24
+          }
+        },
+        "rich_text_m7mXU9": {
+          "type": "rich_text",
+          "settings": {
+            "rich_text": "<p>Studyhub is a leading online learning platform dedicated to helping individuals worldwide achieve their educational goals. For over 5 years, we’ve offered 2,200+ high-quality courses tailored to learners of all ages, backgrounds, and experience levels. With 20,000+ students, we’ve become a trusted hub for knowledge, skills, and career growth. Driven by a passion for education and innovation, our team of expert educators and industry professionals is committed to making learning accessible, effective, and transformative. Our mission is simple: to make the world better through the power of education.</p>",
+            "heading_list_icon_show": false,
+            "block_center": false,
+            "text_color": "#ffffff",
+            "text_size": 24,
+            "text_line_height": 27,
+            "text_font_weight": "400",
+            "text_align": "left",
+            "text_margin_bottom": 30
+          }
+        },
+        "button_4qkXcR": {
+          "type": "button",
+          "settings": {
+            "button_text": "Check Our Courses",
+            "button_url": "shopify://collections/all",
+            "button_svg_icon": "",
+            "text_size": 16,
+            "text_line_height": 24,
+            "text_font_weight": "400",
+            "text_align": "left",
+            "text_margin_bottom": 0,
+            "button_icon_position": "row",
+            "button_icon_gap": 6,
+            "align_items": "center",
+            "justify_content": "center",
+            "button_bg_color": "#ffffff",
+            "button_text_color": "#020a08",
+            "button_border_radius": 100,
+            "button_padding": 16,
+            "button_padding_horizontal": 32,
+            "button_text_size": 18,
+            "button_font_weight": "400",
+            "button_border_width": 0,
+            "button_border_color": "",
+            "button_hover_bg_color": "",
+            "button_hover_text_color": "",
+            "button_hover_border_color": "",
+            "button_hover_border_width": 0,
+            "button_hover_border_radius": 0
+          }
+        },
+        "image_DTbDMg": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/about_hero.webp",
+            "image_url": "",
+            "image_width": 673,
+            "image_object_fit": "cover",
+            "image_object_position": "center",
+            "image_border_radius": 0
+          }
+        }
+      },
+      "block_order": [
+        "text_jKPUyN",
+        "rich_text_m7mXU9",
+        "button_4qkXcR",
+        "image_DTbDMg"
+      ],
+      "name": "NXT Advanced Text",
+      "settings": {
+        "contents_width": 691,
+        "contents_center": false,
+        "flex_direction": "row",
+        "align_items": "center",
+        "justify_content": "space-between",
+        "gap": 10,
+        "text_align_mobile": "center",
+        "flex_direction_mobile": "column",
+        "align_items_mobile": "center",
+        "justify_content_mobile": "center",
+        "gap_mobile": 40,
+        "container_max_width": 1418,
+        "padding_top": 172,
+        "padding_bottom": 100,
+        "padding_left_right": 16,
+        "bg_type": "color",
+        "background_color": "#020a08",
+        "background_gradient": "",
+        "bg_size": "cover",
+        "bg_position": "center center",
+        "bg_repeat": "no-repeat"
+      }
+    },
+    "rh_certificate_accreditations_section_cnKyU8": {
+      "type": "rh-certificate-accreditations-section",
+      "blocks": {
+        "certification_logo_wNpa9a": {
+          "type": "certification_logo",
+          "settings": {
+            "logo": "shopify://shop_images/Frame_52.png",
+            "alt_text": "ISO 9001 Certification"
+          }
+        },
+        "certification_logo_tmBcnE": {
+          "type": "certification_logo",
+          "settings": {
+            "logo": "shopify://shop_images/Frame_53.png",
+            "alt_text": "CPD Certification"
+          }
+        },
+        "certification_logo_jiJr7r": {
+          "type": "certification_logo",
+          "settings": {
+            "logo": "shopify://shop_images/Frame_51.png",
+            "alt_text": "IIBA Partnership"
+          }
+        },
+        "certification_logo_GNp4Uc": {
+          "type": "certification_logo",
+          "settings": {
+            "logo": "shopify://shop_images/Frame_54.png",
+            "alt_text": "PMI Approved"
+          }
+        },
+        "certification_logo_zy8pXH": {
+          "type": "certification_logo",
+          "settings": {
+            "logo": "shopify://shop_images/Frame_55.png",
+            "alt_text": "ACCA Partnership"
+          }
+        },
+        "certification_logo_PKAUUB": {
+          "type": "certification_logo",
+          "settings": {
+            "logo": "shopify://shop_images/Frame_56.png",
+            "alt_text": "CIPD Approved"
+          }
+        }
+      },
+      "block_order": [
+        "certification_logo_wNpa9a",
+        "certification_logo_tmBcnE",
+        "certification_logo_jiJr7r",
+        "certification_logo_GNp4Uc",
+        "certification_logo_zy8pXH",
+        "certification_logo_PKAUUB"
+      ],
+      "name": "SA Certifications & Accreditations",
+      "settings": {
+        "title": "Our Certifications & <br>Accreditations",
+        "description": "We partner with trusted global organisations to ensure your certificate holds real-world value and recognition.",
+        "background_color": "#000a1e",
+        "padding_top_desktop": 128,
+        "padding_bottom_desktop": 128,
+        "padding_horizontal_desktop": 20,
+        "padding_top_large": 96,
+        "padding_bottom_large": 96,
+        "padding_horizontal_large": 20,
+        "padding_top_medium": 80,
+        "padding_bottom_medium": 80,
+        "padding_horizontal_medium": 20,
+        "padding_top_small": 64,
+        "padding_bottom_small": 64,
+        "padding_horizontal_small": 20,
+        "padding_top_tablet": 48,
+        "padding_bottom_tablet": 48,
+        "padding_horizontal_tablet": 20,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32,
+        "padding_horizontal_mobile": 16,
+        "padding_top_mobile_small": 24,
+        "padding_bottom_mobile_small": 24,
+        "padding_horizontal_mobile_small": 12
+      }
+    },
+    "srs_why_learn_bVWP7L": {
+      "type": "srs-why-learn",
+      "name": "SA Why E-Learn",
+      "settings": {
+        "main_title": "Impact of E-Learn",
+        "subtitle": "",
+        "stat1_label": "",
+        "stat1_number": "1000",
+        "stat1_suffix": "+",
+        "stat1_description": "1000+  learners complete their courses — no pressure, just progress.",
+        "stat1_icon": "",
+        "stat2_label": "",
+        "stat2_number": "3000",
+        "stat2_suffix": "+",
+        "stat2_description": "Most learners say E-Learn  Courses helped directly with job growth or upskilling.",
+        "stat2_icon": "",
+        "stat3_label": "",
+        "stat3_number": "500",
+        "stat3_suffix": "+",
+        "stat3_description": "It starts with one course and 500+ Individual Instructors to Instruct",
+        "stat3_icon": "",
+        "stat4_label": "",
+        "stat4_number": "1500",
+        "stat4_suffix": "+",
+        "stat4_description": "Reviewed across 90+ countries. From London to Lagos to Lahore.",
+        "stat4_icon": "",
+        "background_color": "#020a08",
+        "text_color": "#ffffff",
+        "accent_color": "#36f4a4",
+        "padding_top": 120,
+        "padding_bottom": 140
+      }
+    },
+    "nxt_advanced_section_hNWPrV": {
+      "type": "nxt-advanced-section",
+      "blocks": {
+        "text_mwrtG7": {
+          "type": "text",
+          "settings": {
+            "text": "Why E-Learn?",
+            "text_color": "#ffffff",
+            "text_size": 70,
+            "text_line_height": 70,
+            "text_font_weight": "300",
+            "text_align": "left",
+            "text_margin_bottom": 24
+          }
+        },
+        "rich_text_ceJBPV": {
+          "type": "rich_text",
+          "settings": {
+            "rich_text": "<p>When you choose to study with Studyhub, you're investing in more than just a course—you're investing in your future. Our extensive collection of courses covers a wide array of subjects, each made with attention to detail and a clear focus on real-world applicability. We understand the dynamic nature of the global job market, and our courses reflect the most in-demand skills and knowledge areas. With us, you are not just learning; you are advancing towards your dreams.</p><ul><li>Chance to get extensive training from industry expert instructors</li><li>Study anytime from anywhere at your own pace</li><li>Upskill and enhance your earning potential by completing acourse and getting a CPD accredited certificate.</li><li>Satisfaction guaranteed</li></ul>",
+            "heading_list_icon_show": true,
+            "heading_list_icon": "shopify://shop_images/check-square--check-form-validation-checkmark-success-add-addition-box-square-tick.png",
+            "block_center": false,
+            "text_color": "#ffffff",
+            "text_size": 24,
+            "text_line_height": 27,
+            "text_font_weight": "400",
+            "text_align": "left",
+            "text_margin_bottom": 30
+          }
+        },
+        "button_Hr4WpQ": {
+          "type": "button",
+          "settings": {
+            "button_text": "Check Our Courses",
+            "button_url": "shopify://collections/all",
+            "button_svg_icon": "",
+            "text_size": 16,
+            "text_line_height": 24,
+            "text_font_weight": "400",
+            "text_align": "left",
+            "text_margin_bottom": 0,
+            "button_icon_position": "row",
+            "button_icon_gap": 6,
+            "align_items": "center",
+            "justify_content": "center",
+            "button_bg_color": "#ffffff",
+            "button_text_color": "#020a08",
+            "button_border_radius": 100,
+            "button_padding": 16,
+            "button_padding_horizontal": 32,
+            "button_text_size": 18,
+            "button_font_weight": "400",
+            "button_border_width": 0,
+            "button_border_color": "",
+            "button_hover_bg_color": "",
+            "button_hover_text_color": "",
+            "button_hover_border_color": "",
+            "button_hover_border_width": 0,
+            "button_hover_border_radius": 0
+          }
+        },
+        "image_yiNihH": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hero-about.webp",
+            "image_url": "",
+            "image_width": 695,
+            "image_object_fit": "cover",
+            "image_object_position": "center",
+            "image_border_radius": 12
+          }
+        }
+      },
+      "block_order": [
+        "text_mwrtG7",
+        "rich_text_ceJBPV",
+        "button_Hr4WpQ",
+        "image_yiNihH"
+      ],
+      "name": "NXT Advanced Text",
+      "settings": {
+        "contents_width": 691,
+        "contents_center": false,
+        "flex_direction": "row",
+        "align_items": "center",
+        "justify_content": "space-between",
+        "gap": 10,
+        "text_align_mobile": "center",
+        "flex_direction_mobile": "column",
+        "align_items_mobile": "center",
+        "justify_content_mobile": "center",
+        "gap_mobile": 30,
+        "container_max_width": 1418,
+        "padding_top": 60,
+        "padding_bottom": 100,
+        "padding_left_right": 16,
+        "bg_type": "color",
+        "background_color": "#020a08",
+        "background_gradient": "",
+        "bg_size": "cover",
+        "bg_position": "center center",
+        "bg_repeat": "no-repeat"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "nxt_advanced_section_kVgGCq",
+    "rh_certificate_accreditations_section_cnKyU8",
+    "srs_why_learn_bVWP7L",
+    "nxt_advanced_section_hNWPrV"
+  ]
+}

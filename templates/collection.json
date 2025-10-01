@@ -35,7 +35,7 @@
         "description_font_size_mobile": 18,
         "title_font_weight": "300",
         "section_padding_top": 140,
-        "section_padding_bottom": 140,
+        "section_padding_bottom": 180,
         "content_alignment": "left",
         "content_max_width": 530,
         "enable_animations": true,
@@ -56,7 +56,8 @@
       "type": "main-collection-product-grid",
       "custom_css": [
         ".facets__form-vertical {border: 1px solid #133b32; border-radius: 12px; padding: 20px; background: #041e18;}",
-        ".facet-filters__field .select__select {background: #03080a;}"
+        ".facet-filters__field .select__select {background: #03080a;}",
+        ".rh-radious-border-shadow {border-top-left-radius: 48px; border-top-right-radius: 48px; box-shadow: 0px 1px 0px 0px #272c3166 inset; position: relative; z-index: 2; margin-top: -48px;}"
       ],
       "settings": {
         "products_per_page": 16,
@@ -130,6 +131,7 @@
         "certification_logo_dXatti",
         "certification_logo_pxcqQP"
       ],
+      "custom_css": [],
       "name": "SA Certifications & Accreditations",
       "settings": {
         "title": "Our Certifications & Accreditations",

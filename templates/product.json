@@ -30,7 +30,7 @@
         "description_font_size_desktop": 24,
         "description_font_size_mobile": 18,
         "title_font_weight": "300",
-        "section_padding_top": 52,
+        "section_padding_top": 94,
         "section_padding_bottom": 84,
         "content_alignment": "left",
         "content_max_width": 740,
@@ -358,6 +358,36 @@
         "padding_bottom_mobile_small": 24,
         "padding_horizontal_mobile_small": 12
       }
+    },
+    "srs_single_q_and_a_JXBrWp": {
+      "type": "srs-single-q-and-a",
+      "name": "SA Single FAQ Section",
+      "settings": {
+        "title": "Q & A",
+        "background_color": "#020a08",
+        "background_image": "shopify://shop_images/faq-bg.png",
+        "padding_top_desktop": 128,
+        "padding_bottom_desktop": 128,
+        "padding_horizontal_desktop": 20,
+        "padding_top_large": 80,
+        "padding_bottom_large": 80,
+        "padding_horizontal_large": 20,
+        "padding_top_medium": 64,
+        "padding_bottom_medium": 64,
+        "padding_horizontal_medium": 20,
+        "padding_top_small": 48,
+        "padding_bottom_small": 48,
+        "padding_horizontal_small": 20,
+        "padding_top_tablet": 32,
+        "padding_bottom_tablet": 32,
+        "padding_horizontal_tablet": 20,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 24,
+        "padding_horizontal_mobile": 16,
+        "padding_top_mobile_small": 24,
+        "padding_bottom_mobile_small": 24,
+        "padding_horizontal_mobile_small": 12
+      }
     }
   },
   "order": [
@@ -366,6 +396,7 @@
     "main",
     "related-products",
     "rh_certificate_accreditations_section_U7CeCE",
-    "rh_future_building_section_FRGbYx"
+    "rh_future_building_section_FRGbYx",
+    "srs_single_q_and_a_JXBrWp"
   ]
 }

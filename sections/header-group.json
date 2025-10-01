@@ -41,7 +41,7 @@
         "main_menu": "main-menu",
         "search_title": "Search Courses",
         "search_placeholder": "Search for courses, topics, or instructors...",
-        "show_popular_searches": true,
+        "show_popular_searches": false,
         "popular_searches_title": "Popular Searches",
         "popular_search_terms": "JavaScript\nPython\nReact\nData Science"
       }
